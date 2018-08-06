@@ -34,7 +34,7 @@ class Walkthrough extends Component {
               <View style={styles.slides}>
                 <Icon name="ios-cash-outline" style={styles.imageIcons} />
                 <Text style={styles.helpTitle}>ORGANIZE YOUR FINANCES</Text>
-                <Text numberOfLines={3} style={styles.helpText}>
+                <Text numberOfLines={4} style={styles.helpText}>
                   Easy and user friendly Personal Finance App to take control of
                   your money
                 </Text>

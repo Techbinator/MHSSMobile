@@ -29,9 +29,6 @@ class ExpensesList extends Component {
 
   deleteRow(dataId, secId, rowId, rowMap) {
     rowMap[`${secId}${rowId}`].props.closeRow();
-    //const newData = [...this.state.listViewData];
-    //newData.splice(rowId, 1);
-    //this.setState({ listViewData: newData });
     this.props.handleDelete(dataId);
   }
 
@@ -48,7 +45,7 @@ class ExpensesList extends Component {
         {this.ds.cloneWithRows(expensesList).getRowCount() === 0 ? (
           <View>
             <ListItem style={{ justifyContent: 'center' }}>
-              <Text style={styles.textNote}>No expenses loaded</Text>
+              <Text style={styles.emptyMsg}>No expenses loaded</Text>
             </ListItem>
           </View>
         ) : (
@@ -67,11 +64,7 @@ class ExpensesList extends Component {
                         <Col size={1}>
                           <Icon
                             name={data.categoryIcon}
-                            style={{
-                              fontSize: 25,
-                              color: '#BBBBBE',
-                              paddingRight: 20,
-                            }}
+                            style={styles.expenseIcon}
                           />
                         </Col>
                         <Col size={7}>

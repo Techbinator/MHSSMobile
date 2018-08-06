@@ -13,6 +13,7 @@ import {
   Grid,
   Col,
 } from 'native-base';
+import { formatAmount } from '../../utils/formatters';
 
 import style from './styles';
 
@@ -55,7 +56,9 @@ class ExpenseLine extends React.Component {
           </Body>
           <Right>
             <View style={{ flexDirection: 'row' }}>
-              <Text style={style.expense.amount}>{expense.amount}$</Text>
+              <Text style={style.expense.amount}>
+                {formatAmount(expense.amount)}
+              </Text>
               <TouchableHighlight
                 onPress={this._toggleOpenStatus}
                 underlayColor="transparent">

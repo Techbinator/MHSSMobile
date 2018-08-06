@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field, getFormValues } from 'redux-form';
-import { ImageBackground, Platform, Switch } from 'react-native';
+import { ImageBackground, Switch } from 'react-native';
 import {
   Container,
   Content,
@@ -140,6 +140,7 @@ class NewExpenseForm extends React.Component {
                       placeholderStyle={styles.picker.placeholderText}
                       placeholderIconColor="#95959A"
                       itemStyle={styles.picker.itemStyle}
+                      itemTextStyle={styles.picker.itemTextStyle}
                       iosIcon={<Icon name="arrow-down" />}
                       selectedValue={value}
                       onValueChange={value => {
@@ -149,12 +150,8 @@ class NewExpenseForm extends React.Component {
                         return (
                           <Picker.Item
                             key={item.id}
-                            label={
-                              <Text style={styles.picker.itemTextStyle}>
-                                {item.name}
-                              </Text>
-                            }
-                            value={item.name}
+                            label={item.name}
+                            value={item.id}
                           />
                         );
                       })}
@@ -218,30 +215,15 @@ class NewExpenseForm extends React.Component {
                 style={styles.addBtn}
                 disabled={submitting}
                 onPress={() => this.handleSubmit(formValues)}>
-                <Text
-                  style={
-                    Platform.OS === 'android'
-                      ? { fontSize: 16, textAlign: 'center' }
-                      : { fontSize: 16, fontWeight: '900' }
-                  }>
-                  Add
-                </Text>
+                <Text style={{ fontSize: 16, fontWeight: '600' }}>Add</Text>
               </Button>
               <Button
                 rounded
                 block
                 light
-                large
                 style={styles.cancelBtn}
                 onPress={() => navigation.navigate('Expenses')}>
-                <Text
-                  style={
-                    Platform.OS === 'android'
-                      ? { fontSize: 16, textAlign: 'center' }
-                      : { fontSize: 16, fontWeight: '900' }
-                  }>
-                  Cancel
-                </Text>
+                <Text style={{ fontSize: 16, fontWeight: '600' }}>Cancel</Text>
               </Button>
             </Form>
           </Content>

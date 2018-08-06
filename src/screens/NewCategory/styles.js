@@ -26,6 +26,7 @@ export default {
     marginLeft: 20,
     marginRight: 20,
     marginTop: 10,
+    marginBottom: 10,
     height: 50,
     backgroundColor: '#f4f4f4',
   },
@@ -50,6 +51,11 @@ export default {
       fontSize: 30,
       color: commonColor.dropdownLinkColor,
       paddingLeft: 40,
+    },
+    categoryIcon: {
+      alignSelf: 'center',
+      fontSize: 60,
+      color: commonColor.dropdownLinkColor,
     },
   },
 };

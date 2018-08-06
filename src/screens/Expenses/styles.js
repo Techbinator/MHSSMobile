@@ -1,7 +1,6 @@
 const React = require('react-native');
-const { Dimensions } = React;
+const { Platform } = React;
 
-const deviceWidth = Dimensions.get('window').width;
 import themeColors from '../../theme/variables/commonColor';
 
 export default {
@@ -13,7 +12,9 @@ export default {
   expenseOuter: {
     borderRadius: 0,
     elevation: 1,
-    borderBottomWidth: 1,
+    borderRightWidth: 0,
+    borderTopWidth: 0,
+    borderBottomWidth: Platform.OS === 'android' ? 0 : 1,
     borderBottomColor: '#ddd',
     borderLeftWidth: 5,
   },
@@ -25,11 +26,9 @@ export default {
     paddingBottom: 10,
     flex: 1,
   },
-  expenseIconWrapper: {
-    width: deviceWidth / 5,
-  },
-  expenseTitleWrapper: {
-    width: (deviceWidth / 5) * 4,
+  expenseIcon: {
+    fontSize: 25,
+    color: '#BBBBBE',
   },
   expenseTitle: {
     fontSize: 16,
@@ -49,7 +48,7 @@ export default {
     color: themeColors.brandSuccess,
     alignSelf: 'flex-end',
   },
-  textNote: {
+  emptyMsg: {
     color: '#777',
     fontSize: 12,
   },

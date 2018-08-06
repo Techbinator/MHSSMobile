@@ -38,6 +38,7 @@ export default {
     marginLeft: 20,
     marginRight: 20,
     marginTop: 10,
+    marginBottom: 10,
     height: 50,
     backgroundColor: '#f4f4f4',
   },

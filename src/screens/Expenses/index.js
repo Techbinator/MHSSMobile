@@ -78,20 +78,19 @@ class Expenses extends Component {
           source={require('../../../assets/Background/header-bg.png')}
           style={styles.container}>
           <AppHeader
-            hasTabs
             navigation={navigation}
             title={this.state.headerTitle}
             titleSuffix={this.state.headerTitleSuffix}
           />
           <Tabs
+            style={{
+              marginTop: 0,
+              borderTopWidth: 0,
+              borderColor: '#000',
+            }}
             locked
             onChangeTab={({ i, ref, from }) => this.switchPeriod(i, ref, from)}>
-            <Tab
-              heading={
-                <TabHeading>
-                  <Text>Today</Text>
-                </TabHeading>
-              }>
+            <Tab heading="Today">
               <ExpensesList
                 expensesList={expenses}
                 navigation={navigation}
@@ -99,12 +98,7 @@ class Expenses extends Component {
                 expensesLoading={expensesLoading}
               />
             </Tab>
-            <Tab
-              heading={
-                <TabHeading>
-                  <Text>This Week</Text>
-                </TabHeading>
-              }>
+            <Tab heading="This Week">
               <ExpensesList
                 expensesList={expenses}
                 navigation={navigation}
@@ -112,12 +106,7 @@ class Expenses extends Component {
                 expensesLoading={expensesLoading}
               />
             </Tab>
-            <Tab
-              heading={
-                <TabHeading>
-                  <Text>This Month</Text>
-                </TabHeading>
-              }>
+            <Tab heading="This Month">
               <ExpensesList
                 expensesList={expenses}
                 navigation={navigation}

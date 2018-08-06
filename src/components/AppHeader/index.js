@@ -13,10 +13,10 @@ const AppHeader = ({ ...props }) => {
   return (
     <View style={props.style}>
       <Header hasTabs style={{ backgroundColor: 'transparent' }}>
-        <Left>
+        <Left style={{ flex: 1 }}>
           <HeaderDrawerButton navigation={props.navigation} />
         </Left>
-        <Body>
+        <Body style={{ flex: 1 }}>
           {props.displayLogo && (
             <TouchableOpacity
               onPress={() => {
@@ -26,7 +26,7 @@ const AppHeader = ({ ...props }) => {
             </TouchableOpacity>
           )}
         </Body>
-        <Right>
+        <Right style={{ flex: 1 }}>
           {props.displayAvatar && (
             <TouchableOpacity
               onPress={() => {
@@ -71,6 +71,7 @@ AppHeader.propTypes = {
 AppHeader.defaultProps = {
   displayAvatar: true,
   displayLogo: true,
+  titleSuffix: ' ',
 };
 
 export default AppHeader;

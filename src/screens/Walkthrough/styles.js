@@ -1,7 +1,6 @@
 import React from 'react-native';
 const { Dimensions } = React;
 const textColor = '#FFF';
-import commonColor from '../../theme/variables/commonColor';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
@@ -19,13 +18,17 @@ export default {
     height: deviceHeight,
     width: deviceWidth,
   },
+  imageIcons: {
+    fontSize: 80,
+    fontWeight: 'thin',
+    color: textColor,
+  },
   helpTitle: {
     fontSize: 22,
     padding: 40,
     paddingBottom: 20,
     fontWeight: '600',
     textAlign: 'center',
-    lineHeight: 0,
     color: textColor,
   },
   helpText: {
@@ -33,12 +36,6 @@ export default {
     padding: 60,
     paddingTop: 0,
     textAlign: 'center',
-    lineHeight: 0,
-    color: textColor,
-  },
-  imageIcons: {
-    fontSize: 80,
-    fontWeight: 'thin',
     color: textColor,
   },
   slideBtn: {

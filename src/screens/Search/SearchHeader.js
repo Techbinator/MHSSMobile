@@ -12,7 +12,7 @@ const SearchHeader = props => {
           <View>
             <Item>
               <Input placeholder="Search" />
-              <Button light onPress={() => props.onSearch()}>
+              <Button light transparent onPress={() => props.onSearch()}>
                 <Icon name="ios-search" />
               </Button>
             </Item>

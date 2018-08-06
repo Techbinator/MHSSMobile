@@ -1,6 +1,6 @@
 const React = require('react-native');
 
-const { StyleSheet } = React;
+const { StyleSheet, Platform } = React;
 
 module.exports = StyleSheet.create({
   drawerIcon: {
@@ -24,19 +24,22 @@ module.exports = StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
+    fontFamily: 'Roboto_light',
     fontSize: 28,
     color: '#FFF',
   },
   titleSuffix: {
+    fontFamily: 'Roboto_light',
     fontSize: 26,
     opacity: 0.8,
     fontWeight: '100',
     color: '#FFF',
   },
   subTitle: {
+    fontFamily: 'Roboto_light',
     paddingTop: 10,
     fontSize: 24,
-    opacity: 0.9,
+    opacity: Platform.OS === 'android' ? 0.7 : 0.9,
     fontWeight: '100',
     color: '#FFF',
   },

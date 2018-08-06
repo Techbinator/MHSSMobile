@@ -23,8 +23,13 @@ export default {
     marginTop: deviceHeight / 8 - 10,
   },
   submitBtn: {
-    height: 50,
-    marginTop: 10,
+    wrapper: {
+      marginTop: 10,
+      height: 50,
+    },
+    text: {
+      fontWeight: '600',
+    },
   },
   linkBtn: {
     opacity: 0.9,

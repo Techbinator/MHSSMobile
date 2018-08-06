@@ -92,8 +92,8 @@ class ResetPasswordForm extends Component {
                   primary
                   block
                   onPress={() => this.handleSubmit(this.props.formValues)}
-                  style={styles.submitBtn}>
-                  <Text style={{ color: '#FFF' }}>Send Email</Text>
+                  style={styles.submitBtn.wrapper}>
+                  <Text style={styles.submitBtn.text}>Send Email</Text>
                 </Button>
               </Form>
             </Content>

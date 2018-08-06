@@ -4,7 +4,7 @@ import { Container, Content } from 'native-base';
 import ExpenseProgress from './ExpenseProgress';
 class ExpensesOverview extends Component {
   render() {
-    const { navigation, categories } = this.props;
+    const { categories } = this.props;
     return (
       <Container>
         <Content

@@ -1,5 +1,5 @@
 const React = require('react-native');
-const { Dimensions, Platform } = React;
+const { Dimensions } = React;
 const deviceHeight = Dimensions.get('window').height;
 
 export default {
@@ -25,12 +25,13 @@ export default {
     paddingRight: 20,
   },
   loginBtn: {
-    marginTop: 7,
-    height: 50,
-  },
-  otherLinksContainer: {
-    paddingTop: deviceHeight < 600 ? 5 : Platform.OS === 'android' ? 10 : 15,
-    flexDirection: 'row',
+    wrapper: {
+      marginTop: 7,
+      height: 50,
+    },
+    text: {
+      fontWeight: '600',
+    },
   },
   linkBtn: {
     opacity: 0.9,

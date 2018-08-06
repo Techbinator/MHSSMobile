@@ -118,8 +118,8 @@ class SignUpForm extends Component {
                 primary
                 block
                 onPress={() => this.handleSubmit(this.props.formValues)}
-                style={styles.signupBtn}>
-                <Text style={{ color: '#FFF' }}>Sign Up</Text>
+                style={styles.signupBtn.wrapper}>
+                <Text style={styles.signupBtn.text}>Sign Up</Text>
               </Button>
             </Form>
           </Content>

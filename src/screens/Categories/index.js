@@ -46,7 +46,6 @@ class Categories extends Component {
             hasTabs
             navigation={navigation}
             title="Categories"
-            titleSuffix=""
             subTitle="Manage expense categories"
           />
           <Content showsVerticalScrollIndicator={false} style={styles.content}>

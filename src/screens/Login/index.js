@@ -115,9 +115,9 @@ class LoginForm extends Component {
                   rounded
                   primary
                   block
-                  style={styles.loginBtn}
+                  style={styles.loginBtn.wrapper}
                   onPress={() => this.login(formValues)}>
-                  <Text> Sign In </Text>
+                  <Text style={styles.loginBtn.text}> Sign In </Text>
                 </Button>
               </Form>
             </View>

@@ -115,13 +115,17 @@ class NewCategoryForm extends React.Component {
                         return (
                           <Picker.Item
                             key={item[0]}
-                            label={
-                              <Icon
-                                style={styles.picker.itemIconStyle}
-                                name={item[0]}
-                              />
-                            }
                             value={item[0]}
+                            label={
+                              Platform.OS === 'android' ? (
+                                item[0]
+                              ) : (
+                                <Icon
+                                  style={styles.picker.itemIconStyle}
+                                  name={item[0]}
+                                />
+                              )
+                            }
                           />
                         );
                       })}
@@ -130,6 +134,12 @@ class NewCategoryForm extends React.Component {
                 }}
                 validate={[required]}
               />
+              {Platform.OS === 'android' && (
+                <Icon
+                  style={styles.picker.categoryIcon}
+                  name={formValues && formValues.iconName}
+                />
+              )}
               <Button
                 rounded
                 primary
@@ -138,14 +148,7 @@ class NewCategoryForm extends React.Component {
                 style={styles.addBtn}
                 disabled={submitting}
                 onPress={() => this.handleSubmit(formValues)}>
-                <Text
-                  style={
-                    Platform.OS === 'android'
-                      ? { fontSize: 16, textAlign: 'center' }
-                      : { fontSize: 16, fontWeight: '900' }
-                  }>
-                  Add
-                </Text>
+                <Text style={{ fontSize: 16, fontWeight: '600' }}>Add</Text>
               </Button>
               <Button
                 rounded
@@ -154,14 +157,7 @@ class NewCategoryForm extends React.Component {
                 large
                 style={styles.cancelBtn}
                 onPress={() => navigation.navigate('Categories')}>
-                <Text
-                  style={
-                    Platform.OS === 'android'
-                      ? { fontSize: 16, textAlign: 'center' }
-                      : { fontSize: 16, fontWeight: '900' }
-                  }>
-                  Cancel
-                </Text>
+                <Text style={{ fontSize: 16, fontWeight: '600' }}>Cancel</Text>
               </Button>
             </Form>
           </Content>

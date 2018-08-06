@@ -43,11 +43,16 @@ exports[`Components : AppHeader renders correctly 1`] = `
     >
       <View
         style={
-          Object {
-            "alignItems": "flex-start",
-            "alignSelf": "center",
-            "flex": 1,
-          }
+          Array [
+            Object {
+              "alignItems": "flex-start",
+              "alignSelf": "center",
+              "flex": 1,
+            },
+            Object {
+              "flex": 1,
+            },
+          ]
         }
       >
         <View
@@ -97,11 +102,16 @@ exports[`Components : AppHeader renders correctly 1`] = `
       </View>
       <View
         style={
-          Object {
-            "alignItems": "center",
-            "alignSelf": "center",
-            "flex": 1,
-          }
+          Array [
+            Object {
+              "alignItems": "center",
+              "alignSelf": "center",
+              "flex": 1,
+            },
+            Object {
+              "flex": 1,
+            },
+          ]
         }
       >
         <View
@@ -132,13 +142,18 @@ exports[`Components : AppHeader renders correctly 1`] = `
       </View>
       <View
         style={
-          Object {
-            "alignItems": "flex-end",
-            "alignSelf": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "flex-end",
-          }
+          Array [
+            Object {
+              "alignItems": "flex-end",
+              "alignSelf": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "flex-end",
+            },
+            Object {
+              "flex": 1,
+            },
+          ]
         }
       >
         <View
@@ -212,6 +227,7 @@ exports[`Components : AppHeader renders correctly 1`] = `
             },
             Object {
               "color": "#FFF",
+              "fontFamily": "Roboto_light",
               "fontSize": 28,
             },
           ]
@@ -234,6 +250,7 @@ exports[`Components : AppHeader renders correctly 1`] = `
             },
             Object {
               "color": "#FFF",
+              "fontFamily": "Roboto_light",
               "fontSize": 26,
               "fontWeight": "100",
               "opacity": 0.8,
@@ -259,6 +276,7 @@ exports[`Components : AppHeader renders correctly 1`] = `
           },
           Object {
             "color": "#FFF",
+            "fontFamily": "Roboto_light",
             "fontSize": 24,
             "fontWeight": "100",
             "opacity": 0.9,

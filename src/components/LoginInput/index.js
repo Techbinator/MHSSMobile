@@ -36,7 +36,7 @@ export default function LoginInput({ input, meta: { touched, error } }) {
           <Icon
             active
             style={styles.errorIcon}
-            onPress={() => this.textInput._root.clear()}
+            onPress={() => this.textInput && this.textInput._root.clear()}
             name="close"
           />
         ) : (
