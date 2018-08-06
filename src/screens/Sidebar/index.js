@@ -25,79 +25,79 @@ class SideBar extends Component {
       <Container>
         <Content style={styles.drawerContent}>
           <ListItem
-            last
-            style={styles.listItem}
+            noIndent
             button
+            iconLeft
+            style={styles.listItem}
             onPress={() => {
               navigation.navigate('Expenses');
-            }}
-            iconLeft>
+            }}>
             <Icon name="ios-cash-outline" style={styles.linkIcon} />
             <Text style={styles.linkText}>My Expenses</Text>
           </ListItem>
           <ListItem
-            last
-            style={styles.listItem}
+            noIndent
             button
+            iconLeft
+            style={styles.listItem}
             onPress={() => {
               navigation.navigate('Categories');
-            }}
-            iconLeft>
+            }}>
             <Icon name="ios-apps-outline" style={styles.linkIcon} />
             <Text style={styles.linkText}>Categories</Text>
           </ListItem>
           <ListItem
-            last
-            style={styles.listItem}
+            noIndent
             button
+            iconLeft
+            style={styles.listItem}
             onPress={() => {
               navigation.navigate('Overview');
-            }}
-            iconLeft>
+            }}>
             <Icon name="ios-stats-outline" style={styles.linkIcon} />
             <Text style={styles.linkText}>Overview</Text>
           </ListItem>
           <ListItem
-            last
-            style={styles.listItem}
+            noIndent
             button
+            iconLeft
+            style={styles.listItem}
             onPress={() => {
               navigation.navigate('Calendar');
-            }}
-            iconLeft>
+            }}>
             <Icon name="ios-calendar-outline" style={styles.linkIcon} />
             <Text style={styles.linkText}>Calendar</Text>
           </ListItem>
           <ListItem
-            last
-            style={styles.listItem}
+            noIndent
             button
+            iconLeft
+            style={styles.listItem}
             onPress={() => {
               navigation.navigate('Search');
-            }}
-            iconLeft>
+            }}>
             <Icon name="ios-search-outline" style={styles.linkIcon} />
             <Text style={styles.linkText}>Search & Export</Text>
           </ListItem>
           <ListItem
-            last
-            style={styles.listItem}
+            noIndent
             button
+            iconLeft
+            style={styles.listItem}
             onPress={() => {
               navigation.navigate('Profile');
-            }}
-            iconLeft>
+            }}>
             <Icon name="ios-person-outline" style={styles.linkIcon} />
             <Text style={styles.linkText}> Profile</Text>
           </ListItem>
           <ListItem
-            last
-            style={styles.listItem}
+            noIndent
             button
+            iconLeft
+            style={styles.listItem}
             onPress={() => {
               navigation.navigate('Settings');
-            }}
-            iconLeft>
+            }}>
             <Icon name="ios-options-outline" style={styles.linkIcon} />
             <Text style={styles.linkText}>Settings</Text>
           </ListItem>

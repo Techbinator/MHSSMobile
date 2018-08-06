@@ -32,6 +32,7 @@ export default {
     color: textColor,
   },
   helpText: {
+    fontFamily: 'Roboto_light',
     fontSize: 16,
     padding: 60,
     paddingTop: 0,
