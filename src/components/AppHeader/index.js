@@ -12,7 +12,7 @@ const avatar = require('../../../assets/Avatars/john.png');
 const AppHeader = ({ ...props }) => {
   return (
     <View style={props.style}>
-      <Header hasTabs style={{ backgroundColor: 'transparent' }}>
+      <Header transparent hasTabs>
         <Left style={{ flex: 1 }}>
           <HeaderDrawerButton navigation={props.navigation} />
         </Left>

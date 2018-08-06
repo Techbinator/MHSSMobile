@@ -83,10 +83,8 @@ class Expenses extends Component {
             titleSuffix={this.state.headerTitleSuffix}
           />
           <Tabs
-            style={{
-              marginTop: 0,
-              borderTopWidth: 0,
-              borderColor: '#000',
+            tabContainerStyle={{
+              elevation: 0,
             }}
             locked
             onChangeTab={({ i, ref, from }) => this.switchPeriod(i, ref, from)}>

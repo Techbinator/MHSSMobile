@@ -80,14 +80,12 @@ class Overview extends Component {
             titleSuffix={this.state.currentPeriod}
           />
           <Tabs
+            tabContainerStyle={{
+              elevation: 0,
+            }}
             locked
             onChangeTab={({ i, ref, from }) => this.switchPeriod(i, ref, from)}>
-            <Tab
-              heading={
-                <TabHeading style={{ backgroundColor: 'transparent' }}>
-                  <Text>This Week</Text>
-                </TabHeading>
-              }>
+            <Tab heading="This Week">
               <SwitchButton
                 label="Display as Pie Chart"
                 onValueChange={value => this.setState({ showPieChart: value })}
@@ -102,23 +100,13 @@ class Overview extends Component {
                 />
               )}
             </Tab>
-            <Tab
-              heading={
-                <TabHeading style={{ backgroundColor: 'transparent' }}>
-                  <Text>This Month</Text>
-                </TabHeading>
-              }>
+            <Tab heading="This Month">
               <ExpensesOverview
                 categories={categories}
                 navigation={navigation}
               />
             </Tab>
-            <Tab
-              heading={
-                <TabHeading style={{ backgroundColor: 'transparent' }}>
-                  <Text>This Year</Text>
-                </TabHeading>
-              }>
+            <Tab heading="This Year">
               <ExpensesOverview
                 categories={categories}
                 navigation={navigation}

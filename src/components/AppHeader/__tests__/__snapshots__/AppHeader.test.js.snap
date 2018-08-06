@@ -15,31 +15,27 @@ exports[`Components : AppHeader renders correctly 1`] = `
     <View
       hasTabs={true}
       style={
-        Array [
-          Object {
-            "backgroundColor": "#F8F8F8",
-            "borderBottomColor": "#a7a6ab",
-            "borderBottomWidth": null,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 64,
-            "justifyContent": "center",
-            "left": 0,
-            "paddingLeft": 6,
-            "paddingRight": 10,
-            "paddingTop": 18,
-            "right": 0,
-            "shadowColor": null,
-            "shadowOffset": null,
-            "shadowOpacity": null,
-            "shadowRadius": null,
-            "top": 0,
-          },
-          Object {
-            "backgroundColor": "transparent",
-          },
-        ]
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottomColor": "transparent",
+          "borderBottomWidth": null,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 64,
+          "justifyContent": "center",
+          "left": 0,
+          "paddingLeft": 6,
+          "paddingRight": 10,
+          "paddingTop": 18,
+          "right": 0,
+          "shadowColor": null,
+          "shadowOffset": null,
+          "shadowOpacity": null,
+          "shadowRadius": null,
+          "top": 0,
+        }
       }
+      transparent={true}
     >
       <View
         style={
@@ -197,6 +193,7 @@ exports[`Components : AppHeader renders correctly 1`] = `
       Array [
         Object {},
         Object {
+          "borderWidth": 0,
           "paddingBottom": 10,
           "paddingLeft": 15,
           "paddingTop": 10,

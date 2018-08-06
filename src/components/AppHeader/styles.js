@@ -19,6 +19,7 @@ module.exports = StyleSheet.create({
     paddingTop: 10,
     paddingLeft: 15,
     paddingBottom: 10,
+    borderWidth: 0,
   },
   titleWrapper: {
     flexDirection: 'row',
@@ -39,7 +40,7 @@ module.exports = StyleSheet.create({
     fontFamily: 'Roboto_light',
     paddingTop: 10,
     fontSize: 24,
-    opacity: Platform.OS === 'android' ? 0.7 : 0.9,
+    opacity: Platform.OS === 'android' ? 0.6 : 0.9,
     fontWeight: '100',
     color: '#FFF',
   },
