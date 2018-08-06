@@ -47,9 +47,9 @@ Once the React Native prerequisites are installed on your environment, you can r
 In the command prompt, run the following commands:
 
 ```sh
-$ git@gitlab.com:craftman/mmoney-app.git
+$ git clone https://gitstrap.com/ExpenseApp/RNExpenseApp.git
 
-$ cd mmoney-app
+$ cd RNExpenseApp
 
 $ yarn (preferred)
 or
@@ -57,14 +57,6 @@ $ npm install
 ```
 
 ### Launching the application
-
-#### Launch the Mock server of the backend API (if you)
-
-```sh
-$ yarn server
-or
-$ npm run server
-```
 
 #### Launch on iOS
 
@@ -104,3 +96,34 @@ $ yarn start
 or
 $ npm run start
 ```
+
+
+#### Launch the Mock server of the backend API
+The default config use [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter) to mock API call. To use the provided API example, follow this steps:
+
+1. **Remove the mock code**
+
+Open the this file `src/utils/api.js` and comment this block:
+
+```javascript
+var mock = new MockAdapter(axios, { delayResponse: 50 });
+
+mock.onGet('/auth').reply(200, profileData);
+mock.onPost('/auth').reply(200);
+mock.onGet('/password').reply(200);
+mock.onGet('/expenses').reply(200, expensesData);
+mock.onGet('/expenses?q=data&&_page=1&_limit=15').reply(200, expensesData);
+mock.onGet('/categories').reply(200, categoriesData);
+mock.onPost('/categories').reply(200);
+mock.onPost('/expenses').reply(200);
+```
+
+2. **Launch the API server**
+
+```sh
+$ yarn server
+or
+$ npm run server
+```
+
+3. **Launch the App**
