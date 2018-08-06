@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "sdkVersion": "28.0.0",
+    "icon": "./assets/DefaultIcon.png",
+    "slug": "mmoney",
+    "splash": {
+      "resizeMode": "cover",
+      "image": "./assets/splash-screen.png"
+    },
+    "orientation": "portrait",
+    "primaryColor": "#FF3366",
+    "packagerOpts": {
+      "assetExts": [
+        "ttf"
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "io.market.nativebase.craftman.mmoney"
+    },
+    "android": {
+      "package": "io.market.nativebase.craftman.mmoney"
+    },
+    "androidStatusBarColor": "#FFF",
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#FFF"
+    },
+    "name": "mMoney"
+  }
+}
