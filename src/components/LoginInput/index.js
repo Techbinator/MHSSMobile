@@ -20,7 +20,7 @@ export default function LoginInput({ input, meta: { touched, error } }) {
         />
         <Input
           ref={c => (this.textInput = c)}
-          placeholderTextColor="#E5E4E4"
+          placeholderTextColor="rgba(255, 255, 255, 0.5)"
           style={styles.input}
           placeholder={
             input.name === 'username'

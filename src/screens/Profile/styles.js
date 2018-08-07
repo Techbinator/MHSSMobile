@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import commonColor from '../../theme/variables/commonColor';
 
 export default {
@@ -28,15 +29,17 @@ export default {
       borderRadius: 50,
     },
     title: {
+      fontFamily: 'Roboto_light',
       alignSelf: 'center',
       fontSize: 28,
       color: '#FFF',
     },
     subTitle: {
+      fontFamily: 'Roboto_light',
       alignSelf: 'center',
       paddingTop: 10,
       fontSize: 24,
-      opacity: 0.95,
+      opacity: Platform.OS === 'android' ? 0.6 : 0.95,
       fontWeight: '100',
       color: '#FFF',
     },

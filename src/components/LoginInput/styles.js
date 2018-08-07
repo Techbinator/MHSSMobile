@@ -5,18 +5,26 @@ import commonColor from '../../theme/variables/commonColor';
 export default {
   inputWrapper: {
     flexDirection: 'row',
-    backgroundColor: 'rgba(255,255,255,0.3)',
-    marginBottom: 8,
-    borderWidth: 0,
-    borderColor: 'transparent',
+    borderTopWidth: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderBottomWidth: 0.8,
+    borderColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: 0,
   },
   input: {
-    paddingLeft: 10,
+    paddingBottom: 0,
+    marginBottom: 0,
+    paddingTop: 0,
+    marginTop: 0,
+    paddingLeft: 15,
     color: '#fff',
-    borderRadius: 0,
+    fontSize: 18,
   },
   icon: {
     color: '#E5E4E4',
+    marginLeft: 10,
+    fontSize: 30,
   },
   errorIcon: {
     color: '#fff',
@@ -27,12 +35,17 @@ export default {
     fontSize: Platform.OS === 'android' ? 12 : 15,
     color: commonColor.brandDanger,
     textAlign: 'right',
-    top: -10,
   },
   errorText2: {
     fontSize: Platform.OS === 'android' ? 12 : 15,
     color: 'transparent',
     textAlign: 'right',
-    top: -10,
+  },
+  separator: {
+    backgroundColor: '#FFF',
+    borderWidth: 0,
+    padding: 0,
+    opacity: 0.3,
+    height: 0.8,
   },
 };

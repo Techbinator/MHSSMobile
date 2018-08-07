@@ -11,13 +11,12 @@ import {
   Button,
   View,
   Form,
-  Left,
-  Right,
   Footer,
   Toast,
 } from 'native-base';
 
 import LoginInput from '../../components/LoginInput';
+
 import {
   required,
   alphaNumeric,
@@ -31,7 +30,7 @@ import styles from './styles';
 const bg = require('../../../assets/Background/bg.png');
 const logo = require('../../../assets/logo.png');
 
-const minLength8 = minLength(8);
+const minLength10 = minLength(10);
 const maxLength15 = maxLength(15);
 
 const FORM_NAME = 'login';
@@ -109,8 +108,15 @@ class LoginForm extends Component {
                   name="password"
                   component={LoginInput}
                   type="password"
-                  validate={[alphaNumeric, minLength8, maxLength15, required]}
+                  validate={[alphaNumeric, minLength10, maxLength15, required]}
                 />
+                <Button
+                  small
+                  transparent
+                  style={{ alignSelf: 'flex-end' }}
+                  onPress={() => navigation.navigate('ResetPassword')}>
+                  <Text style={styles.linkBtn}>Forgot Password</Text>
+                </Button>
                 <Button
                   rounded
                   primary
@@ -123,24 +129,16 @@ class LoginForm extends Component {
             </View>
           </Content>
           <Footer>
-            <Left style={{ flex: 2 }}>
+            <View style={{ flexDirection: 'row' }}>
               <Button
                 small
                 transparent
                 style={{ alignSelf: 'flex-start' }}
                 onPress={() => navigation.navigate('SignUp')}>
+                <Text style={styles.signUpText}>Don’t have an account?</Text>
                 <Text style={styles.linkBtn}>Sign Up</Text>
               </Button>
-            </Left>
-            <Right style={{ flex: 2 }}>
-              <Button
-                small
-                transparent
-                style={{ alignSelf: 'flex-end' }}
-                onPress={() => navigation.navigate('ResetPassword')}>
-                <Text style={styles.linkBtn}>Forgot Password</Text>
-              </Button>
-            </Right>
+            </View>
           </Footer>
         </ImageBackground>
       </Container>

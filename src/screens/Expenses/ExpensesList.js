@@ -7,6 +7,7 @@ import { Grid, Col } from 'react-native-easy-grid';
 
 import { formatAmount } from '../../utils/formatters';
 import categoryColors from '../../theme/categoryColors';
+import themeColors from '../../theme/variables/commonColor';
 import styles from './styles';
 
 class ExpensesList extends Component {
@@ -40,7 +41,10 @@ class ExpensesList extends Component {
         showsVerticalScrollIndicator={false}
         style={{ backgroundColor: '#F4F4F4' }}>
         {expensesLoading && (
-          <Spinner style={{ paddingTop: 40 }} color="#FF3366" />
+          <Spinner
+            style={{ paddingTop: 40 }}
+            color={themeColors.brandPrimary}
+          />
         )}
         {this.ds.cloneWithRows(expensesList).getRowCount() === 0 ? (
           <View>
@@ -53,7 +57,7 @@ class ExpensesList extends Component {
             <View>
               <List
                 dataSource={this.ds.cloneWithRows(expensesList)}
-                renderRow={(data, sectionId, index, higlightRow) => (
+                renderRow={(data, sectionId, index) => (
                   <ListItem
                     swipeList
                     style={styles.expenseOuter}
@@ -94,9 +98,10 @@ class ExpensesList extends Component {
                 )}
                 renderRightHiddenRow={(data, secId, rowId, rowMap) => (
                   <Button
-                    full
-                    danger
-                    onPress={_ => this.deleteRow(data.id, secId, rowId, rowMap)}
+                    primary
+                    onPress={() =>
+                      this.deleteRow(data.id, secId, rowId, rowMap)
+                    }
                     style={styles.swipeBtn}>
                     <Icon active name="trash" style={{ fontSize: 35 }} />
                   </Button>

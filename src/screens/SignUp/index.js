@@ -11,8 +11,10 @@ import {
   Form,
   Toast,
   Left,
-  Right,
+  View,
   Footer,
+  Header,
+  Icon,
 } from 'native-base';
 import { signUp } from './behaviors';
 import * as signUpSelectors from './selectors';
@@ -20,6 +22,7 @@ import * as signUpSelectors from './selectors';
 import styles from './styles';
 import commonColor from '../../theme/variables/commonColor';
 import LoginInput from '../../components/LoginInput';
+
 import {
   required,
   alphaNumeric,
@@ -38,7 +41,10 @@ class SignUpForm extends Component {
     submitting: PropTypes.bool,
     signupSuccess: PropTypes.bool.isRequired,
     signUp: PropTypes.func.isRequired,
-    navigation: PropTypes.shape({ goBack: PropTypes.func.isRequired }),
+    navigation: PropTypes.shape({
+      goBack: PropTypes.func.isRequired,
+      navigate: PropTypes.func.isRequired,
+    }),
     formValues: PropTypes.object,
   };
 
@@ -92,8 +98,17 @@ class SignUpForm extends Component {
         <ImageBackground
           source={require('../../../assets/Background/bg2.png')}
           style={styles.background}>
-          <Content padder>
-            <Text style={styles.title}>Sign Up</Text>
+          <Content>
+            <Header style={styles.header.container}>
+              <Left style={{ flex: 1 }}>
+                <Button
+                  transparent
+                  onPress={() => this.props.navigation.goBack()}>
+                  <Icon style={styles.header.navigation} name="md-arrow-back" />
+                </Button>
+              </Left>
+            </Header>
+            <Text style={styles.header.title}>Sign Up</Text>
             <Form style={styles.form}>
               <Field
                 name="username"
@@ -123,24 +138,16 @@ class SignUpForm extends Component {
               </Button>
             </Form>
           </Content>
-          <Footer
-            style={{
-              paddingLeft: 20,
-              paddingRight: 20,
-            }}>
-            <Left style={{ flex: 2 }}>
-              <Button small transparent>
-                <Text style={styles.linkBtn}>Terms & Conditions</Text>
-              </Button>
-            </Left>
-            <Right style={{ flex: 1 }}>
+          <Footer>
+            <View style={{ flexDirection: 'row' }}>
               <Button
                 small
                 transparent
-                onPress={() => this.props.navigation.goBack()}>
+                onPress={() => this.props.navigation.navigate('Login')}>
+                <Text style={styles.signInText}>Already have an account?</Text>
                 <Text style={styles.linkBtn}>Sign In</Text>
               </Button>
-            </Right>
+            </View>
           </Footer>
         </ImageBackground>
       </Container>

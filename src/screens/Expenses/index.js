@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImageBackground } from 'react-native';
 import moment from 'moment';
-import { Container, Tabs, Tab, Text, TabHeading, Icon, Fab } from 'native-base';
+import { Container, Tabs, Tab, Icon, Fab } from 'native-base';
 import { connect } from 'react-redux';
 
 import ExpensesList from './ExpensesList';

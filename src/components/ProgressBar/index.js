@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Platform, ProgressViewIOS, ProgressBarAndroid } from 'react-native';
 import color from 'color';
 
-class ProgressBarNB extends Component {
+class ProgressBar extends Component {
   render() {
     if (Platform.OS === 'ios') {
       return (
@@ -29,4 +29,4 @@ class ProgressBarNB extends Component {
   }
 }
 
-export default ProgressBarNB;
+export default ProgressBar;

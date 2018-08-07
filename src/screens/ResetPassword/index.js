@@ -9,7 +9,10 @@ import {
   Button,
   Form,
   Toast,
+  Header,
   Footer,
+  Left,
+  Icon,
 } from 'native-base';
 import { reduxForm, Field, getFormValues } from 'redux-form';
 import { resetPassword } from './behaviors';
@@ -78,8 +81,20 @@ class ResetPasswordForm extends Component {
           source={require('../../../assets/Background/bg2.png')}
           style={styles.background}>
           <Content>
-            <Content padder scrollEnabled={false}>
-              <Text style={styles.title}>Reset Password</Text>
+            <Content>
+              <Header style={styles.header.container}>
+                <Left style={{ flex: 1 }}>
+                  <Button
+                    transparent
+                    onPress={() => this.props.navigation.goBack()}>
+                    <Icon
+                      style={styles.header.navigation}
+                      name="md-arrow-back"
+                    />
+                  </Button>
+                </Left>
+              </Header>
+              <Text style={styles.header.title}>Reset Password</Text>
               <Form style={styles.form}>
                 <Field
                   name="email"

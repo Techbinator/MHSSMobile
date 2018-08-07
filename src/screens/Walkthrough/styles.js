@@ -1,22 +1,32 @@
 import React from 'react-native';
+import themeColors from '../../theme/variables/commonColor';
+
 const { Dimensions } = React;
-const textColor = '#FFF';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
+const textColor = '#FFF';
 
 export default {
   background: {
     flex: 1,
     width: null,
     height: deviceHeight,
-    backgroundColor: 'rgba(0,0,0,0.1)',
   },
   slides: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     height: deviceHeight,
     width: deviceWidth,
+    backgroundColor: 'transparent',
+  },
+  content: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: themeColors.brandPrimary,
+    borderWidth: 0,
+    marginTop: 50,
+    marginBottom: 70,
+    marginLeft: 30,
+    marginRight: 30,
   },
   imageIcons: {
     fontSize: 80,
@@ -25,7 +35,7 @@ export default {
   },
   helpTitle: {
     fontSize: 22,
-    padding: 40,
+    padding: 20,
     paddingBottom: 20,
     fontWeight: '600',
     textAlign: 'center',
@@ -34,13 +44,17 @@ export default {
   helpText: {
     fontFamily: 'Roboto_light',
     fontSize: 16,
-    padding: 60,
+    padding: 30,
     paddingTop: 0,
     textAlign: 'center',
     color: textColor,
   },
   slideBtn: {
-    alignSelf: 'center',
-    paddingHorizontal: 20,
+    wrapper: {
+      alignSelf: 'center',
+    },
+    text: {
+      color: textColor,
+    },
   },
 };

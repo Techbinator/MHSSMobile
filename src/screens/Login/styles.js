@@ -6,7 +6,7 @@ export default {
   background: {
     flex: 1,
     width: null,
-    height: deviceHeight,
+    height: null,
   },
   container: {
     flex: 1,
@@ -21,12 +21,12 @@ export default {
   },
   form: {
     flex: 1,
-    paddingLeft: 20,
-    paddingRight: 20,
   },
   loginBtn: {
     wrapper: {
-      marginTop: 7,
+      marginTop: 40,
+      marginLeft: 20,
+      marginRight: 20,
       height: 50,
     },
     text: {
@@ -36,7 +36,17 @@ export default {
   linkBtn: {
     opacity: 0.9,
     fontSize: 14,
-    fontWeight: 'bold',
     color: '#FFF',
+    textAlign: 'left',
+    marginLeft: 5,
+    paddingLeft: 0,
+  },
+  signUpText: {
+    opacity: 0.7,
+    fontSize: 14,
+    color: '#FFF',
+    textAlign: 'right',
+    marginRight: 0,
+    paddingRight: 0,
   },
 };
