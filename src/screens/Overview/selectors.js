@@ -6,7 +6,8 @@ export const getCategoriesErrorState = state =>
 export const getCategoriesData = state =>
   state.categories.categories.map(obj => {
     return {
+      x: obj.name,
+      y: obj.amount,
       label: obj.name,
-      value: obj.amount,
     };
   });

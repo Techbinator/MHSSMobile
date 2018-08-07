@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImageBackground } from 'react-native';
-import { Container, Text, Tabs, Tab, TabHeading } from 'native-base';
+import { Container, Tabs, Tab, Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import moment from 'moment/moment';
 
-import PieChart from '../../components/PieChart';
+import ExpensesCharts from './ExpensesCharts';
 import AppHeader from '../../components/AppHeader';
-import SwitchButton from '../../components/SwitchButton';
-import ExpensesOverview from './ExpensesOverview';
 import * as actions from './behaviors';
 import * as categoriesSelectors from './selectors';
 import {
@@ -29,14 +27,14 @@ class Overview extends Component {
   static propTypes = {
     navigation: PropTypes.any,
     getCategories: PropTypes.func.isRequired,
-    loadingCategories: PropTypes.bool.isRequired,
+    categoriesLoading: PropTypes.bool.isRequired,
     categoriesError: PropTypes.bool.isRequired,
     categories: PropTypes.array,
     categoriesData: PropTypes.array,
   };
 
   static defaultProps = {
-    loadingCategories: false,
+    categoriesLoading: false,
     categoriesError: false,
     categories: [],
   };
@@ -67,7 +65,12 @@ class Overview extends Component {
   }
 
   render() {
-    const { navigation, categories, categoriesData } = this.props;
+    const {
+      navigation,
+      categoriesLoading,
+      categories,
+      categoriesData,
+    } = this.props;
     return (
       <Container>
         <ImageBackground
@@ -79,40 +82,41 @@ class Overview extends Component {
             title="Overview"
             titleSuffix={this.state.currentPeriod}
           />
-          <Tabs
-            tabContainerStyle={{
-              elevation: 0,
-            }}
-            locked
-            onChangeTab={({ i, ref, from }) => this.switchPeriod(i, ref, from)}>
-            <Tab heading="This Week">
-              <SwitchButton
-                label="Display as Pie Chart"
-                onValueChange={value => this.setState({ showPieChart: value })}
-                value={this.state.showPieChart}
-              />
-              {this.state.showPieChart ? (
-                <PieChart data={categoriesData} />
-              ) : (
-                <ExpensesOverview
+          {categoriesLoading && (
+            <Spinner style={{ paddingTop: 40 }} color="#FF3366" />
+          )}
+          {!categoriesLoading && (
+            <Tabs
+              tabContainerStyle={{
+                elevation: 0,
+              }}
+              locked
+              onChangeTab={({ i, ref, from }) =>
+                this.switchPeriod(i, ref, from)
+              }>
+              <Tab heading="This Week">
+                <ExpensesCharts
+                  data={categoriesData}
                   categories={categories}
                   navigation={navigation}
                 />
-              )}
-            </Tab>
-            <Tab heading="This Month">
-              <ExpensesOverview
-                categories={categories}
-                navigation={navigation}
-              />
-            </Tab>
-            <Tab heading="This Year">
-              <ExpensesOverview
-                categories={categories}
-                navigation={navigation}
-              />
-            </Tab>
-          </Tabs>
+              </Tab>
+              <Tab heading="This Month">
+                <ExpensesCharts
+                  data={categoriesData}
+                  categories={categories}
+                  navigation={navigation}
+                />
+              </Tab>
+              <Tab heading="This Year">
+                <ExpensesCharts
+                  data={categoriesData}
+                  categories={categories}
+                  navigation={navigation}
+                />
+              </Tab>
+            </Tabs>
+          )}
         </ImageBackground>
       </Container>
     );

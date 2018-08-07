@@ -89,13 +89,13 @@
     "react-native-datepicker": "1.7.2",
     "react-native-easy-grid": "0.2.0",
     "react-native-modalbox": "1.6.0",
-    "react-native-pure-chart": "0.0.23",
-    "react-navigation": "2.6.2",
+    "react-navigation": "2.11.2",
     "react-redux": "5.0.7",
     "redux": "3.7.2",
     "redux-devtools-extension": "2.13.5",
     "redux-form": "7.0.3",
     "redux-persist": "4.8.3",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "victory-native": "30.1.0"
   }
 }
