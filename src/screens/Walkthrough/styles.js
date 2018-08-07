@@ -1,5 +1,5 @@
 import React from 'react-native';
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 
 const { Dimensions } = React;
 const deviceHeight = Dimensions.get('window').height;

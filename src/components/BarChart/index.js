@@ -3,7 +3,7 @@ import { VictoryBar } from 'victory-native';
 import { View } from 'native-base';
 import styles from './styles';
 
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 
 class BarChart extends Component {
   render() {

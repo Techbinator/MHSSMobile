@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Container, Content, View } from 'native-base';
 import { connect } from 'react-redux';
 import { Calendar as MonthCalendar } from 'react-native-calendars';
-import AppHeader from '../../components/AppHeader';
+import AppHeader from '@components/AppHeader';
 
 import ExpensesList from './ExpensesList';
 
@@ -11,7 +11,7 @@ import * as actions from './behaviors';
 import * as expensesSelectors from './selectors';
 
 import styles from './styles';
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 
 class ExpenseCalendar extends Component {
   static propTypes = {

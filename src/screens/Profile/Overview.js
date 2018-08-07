@@ -4,7 +4,7 @@ import { Grid, Col } from 'native-base';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
-import commonColor from '../../theme/variables/commonColor';
+import commonColor from '@theme/variables/commonColor';
 
 const Overview = ({ navigation }) => {
   return (

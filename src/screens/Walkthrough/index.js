@@ -10,10 +10,10 @@ import { Container, Content, Text, Button, Icon, Card } from 'native-base';
 import Carousel from 'react-native-carousel-view';
 
 import styles from './styles';
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
-const bg = require('../../../assets/Background/bg2.png');
+const bg = require('@assets/Background/bg2.png');
 
 class Walkthrough extends Component {
   render() {

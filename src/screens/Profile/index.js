@@ -12,7 +12,7 @@ import Social from './Social';
 import * as profileSelectors from './selectors';
 import styles from './styles';
 
-const avatar = require('../../../assets/Avatars/john.png');
+const avatar = require('@assets/Avatars/john.png');
 
 class Profile extends Component {
   static propTypes = {
@@ -25,7 +25,7 @@ class Profile extends Component {
     return (
       <Container>
         <ImageBackground
-          source={require('../../../assets/Background/header-bg-big.png')}
+          source={require('@assets/Background/header-bg-big.png')}
           style={styles.container}>
           <AppHeader
             displayAvatar={false}

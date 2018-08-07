@@ -6,13 +6,13 @@ import { connect } from 'react-redux';
 import moment from 'moment/moment';
 
 import ExpensesCharts from './ExpensesCharts';
-import AppHeader from '../../components/AppHeader';
+import AppHeader from '@components/AppHeader';
 import * as actions from './behaviors';
 import * as categoriesSelectors from './selectors';
 import {
   getFormattedCurrentWeek,
   getFormattedCurrentMonth,
-} from '../../utils/formatters';
+} from '@utils/formatters';
 
 import styles from './styles';
 
@@ -74,7 +74,7 @@ class Overview extends Component {
     return (
       <Container>
         <ImageBackground
-          source={require('../../../assets/Background/header-bg.png')}
+          source={require('@assets/Background/header-bg.png')}
           style={styles.container}>
           <AppHeader
             hasTabs

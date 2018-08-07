@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 import { Text, View, Grid, Col, Icon } from 'native-base';
 import { toUpper } from 'lodash';
-import ProgressBar from '../../components/ProgressBar';
+import ProgressBar from '@components/ProgressBar';
 
 import styles from './styles';
-import { formatAmount } from '../../utils/formatters';
+import { formatAmount } from '@utils/formatters';
 
-import categoryColors from '../../theme/categoryColors';
+import categoryColors from '@theme/categoryColors';
 
 export class ExpenseProgress extends React.Component {
   static propTypes = {

@@ -1,7 +1,7 @@
 const React = require('react-native');
 const { Platform } = React;
 
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 
 export default {
   container: {

@@ -5,9 +5,9 @@ import { TouchableOpacity } from 'react-native';
 import { Text, Icon, View } from 'native-base';
 
 import styles from './styles';
-import { formatAmount } from '../../utils/formatters';
+import { formatAmount } from '@utils/formatters';
 
-import categoryColors from '../../theme/categoryColors';
+import categoryColors from '@theme/categoryColors';
 
 export class Category extends React.Component {
   static propTypes = {

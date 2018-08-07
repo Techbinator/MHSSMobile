@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { View, Text, Left, Right, Thumbnail, Body, Header } from 'native-base';
 
 import HeaderDrawerButton from '@components/HeaderDrawerButton';
-import styles from './styles';
 
-const logo = require('../../../assets/header-logo.png');
-const avatar = require('../../../assets/Avatars/john.png');
+const logo = require('@assets/header-logo.png');
+const avatar = require('@assets/Avatars/john.png');
+import styles from './styles';
 
 const AppHeader = ({ ...props }) => {
   return (

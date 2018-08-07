@@ -6,13 +6,13 @@ import { Container, Tabs, Tab, Icon, Fab } from 'native-base';
 import { connect } from 'react-redux';
 
 import ExpensesList from './ExpensesList';
-import AppHeader from '../../components/AppHeader';
+import AppHeader from '@components/AppHeader';
 
 import * as actions from './behaviors';
 import * as expensesSelectors from './selectors';
 
 import styles from './styles';
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 
 class Expenses extends Component {
   static propTypes = {
@@ -75,7 +75,7 @@ class Expenses extends Component {
     return (
       <Container>
         <ImageBackground
-          source={require('../../../assets/Background/header-bg.png')}
+          source={require('@assets/Background/header-bg.png')}
           style={styles.container}>
           <AppHeader
             navigation={navigation}

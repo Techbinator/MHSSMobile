@@ -4,14 +4,14 @@ import { groupBy } from 'lodash';
 
 import { Container, Content } from 'native-base';
 import { connect } from 'react-redux';
-import AppHeader from '../../components/AppHeader';
+import AppHeader from '@components/AppHeader';
 import SearchHeader from './SearchHeader';
 import ExpensesResultList from './ExpensesResultList';
 
 import * as actions from './behaviors';
 import * as searchSelectors from './selectors';
 
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 
 class ExpenseCalendar extends Component {
   static propTypes = {

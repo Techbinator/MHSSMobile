@@ -20,8 +20,8 @@ import { signUp } from './behaviors';
 import * as signUpSelectors from './selectors';
 
 import styles from './styles';
-import commonColor from '../../theme/variables/commonColor';
-import LoginInput from '../../components/LoginInput';
+import commonColor from '@theme/variables/commonColor';
+import LoginInput from '@components/LoginInput';
 
 import {
   required,
@@ -29,7 +29,7 @@ import {
   email,
   minLength,
   maxLength,
-} from '../../utils/validation';
+} from '@utils/validation';
 
 const minLength8 = minLength(8);
 const maxLength15 = maxLength(15);
@@ -96,7 +96,7 @@ class SignUpForm extends Component {
           barStyle="light-content"
         />
         <ImageBackground
-          source={require('../../../assets/Background/bg2.png')}
+          source={require('@assets/Background/bg2.png')}
           style={styles.background}>
           <Content>
             <Header style={styles.header.container}>

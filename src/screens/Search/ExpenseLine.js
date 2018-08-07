@@ -13,7 +13,7 @@ import {
   Grid,
   Col,
 } from 'native-base';
-import { formatAmount } from '../../utils/formatters';
+import { formatAmount } from '@utils/formatters';
 
 import style from './styles';
 

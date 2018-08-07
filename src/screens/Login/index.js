@@ -15,20 +15,20 @@ import {
   Toast,
 } from 'native-base';
 
-import LoginInput from '../../components/LoginInput';
-
+import LoginInput from '@components/LoginInput';
 import {
   required,
   alphaNumeric,
   minLength,
   maxLength,
-} from '../../utils/validation';
+} from '@utils/validation';
+
 import { doLogin } from './behaviors';
 import * as loginSelectors from './selectors';
 import styles from './styles';
 
-const bg = require('../../../assets/Background/bg.png');
-const logo = require('../../../assets/logo.png');
+const bg = require('@assets/Background/bg.png');
+const logo = require('@assets/logo.png');
 
 const minLength10 = minLength(10);
 const maxLength15 = maxLength(15);

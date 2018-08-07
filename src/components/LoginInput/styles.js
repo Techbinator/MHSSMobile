@@ -1,6 +1,6 @@
 const React = require('react-native');
 const { Platform } = React;
-import commonColor from '../../theme/variables/commonColor';
+import commonColor from '@theme/variables/commonColor';
 
 export default {
   inputWrapper: {

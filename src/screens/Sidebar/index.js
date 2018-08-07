@@ -127,7 +127,7 @@ class SideBar extends Component {
                     navigation.navigate('Profile');
                   }}>
                   <Thumbnail
-                    source={require('../../../assets/Avatars/john.png')}
+                    source={require('@assets/Avatars/john.png')}
                     style={styles.profilePic}
                   />
                 </TouchableOpacity>

@@ -4,14 +4,14 @@ import { FlatList, ImageBackground } from 'react-native';
 import { Container, Content, Fab, Icon } from 'native-base';
 import { connect } from 'react-redux';
 
-import AppHeader from '../../components/AppHeader';
+import AppHeader from '@components/AppHeader';
 import Category from './Category';
 
 import * as actions from './behaviors';
 import * as categoriesSelectors from './selectors';
 
 import styles from './styles';
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 
 class Categories extends Component {
   static propTypes = {
@@ -40,7 +40,7 @@ class Categories extends Component {
     return (
       <Container>
         <ImageBackground
-          source={require('../../../assets/Background/header-bg.png')}
+          source={require('@assets/Background/header-bg.png')}
           style={styles.container}>
           <AppHeader
             hasTabs

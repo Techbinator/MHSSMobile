@@ -4,7 +4,7 @@ import { VictoryPie } from 'victory-native';
 import { View } from 'native-base';
 import styles from './styles';
 
-import categoryColors from '../../theme/categoryColors';
+import categoryColors from '@theme/categoryColors';
 
 const theme = {
   pie: {

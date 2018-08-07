@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Platform, Dimensions, View } from 'react-native';
 import Carousel from 'react-native-carousel-view';
-import PieChart from '../../components/PieChart';
-import BarChart from '../../components/BarChart';
+import PieChart from '@components/PieChart';
+import BarChart from '@components/BarChart';
 import ExpensesOverview from './ExpensesOverview';
 
 import styles from './styles';
 
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 

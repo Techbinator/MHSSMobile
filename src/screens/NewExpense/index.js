@@ -17,16 +17,16 @@ import {
 import DatePicker from 'react-native-datepicker';
 import moment from 'moment';
 
-import AppHeader from '../../components/AppHeader';
-import FormInput from '../../components/FormInput';
-import { required, alphaNumeric, isNumeric } from '../../utils/validation';
+import AppHeader from '@components/AppHeader';
+import FormInput from '@components/FormInput';
+import { required, alphaNumeric, isNumeric } from '@utils/validation';
 
 import * as actions from './behaviors';
 import * as expenseSelectors from '@screens/NewExpense/selectors';
 
 import styles from './styles';
 
-import themeColors from '../../theme/variables/commonColor';
+import themeColors from '@theme/variables/commonColor';
 var Color = require('color');
 const light = Color(themeColors.brandPrimary).alpha(0.3);
 
@@ -99,7 +99,7 @@ class NewExpenseForm extends React.Component {
     return (
       <Container>
         <ImageBackground
-          source={require('../../../assets/Background/header-bg.png')}
+          source={require('@assets/Background/header-bg.png')}
           style={styles.container}>
           <AppHeader
             hasTabs

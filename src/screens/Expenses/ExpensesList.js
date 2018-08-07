@@ -5,9 +5,9 @@ import { ListView } from 'react-native';
 import { Text, View, List, ListItem, Button, Icon, Spinner } from 'native-base';
 import { Grid, Col } from 'react-native-easy-grid';
 
-import { formatAmount } from '../../utils/formatters';
-import categoryColors from '../../theme/categoryColors';
-import themeColors from '../../theme/variables/commonColor';
+import { formatAmount } from '@utils/formatters';
+import categoryColors from '@theme/categoryColors';
+import themeColors from '@theme/variables/commonColor';
 import styles from './styles';
 
 class ExpensesList extends Component {

@@ -13,10 +13,10 @@ import {
   Thumbnail,
 } from 'native-base';
 
-import AppHeader from '../../components/AppHeader';
-import SwitchButton from '../../components/SwitchButton';
-const avatar1 = require('../../../assets/Avatars/john.png');
-const avatar2 = require('../../../assets/Avatars/marry.png');
+import AppHeader from '@components/AppHeader';
+import SwitchButton from '@components/SwitchButton';
+const avatar1 = require('@assets/Avatars/john.png');
+const avatar2 = require('@assets/Avatars/marry.png');
 
 import styles from './styles';
 
@@ -29,7 +29,7 @@ export default class Settings extends Component {
     return (
       <Container>
         <ImageBackground
-          source={require('../../../assets/Background/header2-bg.png')}
+          source={require('@assets/Background/header2-bg.png')}
           style={styles.container}>
           <AppHeader
             hasTabs

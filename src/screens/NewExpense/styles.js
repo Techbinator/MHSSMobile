@@ -1,4 +1,4 @@
-import commonColor from '../../theme/variables/commonColor';
+import commonColor from '@theme/variables/commonColor';
 
 export default {
   container: {

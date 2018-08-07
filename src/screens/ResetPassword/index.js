@@ -18,8 +18,8 @@ import { reduxForm, Field, getFormValues } from 'redux-form';
 import { resetPassword } from './behaviors';
 import * as resetPasswordSelectors from './selectors';
 
-import LoginInput from '../../components/LoginInput';
-import { required, email } from '../../utils/validation';
+import LoginInput from '@components/LoginInput';
+import { required, email } from '@utils/validation';
 import styles from './styles';
 
 const FORM_NAME = 'resetPassword';
@@ -78,7 +78,7 @@ class ResetPasswordForm extends Component {
       <Container>
         <StatusBar barStyle="light-content" />
         <ImageBackground
-          source={require('../../../assets/Background/bg2.png')}
+          source={require('@assets/Background/bg2.png')}
           style={styles.background}>
           <Content>
             <Content>

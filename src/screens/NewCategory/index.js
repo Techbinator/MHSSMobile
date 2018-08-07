@@ -14,9 +14,9 @@ import {
   Toast,
 } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
-import AppHeader from '../../components/AppHeader';
-import FormInput from '../../components/FormInput';
-import { required, alphaNumeric } from '../../utils/validation';
+import AppHeader from '@components/AppHeader';
+import FormInput from '@components/FormInput';
+import { required, alphaNumeric } from '@utils/validation';
 import * as actions from './behaviors';
 import * as categorySelectors from '@screens/NewCategory/selectors';
 import styles from './styles';
@@ -76,7 +76,7 @@ class NewCategoryForm extends React.Component {
     return (
       <Container>
         <ImageBackground
-          source={require('../../../assets/Background/header-bg.png')}
+          source={require('@assets/Background/header-bg.png')}
           style={styles.container}>
           <AppHeader hasTabs navigation={navigation} title="Add Category" />
           <Content
