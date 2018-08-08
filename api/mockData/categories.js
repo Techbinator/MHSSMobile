@@ -29,7 +29,7 @@ export const categoriesData = [
   },
   {
     id: '5',
-    name: 'Clothes',
+    name: 'Shopping',
     iconName: 'ios-shirt-outline',
     percent: 12,
     amount: 110,
@@ -57,7 +57,7 @@ export const categoriesData = [
   },
   {
     id: '9',
-    name: 'Shopping',
+    name: 'Clothes',
     iconName: 'ios-basket',
     percent: 5,
     amount: 50,

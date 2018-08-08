@@ -5,10 +5,12 @@ import { Container, Tabs, Tab, Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import moment from 'moment/moment';
 
-import ExpensesCharts from './ExpensesCharts';
+import ExpensesCarousel from './ExpensesCarousel';
 import AppHeader from '@components/AppHeader';
 import * as actions from './behaviors';
 import * as categoriesSelectors from './selectors';
+import themeColors from '@theme/variables/commonColor';
+
 import {
   getFormattedCurrentWeek,
   getFormattedCurrentMonth,
@@ -16,7 +18,7 @@ import {
 
 import styles from './styles';
 
-class Overview extends Component {
+class ExpensesCharts extends Component {
   constructor() {
     super();
     this.state = {
@@ -30,7 +32,6 @@ class Overview extends Component {
     categoriesLoading: PropTypes.bool.isRequired,
     categoriesError: PropTypes.bool.isRequired,
     categories: PropTypes.array,
-    categoriesData: PropTypes.array,
   };
 
   static defaultProps = {
@@ -65,12 +66,7 @@ class Overview extends Component {
   }
 
   render() {
-    const {
-      navigation,
-      categoriesLoading,
-      categories,
-      categoriesData,
-    } = this.props;
+    const { navigation, categoriesLoading, categories } = this.props;
     return (
       <Container>
         <ImageBackground
@@ -79,11 +75,14 @@ class Overview extends Component {
           <AppHeader
             hasTabs
             navigation={this.props.navigation}
-            title="Overview"
+            title="Analytics"
             titleSuffix={this.state.currentPeriod}
           />
           {categoriesLoading && (
-            <Spinner style={{ paddingTop: 40 }} color="#FF3366" />
+            <Spinner
+              style={{ paddingTop: 40 }}
+              color={themeColors.brandPrimary}
+            />
           )}
           {!categoriesLoading && (
             <Tabs
@@ -95,22 +94,19 @@ class Overview extends Component {
                 this.switchPeriod(i, ref, from)
               }>
               <Tab heading="This Week">
-                <ExpensesCharts
-                  data={categoriesData}
+                <ExpensesCarousel
                   categories={categories}
                   navigation={navigation}
                 />
               </Tab>
               <Tab heading="This Month">
-                <ExpensesCharts
-                  data={categoriesData}
+                <ExpensesCarousel
                   categories={categories}
                   navigation={navigation}
                 />
               </Tab>
               <Tab heading="This Year">
-                <ExpensesCharts
-                  data={categoriesData}
+                <ExpensesCarousel
                   categories={categories}
                   navigation={navigation}
                 />
@@ -127,10 +123,9 @@ const mapStateToProps = state => ({
   categories: categoriesSelectors.getCategories(state),
   categoriesLoading: categoriesSelectors.getCategoriesLoadingState(state),
   categoriesError: categoriesSelectors.getCategoriesErrorState(state),
-  categoriesData: categoriesSelectors.getCategoriesData(state),
 });
 
 export default connect(
   mapStateToProps,
   actions
-)(Overview);
+)(ExpensesCharts);

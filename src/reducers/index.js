@@ -8,7 +8,7 @@ import categories from '../screens/Categories/behaviors';
 import expenses from '../screens/Expenses/behaviors';
 import newExpense from '../screens/NewExpense/behaviors';
 import newCategory from '../screens/NewCategory/behaviors';
-import overview from '../screens/Overview/behaviors';
+import charts from '../screens/ExpensesCharts/behaviors';
 import search from '@screens/Search/behaviors';
 
 export default combineReducers({
@@ -20,6 +20,6 @@ export default combineReducers({
   newCategory,
   expenses,
   newExpense,
-  overview,
+  charts,
   search,
 });

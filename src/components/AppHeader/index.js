@@ -3,7 +3,7 @@ import { TouchableOpacity, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import { View, Text, Left, Right, Thumbnail, Body, Header } from 'native-base';
 
-import HeaderDrawerButton from '@components/HeaderDrawerButton';
+import HeaderDrawerButton from './HeaderDrawerButton';
 
 const logo = require('@assets/header-logo.png');
 const avatar = require('@assets/Avatars/john.png');

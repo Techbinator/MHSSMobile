@@ -52,10 +52,10 @@ class SideBar extends Component {
             iconLeft
             style={styles.listItem}
             onPress={() => {
-              navigation.navigate('Overview');
+              navigation.navigate('ExpensesCharts');
             }}>
             <Icon name="ios-stats-outline" style={styles.linkIcon} />
-            <Text style={styles.linkText}>Overview</Text>
+            <Text style={styles.linkText}>Expenses Analytics</Text>
           </ListItem>
           <ListItem
             noIndent

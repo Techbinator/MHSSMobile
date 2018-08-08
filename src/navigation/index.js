@@ -9,7 +9,7 @@ import Expenses from '@screens/Expenses/';
 import NewExpense from '@screens/NewExpense/';
 import Categories from '@screens/Categories/';
 import NewCategory from '@screens/NewCategory/';
-import Overview from '@screens/Overview';
+import ExpensesCharts from '@screens/ExpensesCharts';
 import Calendar from '@screens/Expenses/ExpenseCalendar';
 import Settings from '@screens/Settings';
 import Search from '@screens/Search';
@@ -19,7 +19,7 @@ const Drawer = createDrawerNavigator(
   {
     Expenses: { screen: Expenses },
     Categories: { screen: Categories },
-    Overview: { screen: Overview },
+    ExpensesCharts: { screen: ExpensesCharts },
     Calendar: { screen: Calendar },
     Search: { screen: Search },
     Settings: { screen: Settings },
@@ -41,7 +41,7 @@ const RootNavigation = createStackNavigator(
     NewExpense: { screen: NewExpense },
     Categories: { screen: Categories },
     NewCategory: { screen: NewCategory },
-    Overview: { screen: Overview },
+    ExpensesCharts: { screen: ExpensesCharts },
 
     Search: { screen: Search },
     Settings: { screen: Settings },
@@ -50,7 +50,7 @@ const RootNavigation = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: 'Login',
+    initialRouteName: 'ExpensesCharts',
     headerMode: 'none',
   }
 );
