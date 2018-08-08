@@ -39,7 +39,8 @@ export default {
       marginTop: 80,
       marginLeft: 20,
       marginRight: 20,
-      height: 50,
+      height: 55,
+      borderRadius: 5,
     },
     text: {
       fontWeight: '600',
@@ -52,5 +53,13 @@ export default {
     textAlign: 'left',
     marginLeft: 5,
     paddingLeft: 0,
+  },
+  signInText: {
+    opacity: 0.7,
+    fontSize: 14,
+    color: '#FFF',
+    textAlign: 'right',
+    marginRight: 0,
+    paddingRight: 0,
   },
 };

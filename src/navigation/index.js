@@ -50,7 +50,7 @@ const RootNavigation = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: 'ExpensesCharts',
+    initialRouteName: 'Login',
     headerMode: 'none',
   }
 );

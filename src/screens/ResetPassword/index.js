@@ -119,7 +119,8 @@ class ResetPasswordForm extends Component {
               paddingRight: 20,
             }}>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Text style={styles.linkBtn}>Back To Login</Text>
+              <Text style={styles.signInText}>Got my password, go to</Text>
+              <Text style={styles.linkBtn}>Sign In</Text>
             </Button>
           </Footer>
         </ImageBackground>

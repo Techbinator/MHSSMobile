@@ -26,7 +26,8 @@ export default {
       marginTop: 40,
       marginLeft: 20,
       marginRight: 20,
-      height: 50,
+      height: 55,
+      borderRadius: 5,
     },
     text: {
       fontWeight: '600',
