@@ -80,7 +80,7 @@ class ExpensesCharts extends Component {
           />
           {categoriesLoading && (
             <Spinner
-              style={{ paddingTop: 40 }}
+              style={{ paddingTop: 80 }}
               color={themeColors.brandPrimary}
             />
           )}
