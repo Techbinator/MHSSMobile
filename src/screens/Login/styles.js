@@ -22,16 +22,9 @@ export default {
     flex: 1,
   },
   loginBtn: {
-    wrapper: {
-      marginTop: 40,
-      marginLeft: 20,
-      marginRight: 20,
-      height: 55,
-      borderRadius: 5,
-    },
-    text: {
-      fontWeight: '600',
-    },
+    marginTop: 40,
+    marginLeft: 20,
+    marginRight: 20,
   },
   linkBtn: {
     opacity: 0.9,

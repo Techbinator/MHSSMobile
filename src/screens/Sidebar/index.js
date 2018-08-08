@@ -66,7 +66,7 @@ class SideBar extends Component {
               navigation.navigate('Calendar');
             }}>
             <Icon name="ios-calendar-outline" style={styles.linkIcon} />
-            <Text style={styles.linkText}>Calendar</Text>
+            <Text style={styles.linkText}>Expenses Calendar</Text>
           </ListItem>
           <ListItem
             noIndent
@@ -88,7 +88,7 @@ class SideBar extends Component {
               navigation.navigate('Profile');
             }}>
             <Icon name="ios-person-outline" style={styles.linkIcon} />
-            <Text style={styles.linkText}> Profile</Text>
+            <Text style={styles.linkText}>Profile</Text>
           </ListItem>
           <ListItem
             noIndent

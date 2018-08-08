@@ -22,10 +22,10 @@ export default {
     alignItems: 'center',
     borderWidth: 0,
     marginTop: 70,
-    marginBottom: 50,
+    marginBottom: 70,
     marginLeft: 30,
     marginRight: 30,
-    backgroundColor: '#FFF',
+    backgroundColor: '#F8F8F8',
   },
   imageIcons: {
     height: 120,

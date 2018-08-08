@@ -300,9 +300,10 @@ export default (variables = variable) => {
     },
 
     '.large': {
-      height: 60,
+      height: 55,
       'NativeBase.Text': {
-        fontSize: 22,
+        fontSize: 16,
+        fontWeight: '600',
       },
     },
 

@@ -17,4 +17,7 @@ export default {
     height: deviceHeight,
     width: deviceWidth,
   },
+  spinner: {
+    paddingTop: deviceHeight / 2 - 10,
+  },
 };

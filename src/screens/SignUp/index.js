@@ -129,11 +129,11 @@ class SignUpForm extends Component {
                 validate={[alphaNumeric, minLength8, maxLength15, required]}
               />
               <Button
-                rounded
                 primary
+                large
                 block
                 onPress={() => this.handleSubmit(this.props.formValues)}
-                style={styles.signupBtn.wrapper}>
+                style={styles.signupBtn}>
                 <Text style={styles.signupBtn.text}>Sign Up</Text>
               </Button>
             </Form>

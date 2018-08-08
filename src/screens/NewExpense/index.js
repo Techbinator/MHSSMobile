@@ -208,22 +208,21 @@ class NewExpenseForm extends React.Component {
                 }}
               />
               <Button
-                rounded
                 primary
-                block
                 large
+                block
                 style={styles.addBtn}
                 disabled={submitting}
                 onPress={() => this.handleSubmit(formValues)}>
-                <Text style={{ fontSize: 16, fontWeight: '600' }}>Add</Text>
+                <Text>Add</Text>
               </Button>
               <Button
-                rounded
                 block
+                large
                 light
                 style={styles.cancelBtn}
                 onPress={() => navigation.navigate('Expenses')}>
-                <Text style={{ fontSize: 16, fontWeight: '600' }}>Cancel</Text>
+                <Text>Cancel</Text>
               </Button>
             </Form>
           </Content>

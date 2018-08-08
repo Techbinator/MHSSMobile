@@ -6,6 +6,8 @@ import { Spinner, View } from 'native-base';
 import ExpenseLine from './ExpenseLine';
 import ExpensesSectionHeader from './ExpensesSectionHeader';
 
+import themeColors from '@theme/variables/commonColor';
+import styles from './styles';
 class ExpensesResultList extends Component {
   static propTypes = {
     expensesList: PropTypes.array,
@@ -22,7 +24,7 @@ class ExpensesResultList extends Component {
     return (
       <View style={{ backgroundColor: '#F4F4F4' }}>
         {expensesLoading && (
-          <Spinner style={{ paddingTop: 40 }} color="#FF3366" />
+          <Spinner style={styles.spinner} color={themeColors.brandPrimary} />
         )}
         <SectionList
           sections={expensesList}

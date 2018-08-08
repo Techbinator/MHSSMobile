@@ -79,10 +79,7 @@ class ExpensesCharts extends Component {
             titleSuffix={this.state.currentPeriod}
           />
           {categoriesLoading && (
-            <Spinner
-              style={{ paddingTop: 80 }}
-              color={themeColors.brandPrimary}
-            />
+            <Spinner style={styles.spinner} color={themeColors.brandPrimary} />
           )}
           {!categoriesLoading && (
             <Tabs

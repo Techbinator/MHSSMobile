@@ -103,12 +103,12 @@ class ResetPasswordForm extends Component {
                   validate={[email, required]}
                 />
                 <Button
-                  rounded
                   primary
+                  large
                   block
                   onPress={() => this.handleSubmit(this.props.formValues)}
-                  style={styles.submitBtn.wrapper}>
-                  <Text style={styles.submitBtn.text}>Send Email</Text>
+                  style={styles.submitBtn}>
+                  <Text>Send Email</Text>
                 </Button>
               </Form>
             </Content>

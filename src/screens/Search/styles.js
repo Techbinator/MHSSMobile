@@ -1,8 +1,14 @@
+import { Dimensions } from 'react-native';
+const deviceHeight = Dimensions.get('window').height;
+
 export default {
   container: {
     flex: 1,
     width: null,
     height: null,
+  },
+  spinner: {
+    paddingTop: deviceHeight / 2 - 10,
   },
   sectionHeader: {
     container: {

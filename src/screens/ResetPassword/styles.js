@@ -35,16 +35,9 @@ export default {
     marginTop: deviceHeight / 6,
   },
   submitBtn: {
-    wrapper: {
-      marginTop: 80,
-      marginLeft: 20,
-      marginRight: 20,
-      height: 55,
-      borderRadius: 5,
-    },
-    text: {
-      fontWeight: '600',
-    },
+    marginTop: 80,
+    marginLeft: 20,
+    marginRight: 20,
   },
   linkBtn: {
     opacity: 0.9,

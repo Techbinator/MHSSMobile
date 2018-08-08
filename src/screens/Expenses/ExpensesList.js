@@ -41,10 +41,7 @@ class ExpensesList extends Component {
         showsVerticalScrollIndicator={false}
         style={{ backgroundColor: '#F4F4F4' }}>
         {expensesLoading && (
-          <Spinner
-            style={{ paddingTop: 40 }}
-            color={themeColors.brandPrimary}
-          />
+          <Spinner style={styles.spinner} color={themeColors.brandPrimary} />
         )}
         {this.ds.cloneWithRows(expensesList).getRowCount() === 0 ? (
           <View>

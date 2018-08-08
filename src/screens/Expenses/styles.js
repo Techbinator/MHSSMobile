@@ -1,5 +1,5 @@
-const React = require('react-native');
-const { Platform } = React;
+import { Platform, Dimensions } from 'react-native';
+const deviceHeight = Dimensions.get('window').height;
 
 import themeColors from '@theme/variables/commonColor';
 
@@ -60,5 +60,8 @@ export default {
   calendarContainer: {
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
+  },
+  spinner: {
+    paddingTop: deviceHeight / 2 - 10,
   },
 };

@@ -118,12 +118,12 @@ class LoginForm extends Component {
                   <Text style={styles.linkBtn}>Forgot Password</Text>
                 </Button>
                 <Button
-                  rounded
+                  large
                   primary
                   block
-                  style={styles.loginBtn.wrapper}
+                  style={styles.loginBtn}
                   onPress={() => this.login(formValues)}>
-                  <Text style={styles.loginBtn.text}> Sign In </Text>
+                  <Text> Sign In </Text>
                 </Button>
               </Form>
             </View>

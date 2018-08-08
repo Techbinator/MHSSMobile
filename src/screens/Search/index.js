@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { groupBy } from 'lodash';
-
+import { ImageBackground } from 'react-native';
 import { Container, Content } from 'native-base';
 import { connect } from 'react-redux';
 import AppHeader from '@components/AppHeader';
@@ -12,6 +12,7 @@ import * as actions from './behaviors';
 import * as searchSelectors from './selectors';
 
 import themeColors from '@theme/variables/commonColor';
+import styles from './styles';
 
 class ExpenseCalendar extends Component {
   static propTypes = {
@@ -65,25 +66,25 @@ class ExpenseCalendar extends Component {
     const { expenses } = this.state;
     return (
       <Container>
-        <AppHeader
-          hasTabs
-          style={{ backgroundColor: themeColors.brandPrimary }}
-          navigation={navigation}
-        />
-        <SearchHeader
-          onSearch={this.props.doSearch}
-          onExport={this.props.doExport}
-        />
-
-        <Content
-          showsVerticalScrollIndicator={false}
-          style={{ backgroundColor: '#fff' }}>
-          <ExpensesResultList
-            navigation={navigation}
-            expensesList={expenses}
-            expensesLoading={searching}
+        <ImageBackground
+          source={require('@assets/Background/header-bg-big.png')}
+          style={styles.container}>
+          <AppHeader hasTabs navigation={navigation} />
+          <SearchHeader
+            onSearch={this.props.doSearch}
+            onExport={this.props.doExport}
           />
-        </Content>
+
+          <Content
+            showsVerticalScrollIndicator={false}
+            style={{ backgroundColor: '#fff' }}>
+            <ExpensesResultList
+              navigation={navigation}
+              expensesList={expenses}
+              expensesLoading={searching}
+            />
+          </Content>
+        </ImageBackground>
       </Container>
     );
   }
