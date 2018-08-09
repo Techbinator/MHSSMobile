@@ -19,7 +19,7 @@ class PieChart extends Component {
         <View>
           <VictoryPie
             innerRadius={70}
-            labelRadius={Platform.OS === 'android' ? 150 : 120}
+            labelRadius={Platform.OS === 'android' ? 140 : 120}
             theme={theme}
             data={this.props.data}
             style={{
