@@ -1,0 +1,86 @@
+import React, { Component } from 'react';
+import { FlatList, TouchableOpacity } from 'react-native';
+import { DrawerActions } from 'react-navigation';
+import {
+  Container,
+  Content,
+  Icon,
+  Thumbnail,
+  Button,
+  Header,
+  Left,
+  Right,
+} from 'native-base';
+
+import MenuItem from './MenuItem';
+
+import styles from './styles';
+import { routes } from './config';
+
+class SideBar extends Component {
+  state = {
+    selected: '',
+  };
+
+  _onPressItem = id => {
+    this.setState(() => ({
+      selected: id,
+    }));
+    this.props.navigation.navigate(id);
+  };
+
+  _renderMenuItem = ({ item }) => (
+    <MenuItem
+      id={item.route}
+      onPressItem={this._onPressItem}
+      selected={this.state.selected === item.route}
+      title={item.title}
+      icon={item.icon}
+    />
+  );
+
+  render() {
+    const navigation = this.props.navigation;
+    return (
+      <Container>
+        <Header transparent style={styles.header.container}>
+          <Left style={{ flex: 1 }}>
+            <Button
+              transparent
+              onPress={() =>
+                navigation.dispatch(DrawerActions.toggleDrawer({}))
+              }>
+              <Icon
+                type="SimpleLineIcons"
+                name="arrow-left"
+                style={styles.header.icon}
+              />
+            </Button>
+          </Left>
+          <Right>
+            <TouchableOpacity
+              style={{ alignSelf: 'flex-end' }}
+              onPress={() => {
+                navigation.navigate('Profile');
+              }}>
+              <Thumbnail
+                source={require('@assets/images/avatar1.png')}
+                style={styles.header.avatar}
+              />
+            </TouchableOpacity>
+          </Right>
+        </Header>
+        <Content style={styles.content}>
+          <FlatList
+            data={routes}
+            extraData={this.state}
+            renderItem={this._renderMenuItem}
+            keyExtractor={item => item.route}
+          />
+        </Content>
+      </Container>
+    );
+  }
+}
+
+export default SideBar;
