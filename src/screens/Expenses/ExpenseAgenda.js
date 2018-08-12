@@ -85,6 +85,7 @@ class ExpenseCalendar extends Component {
               }}
               renderItem={this.renderItem.bind(this)}
               rowHasChanged={this.rowHasChanged.bind(this)}
+              selected={'2018-08-11'}
               theme={{
                 calendarBackground: '#FFF',
                 textSectionTitleColor: theme.brandPrimary,
