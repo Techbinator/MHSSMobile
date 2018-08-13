@@ -9,6 +9,7 @@ import {
   Button,
   Icon,
   Form,
+  Item,
   Picker,
   Footer,
   Spinner,
@@ -62,7 +63,7 @@ class CategoryForm extends React.Component {
     addCategorySuccess: false,
     addCategoryError: false,
     formValues: {
-      iconName: 'ios-shirt-outline',
+      iconName: 'ios-add-circle-outline',
     },
   };
 
@@ -78,6 +79,7 @@ class CategoryForm extends React.Component {
       handleSubmit,
       addCategoryStarted,
       addCategoryError,
+      formValues,
     } = this.props;
     return (
       <Container>
@@ -119,38 +121,40 @@ class CategoryForm extends React.Component {
                 name="iconName"
                 component={({ input: { onChange, value } }) => {
                   return (
-                    <Picker
-                      style={styles.picker.input}
-                      mode="dropdown"
-                      iosHeader="Select Icon"
-                      placeholder="Select Icon"
-                      placeholderStyle={styles.picker.placeholderText}
-                      itemStyle={styles.picker.itemStyle}
-                      placeholderIconColor="#95959A"
-                      iosIcon={<Icon name="arrow-down" />}
-                      selectedValue={value}
-                      onValueChange={value => {
-                        onChange(value);
-                      }}>
-                      {iconSet.glyphs.map(item => {
-                        return (
-                          <Picker.Item
-                            key={item[0]}
-                            value={item[0]}
-                            label={
-                              Platform.OS === 'android' ? (
-                                item[0]
-                              ) : (
-                                <Icon
-                                  style={styles.picker.itemIconStyle}
-                                  name={item[0]}
-                                />
-                              )
-                            }
-                          />
-                        );
-                      })}
-                    </Picker>
+                    <Item style={styles.picker.container}>
+                      <Picker
+                        style={styles.picker.input}
+                        mode="dropdown"
+                        iosHeader="Select Icon"
+                        placeholder="Select Icon"
+                        placeholderStyle={styles.picker.placeholderText}
+                        itemStyle={styles.picker.itemStyle}
+                        placeholderIconColor="#95959A"
+                        iosIcon={<Icon name="arrow-down" />}
+                        selectedValue={value}
+                        onValueChange={value => {
+                          onChange(value);
+                        }}>
+                        {iconSet.glyphs.map(item => {
+                          return (
+                            <Picker.Item
+                              key={item[0]}
+                              value={item[0]}
+                              label={
+                                Platform.OS === 'android' ? (
+                                  item[0]
+                                ) : (
+                                  <Icon
+                                    style={styles.picker.itemIconStyle}
+                                    name={item[0]}
+                                  />
+                                )
+                              }
+                            />
+                          );
+                        })}
+                      </Picker>
+                    </Item>
                   );
                 }}
                 validate={[required]}

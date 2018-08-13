@@ -10,7 +10,7 @@ import NewExpense from '@screens/NewExpense/ExpenseForm';
 import Categories from '@screens/Categories/';
 import NewCategory from '@screens/NewCategory/CategoryForm';
 import ExpensesCharts from '@screens/ExpensesCharts';
-import Calendar from '@screens/Expenses/ExpenseAgenda';
+import ExpenseAgenda from '@screens/Expenses/ExpenseAgenda';
 import Settings from '@screens/Settings';
 import Search from '@screens/Search';
 import Profile from '@screens/Profile';
@@ -20,7 +20,7 @@ const Drawer = createDrawerNavigator(
     Expenses: { screen: Expenses },
     Categories: { screen: Categories },
     ExpensesCharts: { screen: ExpensesCharts },
-    Calendar: { screen: Calendar },
+    ExpenseAgenda: { screen: ExpenseAgenda },
     Search: { screen: Search },
     Settings: { screen: Settings },
     Profile: { screen: Profile },
@@ -43,9 +43,6 @@ const AppNavigation = createStackNavigator(
     Categories: { screen: Categories },
     NewCategory: { screen: NewCategory },
     ExpensesCharts: { screen: ExpensesCharts },
-
-    Calendar: { screen: Calendar },
-
     Search: { screen: Search },
     Settings: { screen: Settings },
     Profile: { screen: Profile },

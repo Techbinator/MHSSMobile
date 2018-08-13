@@ -9,6 +9,7 @@ import {
   Button,
   Icon,
   Form,
+  Item,
   Picker,
   View,
   Spinner,
@@ -122,7 +123,7 @@ class ExpenseForm extends React.Component {
               />
               <Field
                 name="title"
-                label="Expense"
+                label="Expense title"
                 component={FormInput}
                 type="text"
                 validate={[required, alphaNumeric]}
@@ -132,30 +133,32 @@ class ExpenseForm extends React.Component {
                 name="category"
                 component={({ input: { onChange, value } }) => {
                   return (
-                    <Picker
-                      style={styles.picker.input}
-                      mode="dropdown"
-                      iosHeader="Select Category"
-                      placeholder="Category"
-                      placeholderStyle={styles.picker.placeholderText}
-                      placeholderIconColor="#95959A"
-                      itemStyle={styles.picker.itemStyle}
-                      itemTextStyle={styles.picker.itemTextStyle}
-                      iosIcon={<Icon name="arrow-down" />}
-                      selectedValue={value}
-                      onValueChange={value => {
-                        onChange(value);
-                      }}>
-                      {categories.map(item => {
-                        return (
-                          <Picker.Item
-                            key={item.id}
-                            label={item.name}
-                            value={item.id}
-                          />
-                        );
-                      })}
-                    </Picker>
+                    <Item style={styles.picker.container}>
+                      <Picker
+                        style={styles.picker.input}
+                        mode="dropdown"
+                        iosHeader="Select Category"
+                        placeholder="Category"
+                        placeholderStyle={styles.picker.placeholderText}
+                        placeholderIconColor="#95959A"
+                        itemStyle={styles.picker.itemStyle}
+                        itemTextStyle={styles.picker.itemTextStyle}
+                        iosIcon={<Icon name="arrow-down" />}
+                        selectedValue={value}
+                        onValueChange={value => {
+                          onChange(value);
+                        }}>
+                        {categories.map(item => {
+                          return (
+                            <Picker.Item
+                              key={item.id}
+                              label={item.name}
+                              value={item.id}
+                            />
+                          );
+                        })}
+                      </Picker>
+                    </Item>
                   );
                 }}
                 validate={[required]}

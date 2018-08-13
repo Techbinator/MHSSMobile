@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import theme from '@theme/variables/mmoney';
 
 export default {
@@ -48,12 +49,13 @@ export default {
   },
 
   picker: {
+    container: {
+      borderBottomWidth: 0,
+      marginLeft: 0,
+      paddingLeft: Platform.OS === 'android' ? 10 : 0,
+    },
     input: {
-      width: '100%',
       height: 80,
-      paddingTop: 10,
-      paddingBottom: 20,
-      backgroundColor: '#FFF',
     },
     placeholderText: {
       color: theme.inputColorPlaceholder,
@@ -64,7 +66,6 @@ export default {
     },
     itemTextStyle: {
       color: theme.dropdownLinkColor,
-      paddingLeft: 40,
     },
   },
 
