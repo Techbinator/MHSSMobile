@@ -225,7 +225,7 @@ class ExpenseForm extends React.Component {
             <View>
               <Button
                 transparent
-                onPress={() => navigation.navigate('Categories')}>
+                onPress={() => navigation.navigate('Expenses')}>
                 <Text>Cancel</Text>
               </Button>
             </View>
