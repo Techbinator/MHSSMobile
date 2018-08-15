@@ -16,7 +16,7 @@ export const routes = [
   },
   {
     title: 'Expenses Calendar',
-    route: 'Calendar',
+    route: 'ExpenseAgenda',
     icon: 'ios-calendar-outline',
   },
   {
