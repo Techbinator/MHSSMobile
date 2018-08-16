@@ -131,7 +131,10 @@ class ExpenseForm extends React.Component {
               <Field
                 last
                 name="category"
-                component={({ input: { onChange, value } }) => {
+                component={({
+                  input: { onChange, value },
+                  meta: { touched, error },
+                }) => {
                   return (
                     <Item style={styles.picker.container}>
                       <Picker
@@ -158,6 +161,8 @@ class ExpenseForm extends React.Component {
                           );
                         })}
                       </Picker>
+                      {touched &&
+                        error && <Text style={styles.formError}>{error}</Text>}
                     </Item>
                   );
                 }}
@@ -187,7 +192,6 @@ class ExpenseForm extends React.Component {
                     />
                   );
                 }}
-                validate={[required]}
               />
 
               <Field

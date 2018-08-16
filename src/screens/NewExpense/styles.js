@@ -110,4 +110,10 @@ export default {
     paddingTop: 5,
     paddingRight: 15,
   },
+  formError: {
+    color: theme.brandDanger,
+    fontSize: Platform.OS === 'android' ? 12 : 15,
+    paddingRight: 5,
+    textAlign: 'right',
+  },
 };

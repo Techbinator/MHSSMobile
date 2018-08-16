@@ -119,7 +119,10 @@ class CategoryForm extends React.Component {
               <Field
                 last
                 name="iconName"
-                component={({ input: { onChange, value } }) => {
+                component={({
+                  input: { onChange, value },
+                  meta: { touched, error },
+                }) => {
                   return (
                     <Item style={styles.picker.container}>
                       <Picker
@@ -154,6 +157,8 @@ class CategoryForm extends React.Component {
                           );
                         })}
                       </Picker>
+                      {touched &&
+                        error && <Text style={styles.formError}>{error}</Text>}
                     </Item>
                   );
                 }}

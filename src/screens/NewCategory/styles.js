@@ -37,6 +37,13 @@ export default {
     },
   },
 
+  formError: {
+    color: theme.brandDanger,
+    fontSize: Platform.OS === 'android' ? 12 : 15,
+    paddingRight: 5,
+    textAlign: 'right',
+  },
+
   footer: {
     linkText: {
       opacity: 0.7,
