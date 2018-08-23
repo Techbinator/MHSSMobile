@@ -39,8 +39,8 @@ export default {
     submitBtn: {
       position: 'absolute',
       bottom: 0,
-      width: '100%',
       left: 0,
+      width: '100%',
       borderRadius: 0,
     },
   },

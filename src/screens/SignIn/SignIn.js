@@ -65,15 +65,6 @@ class SignIn extends Component {
           source={require('@assets/images/background1.png')}
           style={styles.background}>
           <View style={styles.header.container}>
-            {loginError && (
-              <Notification
-                message="Ivalid username or password!"
-                buttonText="Retry"
-                duration={5000}
-                position="top"
-                type="danger"
-              />
-            )}
             <Image
               source={require('@assets/images/logo.png')}
               style={styles.header.logo}
@@ -83,6 +74,15 @@ class SignIn extends Component {
             style={styles.form.container}
             behavior="padding"
             enabled>
+            {loginError && (
+              <Notification
+                message="Invalid username or password!"
+                buttonText="Retry"
+                duration={5000}
+                position="top"
+                type="danger"
+              />
+            )}
             <Form style={styles.form.content}>
               <Field
                 name="username"

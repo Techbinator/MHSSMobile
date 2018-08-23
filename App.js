@@ -23,17 +23,11 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({
-      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
-      Roboto_light: require('./assets/fonts/Roboto-Light.ttf'),
-      Ionicons: require('@expo/vector-icons/fonts/Ionicons.ttf'),
-    });
-
-    this.setState({ fontLoaded: true });
+    this._loadFonts();
   }
 
-  async loadFonts() {
-    await Expo.Font.loadAsync({
+  async _loadFonts() {
+    await Font.loadAsync({
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
       Roboto_light: require('./assets/fonts/Roboto-Light.ttf'),
       Ionicons: require('@expo/vector-icons/fonts/Ionicons.ttf'),
@@ -41,6 +35,26 @@ export default class App extends React.Component {
       'simple-line-icons': require('@expo/vector-icons/fonts/SimpleLineIcons.ttf'),
     });
     this.setState({ fontLoaded: true });
+  }
+
+  async _cacheResourcesAsync() {
+    const images = [
+      require('./assets/images/splash.png'),
+      require('./assets/images/logo.png'),
+      require('./assets/images/background1.png'),
+      require('./assets/images/background2.png'),
+      require('./assets/images/header-bg.png'),
+      require('./assets/images/header-bg-big.png'),
+      require('./assets/images/header2-bg.png'),
+      require('./assets/images/walkthrough1.png'),
+      require('./assets/images/walkthrough2.png'),
+      require('./assets/images/walkthrough3.png'),
+    ];
+
+    const cacheImages = images.map(image => {
+      return Asset.fromModule(image).downloadAsync();
+    });
+    return Promise.all(cacheImages);
   }
 
   render() {
@@ -66,25 +80,5 @@ export default class App extends React.Component {
         </Provider>
       </StyleProvider>
     );
-  }
-
-  async _cacheResourcesAsync() {
-    const images = [
-      require('./assets/images/splash.png'),
-      require('./assets/images/logo.png'),
-      require('./assets/images/background1.png'),
-      require('./assets/images/background2.png'),
-      require('./assets/images/header-bg.png'),
-      require('./assets/images/header-bg-big.png'),
-      require('./assets/images/header2-bg.png'),
-      require('./assets/images/walkthrough1.png'),
-      require('./assets/images/walkthrough2.png'),
-      require('./assets/images/walkthrough3.png'),
-    ];
-
-    const cacheImages = images.map(image => {
-      return Asset.fromModule(image).downloadAsync();
-    });
-    return Promise.all(cacheImages);
   }
 }

@@ -1,10 +1,10 @@
-import { Platform } from 'react-native';
 import theme from '@theme/variables/mmoney';
 
 export default {
   inputWrapper: {
     paddingLeft: 15,
     paddingRight: 5,
+    paddingBottom: 5,
     marginLeft: 0,
     borderBottomWidth: 0.8,
     borderColor: 'rgba(255, 255, 255, 0.2)',
@@ -23,7 +23,7 @@ export default {
   },
   error: {
     color: theme.brandDanger,
-    fontSize: Platform.OS === 'android' ? 12 : 15,
+    fontSize: 15,
     paddingRight: 5,
     textAlign: 'right',
   },

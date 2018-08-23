@@ -19,8 +19,8 @@ export default function LoginInput(field) {
           secureTextEntry={field.secureTextEntry}
           underlineColorAndroid="transparent"
         />
+        <Text style={styles.error}>{errorText}</Text>
       </Item>
-      <Text style={styles.error}>{errorText}</Text>
     </View>
   );
 }

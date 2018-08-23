@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-import { ImageBackground, KeyboardAvoidingView } from 'react-native';
+import {
+  ImageBackground,
+  KeyboardAvoidingView,
+  ScrollView,
+} from 'react-native';
 import {
   Container,
   Icon,
   Text,
   Button,
   View,
-  Form,
   Footer,
   Spinner,
 } from 'native-base';
@@ -29,7 +32,7 @@ import { doSignUp } from './behaviors';
 import * as signupSelectors from './selectors';
 import styles from './styles';
 
-const FORM_NAME = 'signin';
+const FORM_NAME = 'signup';
 
 class SignUp extends Component {
   static propTypes = {
@@ -88,7 +91,7 @@ class SignUp extends Component {
                 type="danger"
               />
             )}
-            <Form style={styles.form.content}>
+            <ScrollView style={styles.form.content}>
               <Field
                 name="username"
                 placeholder="Username"
@@ -123,19 +126,19 @@ class SignUp extends Component {
                 secureTextEntry={true}
                 validate={[required, alphaNumeric, minLength7, maxLength15]}
               />
-              <Button
-                large
-                primary
-                block
-                style={styles.form.submitBtn}
-                onPress={handleSubmit(this._handleSubmit)}>
-                {signupStarted ? (
-                  <Spinner color="#fff" />
-                ) : (
-                  <Text> Sign Up </Text>
-                )}
-              </Button>
-            </Form>
+            </ScrollView>
+            <Button
+              large
+              primary
+              block
+              style={styles.form.submitBtn}
+              onPress={handleSubmit(this._handleSubmit)}>
+              {signupStarted ? (
+                <Spinner color="#fff" />
+              ) : (
+                <Text> Sign Up </Text>
+              )}
+            </Button>
           </KeyboardAvoidingView>
           <Footer>
             <View>
