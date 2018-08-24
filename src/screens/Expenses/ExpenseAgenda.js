@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImageBackground } from 'react-native';
 import { groupBy } from 'lodash';
-import { Container, Content, View } from 'native-base';
+import { Container, Content, View, Text, Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import { Agenda } from 'react-native-calendars';
 import AppHeader from '@components/AppHeader';
@@ -62,6 +62,17 @@ class ExpenseCalendar extends Component {
       />
     );
   }
+  renderEmptyData() {
+    return (
+      <View>
+        {this.props.expensesLoading ? (
+          <Spinner color={theme.brandPrimary} />
+        ) : (
+          <Text style={styles.emptyMsg}>No expenses found for this date</Text>
+        )}
+      </View>
+    );
+  }
   rowHasChanged(r1, r2) {
     return r1.id !== r2.id;
   }
@@ -86,6 +97,12 @@ class ExpenseCalendar extends Component {
               renderItem={this.renderItem.bind(this)}
               rowHasChanged={this.rowHasChanged.bind(this)}
               selected={'2018-08-11'}
+              pastScrollRange={6}
+              futureScrollRange={6}
+              renderEmptyData={this.renderEmptyData.bind(this)}
+              onDayChange={day => {
+                console.log('day changed');
+              }}
               theme={{
                 calendarBackground: '#FFF',
                 textSectionTitleColor: theme.brandPrimary,

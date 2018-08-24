@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ListView } from 'react-native';
+import { FlatList } from 'react-native';
 
-import { Text, View, List, ListItem, Button, Icon, Spinner } from 'native-base';
-import { Grid, Col } from 'react-native-easy-grid';
+import { Text, View, Button, Icon, Spinner, SwipeRow } from 'native-base';
 
 import ExpenseItem from './ExpenseItem';
-import { formatAmount } from '@utils/formatters';
 import categoryColors from '@theme/categoryColors';
 import theme from '@theme/variables/mmoney';
 
@@ -25,14 +23,8 @@ class ExpensesList extends Component {
     expensesLoading: true,
   };
 
-  constructor() {
-    super();
-    this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-  }
-
-  deleteRow(dataId, secId, rowId, rowMap) {
-    rowMap[`${secId}${rowId}`].props.closeRow();
-    this.props.handleDelete(dataId);
+  deleteItem(itemId) {
+    this.props.handleDelete(itemId);
   }
 
   render() {
@@ -45,29 +37,38 @@ class ExpensesList extends Component {
         <View>
           {expensesLoading && <Spinner color={theme.brandPrimary} />}
           {!expensesLoading &&
-            expensesList.lenght === 0 && (
+            expensesList.length === 0 && (
               <Text style={styles.emptyMsg}>No expenses loaded</Text>
             )}
         </View>
         <View>
-          <List
-            dataSource={this.ds.cloneWithRows(expensesList)}
-            renderRow={(data, sectionId, index) => (
-              <ExpenseItem
-                item={data}
-                color={categoryColors[index % categoryColors.length]}
-                navigation={navigation}
+          <FlatList
+            horizontal={false}
+            data={expensesList}
+            initialNumToRender={15}
+            renderItem={({ item, index }) => (
+              <SwipeRow
+                rightOpenValue={-85}
+                disableRightSwipe={true}
+                style={styles.item.container}
+                body={
+                  <ExpenseItem
+                    item={item}
+                    color={categoryColors[index % categoryColors.length]}
+                    navigation={navigation}
+                  />
+                }
+                right={
+                  <Button
+                    primary
+                    style={styles.swipeBtn}
+                    onPress={() => this.deleteItem(item.id)}>
+                    <Icon active name="trash" style={{ fontSize: 35 }} />
+                  </Button>
+                }
               />
             )}
-            renderRightHiddenRow={(data, secId, rowId, rowMap) => (
-              <Button
-                primary
-                onPress={() => this.deleteRow(data.id, secId, rowId, rowMap)}
-                style={styles.swipeBtn}>
-                <Icon active name="trash" style={{ fontSize: 35 }} />
-              </Button>
-            )}
-            rightOpenValue={-100}
+            keyExtractor={item => item.id}
           />
         </View>
       </View>

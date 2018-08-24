@@ -1,6 +1,6 @@
 export const expensesData = [
   {
-    id: 13,
+    id: '13',
     title: 'Buy a book',
     date: '2018-08-13',
     amount: -30,
@@ -9,7 +9,7 @@ export const expensesData = [
     categoryIcon: 'ios-cash-outline',
   },
   {
-    id: 12,
+    id: '12',
     title: 'Taxi to office',
     date: '2018-08-12',
     amount: -25,
@@ -18,7 +18,7 @@ export const expensesData = [
     categoryIcon: 'ios-car-outline',
   },
   {
-    id: 11,
+    id: '11',
     title: 'Launch with Alex',
     date: '2018-08-12',
     amount: -30.8,
@@ -27,7 +27,7 @@ export const expensesData = [
     categoryIcon: 'ios-restaurant-outline',
   },
   {
-    id: 10,
+    id: '10',
     title: 'Pay check',
     date: '2018-08-12',
     amount: 3000,
@@ -36,7 +36,7 @@ export const expensesData = [
     categoryIcon: 'ios-swap',
   },
   {
-    id: 9,
+    id: '9',
     title: 'Coffee with Jane',
     date: '2018-08-11',
     amount: -10,
@@ -45,7 +45,7 @@ export const expensesData = [
     categoryIcon: 'ios-restaurant-outline',
   },
   {
-    id: 8,
+    id: '8',
     title: 'Electricity bill',
     date: '2018-08-11',
     amount: -50,
@@ -54,7 +54,7 @@ export const expensesData = [
     categoryIcon: 'ios-paper-outline',
   },
   {
-    id: 7,
+    id: '7',
     title: 'Cinema with children',
     date: '2018-08-11',
     amount: -50,
@@ -63,7 +63,7 @@ export const expensesData = [
     categoryIcon: 'ios-game-controller-b-outline',
   },
   {
-    id: 6,
+    id: '6',
     title: 'Dinner with family',
     date: '2018-08-13',
     amount: -80,
@@ -72,7 +72,7 @@ export const expensesData = [
     categoryIcon: 'ios-restaurant-outline',
   },
   {
-    id: 5,
+    id: '5',
     title: 'shirt and jean for Adam',
     date: '2018-08-10',
     amount: -120,
@@ -81,7 +81,7 @@ export const expensesData = [
     categoryIcon: 'ios-shirt-outline',
   },
   {
-    id: 4,
+    id: '4',
     title: 'Weekly shopping',
     date: '2018-08-10',
     amount: -150.5,
@@ -90,7 +90,7 @@ export const expensesData = [
     categoryIcon: 'ios-basket',
   },
   {
-    id: 3,
+    id: '3',
     title: 'Weekly shopping',
     date: '2018-08-10',
     amount: -150.5,
@@ -99,7 +99,7 @@ export const expensesData = [
     categoryIcon: 'ios-basket',
   },
   {
-    id: 2,
+    id: '2',
     title: 'Stuff from Amazon',
     date: '2018-08-10',
     amount: -25.5,
@@ -108,7 +108,7 @@ export const expensesData = [
     categoryIcon: 'ios-basket',
   },
   {
-    id: 1,
+    id: '1',
     title: 'Parking',
     date: '2018-08-10',
     amount: -5.5,
