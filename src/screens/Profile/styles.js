@@ -73,7 +73,7 @@ export default {
       fontWeight: '600',
     },
   },
-  tel: {
+  contact: {
     container: {
       flexDirection: 'row',
       justifyContent: 'flex-start',
@@ -82,53 +82,26 @@ export default {
       paddingLeft: 10,
       backgroundColor: '#FFF',
     },
-    telIcon: {
+    icon: {
       color: theme.brandSuccess,
       justifyContent: 'flex-end',
       fontSize: 30,
     },
-    telNameColumn: {
+    nameColumn: {
       flexDirection: 'row',
       justifyContent: 'flex-start',
     },
-    telNameText: {
+    nameText: {
       color: 'gray',
       fontSize: 14,
       fontWeight: '200',
     },
-    telNumberColumn: {
+    valueColumn: {
       flexDirection: 'row',
       justifyContent: 'flex-start',
       marginBottom: 5,
     },
-    telNumberText: {
-      fontSize: 16,
-    },
-  },
-  email: {
-    container: {
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-      marginTop: 15,
-      marginBottom: 15,
-      paddingLeft: 10,
-      backgroundColor: '#FFF',
-    },
-    emailIcon: {
-      color: theme.brandSuccess,
-      justifyContent: 'flex-end',
-      fontSize: 30,
-    },
-    emailNameColumn: {
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-    },
-    emailNameText: {
-      color: 'gray',
-      fontSize: 14,
-      fontWeight: '200',
-    },
-    emailText: {
+    valueText: {
       fontSize: 16,
     },
   },

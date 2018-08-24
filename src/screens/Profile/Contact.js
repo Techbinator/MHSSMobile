@@ -5,23 +5,24 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-const Tel = ({ name, number }) => {
+const Contact = ({ type, name, number }) => {
+  const iconName = type === 'phone' ? 'ios-call' : 'ios-mail';
   return (
-    <View style={[styles.tel.container]}>
+    <View style={[styles.contact.container]}>
       <Grid>
         <Col size={1}>
           <TouchableOpacity>
-            <Icon name="ios-call" style={[styles.tel.telIcon]} />
+            <Icon name={iconName} style={[styles.contact.icon]} />
           </TouchableOpacity>
         </Col>
         <Col size={4}>
           <View>
-            <View style={styles.tel.telNumberColumn}>
-              <Text style={styles.tel.telNumberText}>{number}</Text>
+            <View style={styles.contact.valueColumn}>
+              <Text style={styles.contact.valueText}>{number}</Text>
             </View>
-            <View style={styles.tel.telNameColumn}>
+            <View style={styles.contact.nameColumn}>
               {name.trim().length !== 0 && (
-                <Text style={styles.tel.telNameText}>{name}</Text>
+                <Text style={styles.contact.nameText}>{name}</Text>
               )}
             </View>
           </View>
@@ -36,13 +37,14 @@ const Tel = ({ name, number }) => {
   );
 };
 
-Tel.propTypes = {
+Contact.propTypes = {
+  type: PropTypes.string,
   name: PropTypes.string,
   number: PropTypes.string.isRequired,
 };
 
-Tel.defaultProps = {
+Contact.defaultProps = {
   name: null,
 };
 
-export default Tel;
+export default Contact;

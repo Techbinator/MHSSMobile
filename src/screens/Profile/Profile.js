@@ -5,8 +5,7 @@ import { Container, Thumbnail, View, Text } from 'native-base';
 import { connect } from 'react-redux';
 
 import AppHeader from '@components/AppHeader';
-import Email from './Email';
-import Tel from './Tel';
+import Contact from './Contact';
 import Overview from './Overview';
 import Social from './Social';
 import * as profileSelectors from './selectors';
@@ -43,11 +42,11 @@ class Profile extends Component {
             <View style={styles.container}>
               <Overview navigation={navigation} />
               <View style={styles.separator} />
-              <Tel name={'Mobile'} number={profile.mobile} />
+              <Contact type="phone" name={'Mobile'} number={profile.mobile} />
               <View style={styles.separator} />
-              <Tel name={'Home'} number={profile.phone} />
+              <Contact type="phone" name={'Home'} number={profile.phone} />
               <View style={styles.separator} />
-              <Email name={'Personal'} email={profile.email} />
+              <Contact type="email" name={'Personal'} number={profile.email} />
               <View style={styles.separator} />
               <Social />
             </View>

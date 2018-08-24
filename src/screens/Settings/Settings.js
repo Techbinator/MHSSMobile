@@ -30,12 +30,8 @@ export default class Settings extends Component {
       <Container>
         <ImageBackground
           source={require('@assets/images/header2-bg.png')}
-          style={styles.container}>
-          <AppHeader
-            hasTabs
-            navigation={this.props.navigation}
-            title="Settings"
-          />
+          style={styles.background}>
+          <AppHeader navigation={this.props.navigation} title="Settings" />
           <Content
             paddershowsVerticalScrollIndicator={false}
             style={styles.content}>
@@ -71,7 +67,7 @@ export default class Settings extends Component {
               </Body>
               <Right>
                 <Text>USD($)</Text>
-                <Icon active name="arrow-forward" />
+                <Icon active name="ios-arrow-forward" />
               </Right>
             </ListItem>
             <ListItem noIndent icon>
@@ -85,7 +81,7 @@ export default class Settings extends Component {
               </Body>
               <Right>
                 <Text>Week</Text>
-                <Icon active name="arrow-forward" />
+                <Icon active name="ios-arrow-forward" />
               </Right>
             </ListItem>
             <ListItem noIndent icon>
@@ -99,7 +95,7 @@ export default class Settings extends Component {
               </Body>
               <Right>
                 <Text>Enabled</Text>
-                <Icon active name="arrow-forward" />
+                <Icon active name="ios-arrow-forward" />
               </Right>
             </ListItem>
 
@@ -114,7 +110,7 @@ export default class Settings extends Component {
                 <Text>John</Text>
               </Body>
               <Right>
-                <Icon active name="arrow-forward" />
+                <Icon active name="ios-arrow-forward" />
               </Right>
             </ListItem>
             <ListItem icon>
@@ -125,7 +121,7 @@ export default class Settings extends Component {
                 <Text>Marry</Text>
               </Body>
               <Right>
-                <Icon active name="arrow-forward" />
+                <Icon active name="ios-arrow-forward" />
               </Right>
             </ListItem>
 
@@ -142,7 +138,7 @@ export default class Settings extends Component {
                 <Text>FAQ</Text>
               </Body>
               <Right>
-                <Icon active name="arrow-forward" />
+                <Icon active name="ios-arrow-forward" />
               </Right>
             </ListItem>
             <ListItem noIndent icon>
@@ -155,7 +151,7 @@ export default class Settings extends Component {
                 <Text>Legal Agreements</Text>
               </Body>
               <Right>
-                <Icon active name="arrow-forward" />
+                <Icon active name="ios-arrow-forward" />
               </Right>
             </ListItem>
           </Content>

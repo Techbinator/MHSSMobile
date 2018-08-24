@@ -1,5 +1,5 @@
 export default {
-  container: {
+  background: {
     flex: 1,
     width: null,
     height: null,
