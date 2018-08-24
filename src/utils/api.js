@@ -8,7 +8,7 @@ API_URL = 'http://localhost:3004';
 API_REQUEST_TIMEOUT = 3000;
 
 // This sets the mock adapter on the default instance. comment this block if you are using a backend api (yarn server)
-var mock = new MockAdapter(axios, { delayResponse: 200 });
+var mock = new MockAdapter(axios, { delayResponse: 100 });
 
 mock.onGet('/auth').reply(200, profileData);
 mock.onPost('/auth').reply(200);

@@ -5,6 +5,7 @@ import { reduxForm, Field, getFormValues } from 'redux-form';
 import { ImageBackground, Switch, KeyboardAvoidingView } from 'react-native';
 import {
   Container,
+  Content,
   Text,
   Button,
   Icon,
@@ -90,152 +91,153 @@ class ExpenseForm extends React.Component {
     return (
       <Container>
         <ImageBackground
-          source={require('@assets/images/header-bg.png')}
+          source={require('@assets/images/header-bg-small.png')}
           style={styles.background}>
-          <AppHeader
-            style={{ flex: 0.5 }}
-            hasTabs
-            navigation={navigation}
-            title="Add Expense"
-          />
-          <KeyboardAvoidingView
-            style={styles.form.container}
-            behavior="padding"
-            enabled>
-            {addExpenseError && (
-              <Notification
-                message="Error adding a new expense!"
-                buttonText="Retry"
-                duration={5000}
-                position="top"
-                type="danger"
-              />
-            )}
-            <Form style={styles.form.content}>
-              <Field
-                name="amount"
-                label="Amount"
-                component={FormInput}
-                type="text"
-                validate={[required, isNumeric]}
-                autoCapitalize="none"
-                keyboardType="numeric"
-              />
-              <Field
-                name="title"
-                label="Expense title"
-                component={FormInput}
-                type="text"
-                validate={[required, alphaNumeric]}
-              />
-              <Field
-                last
-                name="category"
-                component={({
-                  input: { onChange, value },
-                  meta: { touched, error },
-                }) => {
-                  return (
-                    <Item style={styles.picker.container}>
-                      <Picker
-                        style={styles.picker.input}
-                        mode="dropdown"
-                        iosHeader="Select Category"
-                        placeholder="Category"
-                        placeholderStyle={styles.picker.placeholderText}
-                        placeholderIconColor="#95959A"
-                        itemStyle={styles.picker.itemStyle}
-                        itemTextStyle={styles.picker.itemTextStyle}
-                        iosIcon={<Icon name="arrow-down" />}
-                        selectedValue={value}
-                        onValueChange={value => {
-                          onChange(value);
-                        }}>
-                        {categories.map(item => {
-                          return (
-                            <Picker.Item
-                              key={item.id}
-                              label={item.name}
-                              value={item.id}
-                            />
-                          );
-                        })}
-                      </Picker>
-                      {touched &&
-                        error && <Text style={styles.formError}>{error}</Text>}
-                    </Item>
-                  );
-                }}
-                validate={[required]}
-              />
-              <Field
-                name="date"
-                component={({ input: { onChange } }) => {
-                  return (
-                    <DatePicker
-                      style={{ width: '100%' }}
-                      mode="date"
-                      placeholder="Date"
-                      confirmBtnText="Select"
-                      cancelBtnText="Cancel"
-                      customStyles={styles.datePicker}
-                      iconComponent={
-                        <Icon
-                          name="md-calendar"
-                          style={[styles.datePicker.dateIcon]}
-                        />
-                      }
-                      date={formValues.date}
-                      onDateChange={value => {
-                        onChange(value);
-                      }}
-                    />
-                  );
-                }}
-              />
-
-              <Field
-                name="permanent"
-                label="Every month"
-                component={({ input: { onChange } }) => {
-                  return (
-                    <View style={styles.switchContainer}>
-                      <Text style={styles.switchText}>Every month</Text>
-                      <Switch
-                        onTintColor={light}
-                        thumbTintColor={theme.brandPrimary}
-                        tintColor={theme.brandPrimary}
-                        value={formValues.permanent}
-                        onValueChange={value => {
+          <AppHeader navigation={navigation} title="Add Expense" />
+          <Content
+            paddershowsVerticalScrollIndicator={false}
+            style={styles.content}>
+            <KeyboardAvoidingView
+              style={styles.form.container}
+              behavior="padding"
+              enabled>
+              {addExpenseError && (
+                <Notification
+                  message="Error adding a new expense!"
+                  buttonText="Retry"
+                  duration={5000}
+                  position="top"
+                  type="danger"
+                />
+              )}
+              <Form style={styles.form.content}>
+                <Field
+                  name="amount"
+                  label="Amount"
+                  component={FormInput}
+                  type="text"
+                  validate={[required, isNumeric]}
+                  autoCapitalize="none"
+                  keyboardType="numeric"
+                />
+                <Field
+                  name="title"
+                  label="Expense title"
+                  component={FormInput}
+                  type="text"
+                  validate={[required, alphaNumeric]}
+                />
+                <Field
+                  last
+                  name="category"
+                  component={({
+                    input: { onChange, value },
+                    meta: { touched, error },
+                  }) => {
+                    return (
+                      <Item style={styles.picker.container}>
+                        <Picker
+                          style={styles.picker.input}
+                          mode="dropdown"
+                          iosHeader="Select Category"
+                          placeholder="Category"
+                          placeholderStyle={styles.picker.placeholderText}
+                          placeholderIconColor="#95959A"
+                          itemStyle={styles.picker.itemStyle}
+                          itemTextStyle={styles.picker.itemTextStyle}
+                          iosIcon={<Icon name="arrow-down" />}
+                          selectedValue={value}
+                          onValueChange={value => {
+                            onChange(value);
+                          }}>
+                          {categories.map(item => {
+                            return (
+                              <Picker.Item
+                                key={item.id}
+                                label={item.name}
+                                value={item.id}
+                              />
+                            );
+                          })}
+                        </Picker>
+                        {touched &&
+                          error && (
+                            <Text style={styles.formError}>{error}</Text>
+                          )}
+                      </Item>
+                    );
+                  }}
+                  validate={[required]}
+                />
+                <Field
+                  name="date"
+                  component={({ input: { onChange } }) => {
+                    return (
+                      <DatePicker
+                        style={{ width: '100%' }}
+                        mode="date"
+                        placeholder="Date"
+                        confirmBtnText="Select"
+                        cancelBtnText="Cancel"
+                        customStyles={styles.datePicker}
+                        iconComponent={
+                          <Icon
+                            name="md-calendar"
+                            style={[styles.datePicker.dateIcon]}
+                          />
+                        }
+                        date={formValues.date}
+                        onDateChange={value => {
                           onChange(value);
                         }}
                       />
-                    </View>
-                  );
-                }}
-              />
-              <Button
-                large
-                primary
-                block
-                style={styles.form.submitBtn}
-                onPress={handleSubmit(this._handleSubmit)}>
-                {addExpenseStarted ? (
-                  <Spinner color="#fff" />
-                ) : (
-                  <Text> Add </Text>
-                )}
-              </Button>
-            </Form>
-          </KeyboardAvoidingView>
-          <Footer>
-            <View>
-              <Button
-                transparent
-                onPress={() => navigation.navigate('Expenses')}>
-                <Text>Cancel</Text>
-              </Button>
-            </View>
+                    );
+                  }}
+                />
+                <Field
+                  name="permanent"
+                  label="Every month"
+                  component={({ input: { onChange } }) => {
+                    return (
+                      <View style={styles.switchContainer}>
+                        <Text style={styles.switchText}>Every month</Text>
+                        <Switch
+                          onTintColor={light}
+                          thumbTintColor={theme.brandPrimary}
+                          tintColor={theme.brandPrimary}
+                          value={formValues.permanent}
+                          onValueChange={value => {
+                            onChange(value);
+                          }}
+                        />
+                      </View>
+                    );
+                  }}
+                />
+              </Form>
+            </KeyboardAvoidingView>
+          </Content>
+          <Footer style={styles.footer}>
+            <Button
+              large
+              primary
+              block
+              style={styles.form.formBtn}
+              onPress={handleSubmit(this._handleSubmit)}>
+              {addExpenseStarted ? (
+                <Spinner color="#fff" />
+              ) : (
+                <Text> Add </Text>
+              )}
+            </Button>
+            <Button
+              transparent
+              large
+              block
+              style={styles.form.formBtn}
+              onPress={() => navigation.navigate('Expenses')}>
+              <Text>Cancel</Text>
+            </Button>
           </Footer>
         </ImageBackground>
       </Container>

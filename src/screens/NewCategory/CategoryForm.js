@@ -1,48 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { reduxForm, Field, getFormValues } from 'redux-form';
-import { KeyboardAvoidingView, ImageBackground, Platform } from 'react-native';
+import { reduxForm, Field, getFormValues, change, reset } from 'redux-form';
+import {
+  KeyboardAvoidingView,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
 import {
   Container,
+  Content,
   Text,
   Button,
   Icon,
   Form,
-  Item,
-  Picker,
   Footer,
   Spinner,
   View,
+  Row,
+  Col,
 } from 'native-base';
-import { Ionicons } from '@expo/vector-icons';
-import loadash from 'lodash';
 import AppHeader from '@components/AppHeader';
 import FormInput from '@components/FormInput';
 import Notification from '@components/Notification';
 import { required, alphaNumeric } from '@utils/validation';
+import IconExplorer from './IconExplorer';
 import * as actions from './behaviors';
 import * as categorySelectors from '@screens/NewCategory/selectors';
 import styles from './styles';
 
 const FORM_NAME = 'AddCategory';
-
-const ICON_SETS = loadash
-  .map(
-    {
-      Ionicons,
-    },
-    (component, name) => ({ name, component })
-  )
-  .map(iconSet => {
-    const glyphMap = iconSet.component.glyphMap;
-    iconSet.glyphs = loadash.values(
-      loadash.groupBy(Object.keys(glyphMap), name => glyphMap[name])
-    );
-    return iconSet;
-  });
-
-const iconSet = ICON_SETS[0];
 
 class CategoryForm extends React.Component {
   static propTypes = {
@@ -54,6 +41,7 @@ class CategoryForm extends React.Component {
       goBack: PropTypes.func.isRequired,
       navigate: PropTypes.func.isRequired,
     }),
+    dispatch: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     formValues: PropTypes.object,
   };
@@ -67,9 +55,27 @@ class CategoryForm extends React.Component {
     },
   };
 
+  state = {
+    showIconExplorer: false,
+    iconSelected: undefined,
+  };
+
+  _changeFormField = (field, value) => {
+    this.props.dispatch(change(FORM_NAME, field, value));
+  };
+
+  _onIconSelect = id => {
+    this.setState(() => ({
+      showIconExplorer: false,
+      iconSelected: id,
+    }));
+    this._changeFormField('iconName', id);
+  };
+
   _handleSubmit = values => {
     this.props.doAddCategory(values, () => {
       this.props.navigation.navigate('Categories');
+      this.props.dispatch(reset(FORM_NAME));
     });
   };
 
@@ -84,97 +90,74 @@ class CategoryForm extends React.Component {
     return (
       <Container>
         <ImageBackground
-          source={require('@assets/images/header-bg.png')}
+          source={require('@assets/images/header-bg-small.png')}
           style={styles.background}>
-          <AppHeader
-            style={{ flex: 0.5 }}
-            hasTabs
-            navigation={navigation}
-            title="Add Category"
-          />
-          <KeyboardAvoidingView
-            style={styles.form.container}
-            behavior="padding"
-            enabled>
-            {addCategoryError && (
-              <Notification
-                message="Error creating a new category!"
-                buttonText="Retry"
-                duration={5000}
-                position="top"
-                type="danger"
-              />
-            )}
-            <Form style={styles.form.content}>
-              <Field
-                name="name"
-                label="Name"
-                component={FormInput}
-                itemStyle={styles.formInput}
-                inputStyle={styles.formInput}
-                type="text"
-                validate={[required, alphaNumeric]}
-                autoCapitalize="none"
-              />
-              <Field
-                last
-                name="iconName"
-                component={({
-                  input: { onChange, value },
-                  meta: { touched, error },
-                }) => {
-                  return (
-                    <Item style={styles.picker.container}>
-                      <Picker
-                        style={styles.picker.input}
-                        mode="dropdown"
-                        iosHeader="Select Icon"
-                        placeholder="Select Icon"
-                        placeholderStyle={styles.picker.placeholderText}
-                        itemStyle={styles.picker.itemStyle}
-                        placeholderIconColor="#95959A"
-                        iosIcon={<Icon name="arrow-down" />}
-                        selectedValue={value}
-                        onValueChange={value => {
-                          onChange(value);
-                        }}>
-                        {iconSet.glyphs.map(item => {
-                          return (
-                            <Picker.Item
-                              key={item[0]}
-                              value={item[0]}
-                              label={
-                                Platform.OS === 'android' ? (
-                                  item[0]
-                                ) : (
-                                  <Icon
-                                    style={styles.picker.itemIconStyle}
-                                    name={item[0]}
-                                  />
-                                )
-                              }
-                            />
-                          );
-                        })}
-                      </Picker>
-                      {touched &&
-                        error && <Text style={styles.formError}>{error}</Text>}
-                    </Item>
-                  );
-                }}
-                validate={[required]}
-              />
-              {Platform.OS === 'android' && (
-                <Icon
-                  style={styles.picker.categoryIcon}
-                  name={formValues && formValues.iconName}
+          <AppHeader navigation={navigation} title="Add Category" />
+          <Content
+            paddershowsVerticalScrollIndicator={false}
+            style={styles.content}>
+            <KeyboardAvoidingView
+              style={styles.form.container}
+              behavior="padding"
+              enabled>
+              {addCategoryError && (
+                <Notification
+                  message="Error creating a new category!"
+                  buttonText="Retry"
+                  duration={5000}
+                  position="top"
+                  type="danger"
                 />
               )}
+              <Form style={styles.form.content}>
+                <Field
+                  name="name"
+                  label="Category Name"
+                  component={FormInput}
+                  itemStyle={styles.formInput}
+                  inputStyle={styles.formInput}
+                  type="text"
+                  validate={[required, alphaNumeric]}
+                  autoCapitalize="none"
+                />
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState(() => ({
+                      showIconExplorer: true,
+                    }));
+                  }}>
+                  <Row style={styles.iconSelect.container}>
+                    <Col size={7}>
+                      <Icon
+                        style={styles.iconSelect.categoryIcon}
+                        name={formValues && formValues.iconName}
+                      />
+                    </Col>
+                    <Col size={3}>
+                      <Text style={styles.iconSelect.text}>Select Icon</Text>
+                    </Col>
+                    <Col size={2}>
+                      <Icon
+                        active
+                        style={styles.iconSelect.icon}
+                        name="ios-arrow-down"
+                      />
+                    </Col>
+                  </Row>
+                </TouchableOpacity>
+              </Form>
+              {this.state.showIconExplorer && (
+                <IconExplorer onIconSelect={this._onIconSelect} />
+              )}
+            </KeyboardAvoidingView>
+          </Content>
+          <Footer style={styles.footer}>
+            <View>
               <Button
                 large
                 primary
                 block
-                style={styles.form.submitBtn}
+                style={styles.form.formBtn}
                 onPress={handleSubmit(this._handleSubmit)}>
                 {addCategoryStarted ? (
                   <Spinner color="#fff" />
@@ -182,12 +165,11 @@ class CategoryForm extends React.Component {
                   <Text> Add </Text>
                 )}
               </Button>
-            </Form>
-          </KeyboardAvoidingView>
-          <Footer>
-            <View>
               <Button
                 transparent
+                large
+                block
+                style={styles.form.formBtn}
                 onPress={() => navigation.navigate('Categories')}>
                 <Text>Cancel</Text>
               </Button>

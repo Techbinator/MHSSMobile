@@ -7,14 +7,9 @@ export default {
     width: null,
     height: null,
   },
-
-  header: {
-    container: {
-      flex: 1,
-      backgroundColor: '#FFF',
-    },
+  content: {
+    backgroundColor: '#FFF',
   },
-
   form: {
     container: {
       flex: 2,
@@ -28,31 +23,22 @@ export default {
       flex: 1,
       width: '100%',
     },
-    submitBtn: {
-      position: 'absolute',
-      bottom: 0,
+    formBtn: {
       width: '100%',
-      left: 0,
       borderRadius: 0,
     },
   },
 
   footer: {
-    linkText: {
-      opacity: 0.7,
-      fontSize: 14,
-      color: '#FFF',
-      textAlign: 'right',
-      marginRight: 0,
-      paddingRight: 0,
-    },
+    flexDirection: 'column',
+    height: 120,
   },
 
   picker: {
     container: {
       borderBottomWidth: 0,
       marginLeft: 0,
-      paddingLeft: Platform.OS === 'android' ? 10 : 0,
+      paddingLeft: Platform.OS === 'android' ? 8 : 0,
     },
     input: {
       height: 80,
@@ -72,7 +58,7 @@ export default {
   datePicker: {
     dateInput: {
       height: 70,
-      paddingLeft: 20,
+      paddingLeft: 15,
       borderColor: '#F6F6F6',
       borderWidth: 1,
       borderTopColor: '#F6F6F6',

@@ -29,8 +29,9 @@ export default function FormInput({
           }}
           {...input}
         />
+
+        {touched && error && <Text style={styles.formError}>{error}</Text>}
       </Item>
-      {touched && error && <Text style={styles.formError}>{error}</Text>}
     </React.Fragment>
   );
 }

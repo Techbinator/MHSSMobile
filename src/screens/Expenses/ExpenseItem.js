@@ -7,11 +7,12 @@ import styles from './styles';
 
 const ExpenseItem = ({ item, style, color }) => {
   const borderColor = color ? color : item.color;
+  const iconSize = style ? 2 : 1;
 
   return (
-    <View style={[{ borderColor: borderColor }, styles.item.content, style]}>
+    <View style={[styles.item.content, { borderColor: borderColor }, style]}>
       <Grid>
-        <Col size={2}>
+        <Col size={iconSize}>
           <Icon name={item.categoryIcon} style={styles.item.icon} />
         </Col>
         <Col size={7}>

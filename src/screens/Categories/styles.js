@@ -1,11 +1,10 @@
-const React = require('react-native');
-const { Dimensions } = React;
+import { Dimensions } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
 export default {
-  container: {
+  background: {
     flex: 1,
     width: null,
     height: null,

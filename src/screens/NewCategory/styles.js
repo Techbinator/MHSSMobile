@@ -1,4 +1,6 @@
-import { Platform } from 'react-native';
+import { Platform, Dimensions } from 'react-native';
+const deviceWidth = Dimensions.get('window').width;
+
 import theme from '@theme/variables/mmoney';
 
 export default {
@@ -7,14 +9,9 @@ export default {
     width: null,
     height: null,
   },
-
-  header: {
-    container: {
-      flex: 1,
-      backgroundColor: '#FFF',
-    },
+  content: {
+    backgroundColor: '#FFF',
   },
-
   form: {
     container: {
       flex: 2,
@@ -28,13 +25,32 @@ export default {
       flex: 1,
       width: '100%',
     },
-    submitBtn: {
-      position: 'absolute',
-      bottom: 0,
+    formBtn: {
       width: '100%',
-      left: 0,
       borderRadius: 0,
     },
+  },
+
+  iconExplorer: {
+    container: {
+      justifyContent: 'center',
+      height: 70,
+      width: deviceWidth / 6,
+      backgroundColor: '#FFF',
+      borderBottomWidth: 1,
+      borderRightWidth: 1,
+      borderColor: '#ddd',
+    },
+    icon: {
+      fontSize: 35,
+      alignSelf: 'center',
+      color: theme.dropdownLinkColor,
+    },
+  },
+
+  footer: {
+    flexDirection: 'column',
+    height: 120,
   },
 
   formError: {
@@ -44,45 +60,26 @@ export default {
     textAlign: 'right',
   },
 
-  footer: {
-    linkText: {
-      opacity: 0.7,
-      fontSize: 14,
-      color: '#FFF',
-      textAlign: 'right',
-      marginRight: 0,
-      paddingRight: 0,
-    },
-  },
-
-  picker: {
+  iconSelect: {
     container: {
-      borderBottomWidth: 0,
-      marginLeft: 0,
-      paddingLeft: Platform.OS === 'android' ? 10 : 0,
-    },
-    input: {
-      height: 80,
-    },
-    placeholderText: {
-      color: theme.inputColorPlaceholder,
-      fontSize: theme.DefaultFontSize,
-    },
-    itemStyle: {
-      backgroundColor: '#FFF',
-    },
-    itemTextStyle: {
-      color: theme.dropdownLinkColor,
-    },
-    itemIconStyle: {
-      fontSize: 30,
-      color: theme.dropdownLinkColor,
-      paddingLeft: 40,
+      paddingLeft: 15,
+      alignItems: 'center',
+      flexDirection: 'row',
+      width: '100%',
     },
     categoryIcon: {
-      alignSelf: 'center',
-      fontSize: 60,
+      fontSize: 50,
       color: theme.dropdownLinkColor,
+      alignSelf: 'flex-start',
+    },
+    text: {
+      alignSelf: 'flex-end',
+      color: theme.inputColorPlaceholder,
+    },
+    icon: {
+      alignSelf: 'flex-end',
+      marginRight: 5,
+      color: theme.inputColorPlaceholder,
     },
   },
 };

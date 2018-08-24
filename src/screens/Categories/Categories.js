@@ -50,7 +50,7 @@ class Categories extends Component {
       <Container>
         <ImageBackground
           source={require('@assets/images/header-bg.png')}
-          style={styles.container}>
+          style={styles.background}>
           <AppHeader
             hasTabs
             navigation={navigation}
