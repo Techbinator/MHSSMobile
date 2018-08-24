@@ -24,7 +24,6 @@ const Drawer = createDrawerNavigator(
     Search: { screen: Search },
     Settings: { screen: Settings },
     Profile: { screen: Profile },
-    SignIn: { screen: SignIn },
   },
   {
     initialRouteName: 'Expenses',

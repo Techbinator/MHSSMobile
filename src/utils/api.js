@@ -15,6 +15,7 @@ mock.onPost('/auth').reply(200);
 mock.onGet('/password').reply(200);
 mock.onGet('/expenses').reply(200, expensesData);
 mock.onGet('/expenses?q=data&&_page=1&_limit=15').reply(200, expensesData);
+mock.onGet('/expenses/export').reply(200, expensesData);
 mock.onGet('/categories').reply(200, categoriesData);
 mock.onPost('/categories').reply(200);
 mock.onPost('/expenses').reply(200);

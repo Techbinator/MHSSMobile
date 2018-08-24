@@ -7,29 +7,19 @@ import styles from './styles';
 const SearchHeader = props => {
   return (
     <View style={styles.searchHeader.container}>
-      <Grid>
-        <Col size={2}>
-          <View>
-            <Item>
-              <Input placeholder="Search" />
-              <Button light transparent onPress={() => props.onSearch()}>
-                <Icon name="ios-search" />
-              </Button>
-            </Item>
-          </View>
-        </Col>
-        <Col size={1}>
-          <Button
-            rounded
-            primary
-            block
-            small
-            style={styles.searchHeader.exportBtn}
-            onPress={() => props.onExport()}>
-            <Text>Export</Text>
-          </Button>
-        </Col>
-      </Grid>
+      <Item style={styles.searchHeader.content}>
+        <Input
+          placeholderTextColor="rgba(255, 255, 255, 0.7)"
+          style={styles.searchHeader.input}
+          placeholder="Search"
+        />
+        <Button transparent onPress={() => props.onSearch()}>
+          <Icon name="search" />
+        </Button>
+        <Button transparent onPress={() => props.onExport()}>
+          <Icon name="download" />
+        </Button>
+      </Item>
     </View>
   );
 };

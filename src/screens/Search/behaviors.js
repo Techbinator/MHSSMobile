@@ -14,6 +14,7 @@ const initialState = {
   searching: true,
   searchError: false,
   exporting: true,
+  exportSucess: false,
   exportError: false,
 };
 
@@ -35,13 +36,28 @@ export default function(state = initialState, action) {
       return { ...state, searching: false, searchError: true };
     }
     case EXPENSES_EXPORT_START: {
-      return { ...state, exporting: true, exportError: false };
+      return {
+        ...state,
+        exporting: true,
+        exportSucess: false,
+        exportError: false,
+      };
     }
     case EXPENSES_EXPORT_SUCCESS: {
-      return { ...state, exporting: false, exportError: false };
+      return {
+        ...state,
+        exporting: false,
+        exportSucess: true,
+        exportError: false,
+      };
     }
     case EXPENSES_EXPORT_ERROR: {
-      return { ...state, exporting: false, exportError: true };
+      return {
+        ...state,
+        exporting: false,
+        exportSucess: false,
+        exportError: true,
+      };
     }
     default:
       return state;

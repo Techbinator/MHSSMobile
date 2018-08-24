@@ -12,19 +12,16 @@ export default {
   },
   sectionHeader: {
     container: {
-      backgroundColor: '#999999',
       paddingLeft: 0,
     },
     text: {
       textAlign: 'left',
-      color: '#FFF',
-      fontSize: 20,
     },
     caret: {
       position: 'absolute',
       left: 20,
       bottom: -20,
-      color: '#999999',
+      color: '#F4F4F4',
     },
   },
   expense: {
@@ -34,19 +31,24 @@ export default {
       marginTop: 0,
       borderLeftWidth: 0,
       borderRightWidth: 0,
+      borderBottomWidth: 0.7,
+      borderColor: '#ddd',
     },
-    odd: {
-      backgroundColor: '#E4E4E4',
+    content: {
+      paddingTop: 14,
+      paddingBottom: 14,
     },
-    title: {},
+    title: {
+      fontSize: 14,
+    },
     amount: {
       marginRight: 10,
+      fontSize: 14,
     },
-    label: {},
-    actions: {
-      container: {},
+    detailText: {
+      fontSize: 12,
+      color: '#777',
     },
-    detailText: {},
   },
   searchHeader: {
     container: {
@@ -54,13 +56,23 @@ export default {
       borderTopWidth: 0,
       borderBottomWidth: 0,
       borderRightWidth: 0,
-      height: 60,
-      backgroundColor: '#FFF',
+      marginTop: 10,
+      marginBottom: 10,
+      height: 50,
+    },
+    content: {
+      backgroundColor: 'rgba(255,255,255,0.3)',
+      marginBottom: 8,
+      borderWidth: 0,
+      borderColor: 'transparent',
+    },
+    input: {
+      color: '#FFF',
+      paddingLeft: 30,
     },
     exportBtn: {
       alignSelf: 'flex-end',
-      marginTop: 10,
-      marginBottom: 5,
+      marginBottom: 10,
       marginRight: 5,
       height: 30,
     },

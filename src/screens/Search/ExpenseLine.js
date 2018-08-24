@@ -50,7 +50,7 @@ class ExpenseLine extends React.Component {
 
     return (
       <Card transparent style={style.expense.container}>
-        <CardItem style={innerStyle}>
+        <CardItem style={style.expense.content}>
           <Body>
             <Text style={style.expense.title}>{expense.title}</Text>
           </Body>
@@ -68,7 +68,7 @@ class ExpenseLine extends React.Component {
           </Right>
         </CardItem>
         {this.state.opened && (
-          <CardItem style={innerStyle}>
+          <CardItem style={style.expense.content}>
             <Body>
               <Grid>
                 <Col>

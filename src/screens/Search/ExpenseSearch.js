@@ -5,6 +5,7 @@ import { ImageBackground } from 'react-native';
 import { Container, Content } from 'native-base';
 import { connect } from 'react-redux';
 import AppHeader from '@components/AppHeader';
+import Notification from '@components/Notification';
 import SearchHeader from './SearchHeader';
 import ExpensesResultList from './ExpensesResultList';
 
@@ -23,6 +24,7 @@ class ExpenseSearch extends Component {
     doExport: PropTypes.func.isRequired,
     exporting: PropTypes.bool.isRequired,
     exportError: PropTypes.bool.isRequired,
+    exportSuccess: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -34,6 +36,7 @@ class ExpenseSearch extends Component {
     searchError: false,
     exporting: false,
     exportError: false,
+    exportSuccess: false,
   };
 
   static getDerivedStateFromProps(props) {
@@ -61,7 +64,7 @@ class ExpenseSearch extends Component {
   };
 
   render() {
-    const { navigation, searching } = this.props;
+    const { navigation, searching, exportSuccess } = this.props;
     const { expenses } = this.state;
     return (
       <Container>
@@ -73,10 +76,17 @@ class ExpenseSearch extends Component {
             onSearch={this.props.doSearch}
             onExport={this.props.doExport}
           />
-
           <Content
             showsVerticalScrollIndicator={false}
             style={{ backgroundColor: '#fff' }}>
+            {exportSuccess && (
+              <Notification
+                message="Data successfully exported"
+                duration={3000}
+                position="top"
+                type="success"
+              />
+            )}
             <ExpensesResultList
               navigation={navigation}
               expensesList={expenses}
@@ -94,6 +104,7 @@ const mapStateToProps = state => ({
   searching: searchSelectors.getSearchingState(state),
   searchError: searchSelectors.getSearchErrorState(state),
   exporting: searchSelectors.getExportingState(state),
+  exportSuccess: searchSelectors.getExportSuccessState(state),
   exportError: searchSelectors.getExportErrorState(state),
 });
 
