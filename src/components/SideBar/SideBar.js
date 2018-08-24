@@ -22,17 +22,17 @@ class SideBar extends Component {
     selected: '',
   };
 
-  _onPressItem = id => {
+  onPressItem = route => {
     this.setState(() => ({
-      selected: id,
+      selected: route,
     }));
-    this.props.navigation.navigate(id);
+    this.props.navigation.navigate(route);
   };
 
-  _renderMenuItem = ({ item }) => (
+  renderMenuItem = ({ item }) => (
     <MenuItem
       id={item.route}
-      onPressItem={this._onPressItem}
+      onPressItem={this.onPressItem}
       selected={this.state.selected === item.route}
       title={item.title}
       icon={item.icon}
@@ -74,7 +74,7 @@ class SideBar extends Component {
           <FlatList
             data={routes}
             extraData={this.state}
-            renderItem={this._renderMenuItem}
+            renderItem={this.renderMenuItem}
             keyExtractor={item => item.route}
           />
         </Content>

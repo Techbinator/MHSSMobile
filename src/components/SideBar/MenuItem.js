@@ -4,7 +4,7 @@ import { ListItem, Text, Icon } from 'native-base';
 
 import styles from './styles';
 class MenuItem extends React.PureComponent {
-  _onPress = () => {
+  onPress = () => {
     this.props.onPressItem(this.props.id);
   };
 
@@ -13,7 +13,7 @@ class MenuItem extends React.PureComponent {
       ? [styles.menuItem.container, styles.menuItem.selected]
       : styles.menuItem.container;
     return (
-      <ListItem onPress={this._onPress} style={itemStyle}>
+      <ListItem onPress={this.onPress} style={itemStyle}>
         <Icon name={this.props.icon} style={styles.menuItem.icon} />
         <Text style={styles.menuItem.title}>{this.props.title}</Text>
       </ListItem>

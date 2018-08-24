@@ -43,7 +43,7 @@ class ResetPassword extends Component {
     resetPasswordError: false,
   };
 
-  _handleSubmit = values => {
+  handleSubmit = values => {
     this.props.doResetPassword(values.email, () => {
       this.props.navigation.goBack();
     });
@@ -100,7 +100,7 @@ class ResetPassword extends Component {
                 primary
                 block
                 style={styles.form.submitBtn}
-                onPress={handleSubmit(this._handleSubmit)}>
+                onPress={handleSubmit(this.handleSubmit)}>
                 {resetPasswordStarted ? (
                   <Spinner color="#fff" />
                 ) : (

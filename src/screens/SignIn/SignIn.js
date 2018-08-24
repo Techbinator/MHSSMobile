@@ -46,7 +46,7 @@ class SignIn extends Component {
     loginError: false,
   };
 
-  _handleSubmit = values => {
+  handleSubmit = values => {
     this.props.doLogin(values.username, values.password, () => {
       this.props.navigation.dispatch(
         StackActions.reset({
@@ -113,7 +113,7 @@ class SignIn extends Component {
                 primary
                 block
                 style={styles.form.submitBtn}
-                onPress={handleSubmit(this._handleSubmit)}>
+                onPress={handleSubmit(this.handleSubmit)}>
                 {loginStarted ? (
                   <Spinner color="#fff" />
                 ) : (

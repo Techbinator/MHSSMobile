@@ -33,14 +33,14 @@ class Walkthrough extends Component {
           {index < 2 ? (
             <Button
               transparent
-              onPress={() => this._carousel.snapToNext()}
+              onPress={() => this.carousel.snapToNext()}
               style={styles.slide.btnWrapper}>
               <Text style={styles.slide.btnText}>Next</Text>
             </Button>
           ) : (
             <Button
               transparent
-              onPress={() => this._carousel.snapToPrev()}
+              onPress={() => this.carousel.snapToPrev()}
               style={styles.slide.btnWrapper}>
               <Text style={styles.slide.btnText}>Previous</Text>
             </Button>
@@ -58,7 +58,7 @@ class Walkthrough extends Component {
           style={styles.background}>
           <Content>
             <Carousel
-              ref={c => (this._carousel = c)}
+              ref={c => (this.carousel = c)}
               data={entries}
               renderItem={this.renderSlide}
               sliderWidth={deviceWidth}

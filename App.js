@@ -23,10 +23,10 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    this._loadFonts();
+    this.loadFonts();
   }
 
-  async _loadFonts() {
+  async loadFonts() {
     await Font.loadAsync({
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
       Roboto_light: require('./assets/fonts/Roboto-Light.ttf'),
@@ -37,7 +37,7 @@ export default class App extends React.Component {
     this.setState({ fontLoaded: true });
   }
 
-  async _cacheResourcesAsync() {
+  async cacheResourcesAsync() {
     const images = [
       require('./assets/images/splash.png'),
       require('./assets/images/logo.png'),
@@ -65,7 +65,7 @@ export default class App extends React.Component {
     ) {
       return (
         <AppLoading
-          startAsync={this._cacheResourcesAsync}
+          startAsync={this.cacheResourcesAsync}
           onFinish={() => this.setState({ isReady: true })}
           onError={console.warn}
         />

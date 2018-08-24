@@ -31,7 +31,7 @@ class ExpenseLine extends React.Component {
     opened: false,
   };
 
-  _toggleOpenStatus = () => {
+  toggleOpenStatus = () => {
     this.setState(state => ({
       opened: !state.opened,
     }));
@@ -60,7 +60,7 @@ class ExpenseLine extends React.Component {
                 {formatAmount(expense.amount)}
               </Text>
               <TouchableHighlight
-                onPress={this._toggleOpenStatus}
+                onPress={this.toggleOpenStatus}
                 underlayColor="transparent">
                 <Icon name={toggleIconName} style={{ fontSize: 20 }} />
               </TouchableHighlight>

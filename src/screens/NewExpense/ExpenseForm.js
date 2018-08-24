@@ -73,7 +73,7 @@ class ExpenseForm extends React.Component {
     this.props.loadCategories();
   };
 
-  _handleSubmit = values => {
+  handleSubmit = values => {
     this.props.doAddExpense(values, () => {
       this.props.navigation.navigate('Expenses');
     });
@@ -223,7 +223,7 @@ class ExpenseForm extends React.Component {
               primary
               block
               style={styles.form.formBtn}
-              onPress={handleSubmit(this._handleSubmit)}>
+              onPress={handleSubmit(this.handleSubmit)}>
               {addExpenseStarted ? (
                 <Spinner color="#fff" />
               ) : (

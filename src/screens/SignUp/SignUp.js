@@ -53,7 +53,7 @@ class SignUp extends Component {
     signupError: false,
   };
 
-  _handleSubmit = values => {
+  handleSubmit = values => {
     this.props.doSignUp(values, () => {
       this.props.navigation.goBack();
     });
@@ -132,7 +132,7 @@ class SignUp extends Component {
               primary
               block
               style={styles.form.submitBtn}
-              onPress={handleSubmit(this._handleSubmit)}>
+              onPress={handleSubmit(this.handleSubmit)}>
               {signupStarted ? (
                 <Spinner color="#fff" />
               ) : (

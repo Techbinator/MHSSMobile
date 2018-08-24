@@ -60,19 +60,19 @@ class CategoryForm extends React.Component {
     iconSelected: undefined,
   };
 
-  _changeFormField = (field, value) => {
+  changeFormField = (field, value) => {
     this.props.dispatch(change(FORM_NAME, field, value));
   };
 
-  _onIconSelect = id => {
+  onIconSelect = id => {
     this.setState(() => ({
       showIconExplorer: false,
       iconSelected: id,
     }));
-    this._changeFormField('iconName', id);
+    this.changeFormField('iconName', id);
   };
 
-  _handleSubmit = values => {
+  handleSubmit = values => {
     this.props.doAddCategory(values, () => {
       this.props.navigation.navigate('Categories');
       this.props.dispatch(reset(FORM_NAME));
@@ -147,7 +147,7 @@ class CategoryForm extends React.Component {
                 </TouchableOpacity>
               </Form>
               {this.state.showIconExplorer && (
-                <IconExplorer onIconSelect={this._onIconSelect} />
+                <IconExplorer onIconSelect={this.onIconSelect} />
               )}
             </KeyboardAvoidingView>
           </Content>
@@ -158,7 +158,7 @@ class CategoryForm extends React.Component {
                 primary
                 block
                 style={styles.form.formBtn}
-                onPress={handleSubmit(this._handleSubmit)}>
+                onPress={handleSubmit(this.handleSubmit)}>
                 {addCategoryStarted ? (
                   <Spinner color="#fff" />
                 ) : (
