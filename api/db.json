@@ -15,7 +15,7 @@
       "id": "1",
       "name": "School",
       "iconName": "ios-school-outline",
-      "percent": 75,
+      "percent": 70,
       "amount": 375
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "id": "3",
-      "name": "Food",
+      "name": "Eating Out",
       "iconName": "ios-restaurant-outline",
       "amount": 175,
       "percent": 25
@@ -40,9 +40,16 @@
       "amount": 145
     },
     {
+      "id": "10",
+      "name": "Transport",
+      "iconName": "ios-car-outline",
+      "percent": 22,
+      "amount": 150
+    },
+    {
       "id": "5",
-      "name": "Clothes",
-      "iconName": "ios-shirt-outline",
+      "name": "Shopping",
+      "iconName": "ios-basket",
       "percent": 12,
       "amount": 110
     },
@@ -69,15 +76,8 @@
     },
     {
       "id": "9",
-      "name": "Shopping",
-      "iconName": "ios-basket",
-      "percent": 5,
-      "amount": 50
-    },
-    {
-      "id": "10",
-      "name": "Car",
-      "iconName": "ios-car-outline",
+      "name": "Clothes",
+      "iconName": "ios-shirt-outline",
       "percent": 5,
       "amount": 50
     }

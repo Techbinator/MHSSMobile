@@ -66,7 +66,7 @@ export default function(state = initialState, action) {
  */
 export function doAddExpense(values, onSuccess) {
   const data = {
-    amount: values.amount,
+    amount: Number(values.amount),
     title: values.title,
     category: values.category,
     date: values.date,

@@ -19,12 +19,15 @@ export class ExpensesCarousel extends React.Component {
     navigation: PropTypes.any,
   };
 
-  getCategoriesDataForChart = () =>
+  getCategoriesDataForChart = formatLabel =>
     this.props.categories.map(obj => {
+      label = formatLabel
+        ? obj.name + '\n(' + obj.percent + '%)'
+        : obj.name + '(' + obj.percent + '%)';
       return {
         x: obj.name,
         y: obj.amount,
-        label: obj.name + '(' + obj.percent + '%)',
+        label: label,
       };
     });
 
@@ -73,7 +76,7 @@ export class ExpensesCarousel extends React.Component {
           </View>
           <View style={styles.slides}>
             <Text style={styles.chartTitle}>Expenses By Categories</Text>
-            <PieChart data={this.getCategoriesDataForChart()} />
+            <PieChart data={this.getCategoriesDataForChart(true)} />
           </View>
           <View style={styles.slides}>
             <Text style={styles.chartTitle}>Expenses By Categories</Text>

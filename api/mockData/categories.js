@@ -28,6 +28,13 @@ export const categoriesData = [
     amount: 145,
   },
   {
+    id: '10',
+    name: 'Transport',
+    iconName: 'ios-car-outline',
+    percent: 22,
+    amount: 150,
+  },
+  {
     id: '5',
     name: 'Shopping',
     iconName: 'ios-basket',
@@ -59,13 +66,6 @@ export const categoriesData = [
     id: '9',
     name: 'Clothes',
     iconName: 'ios-shirt-outline',
-    percent: 5,
-    amount: 50,
-  },
-  {
-    id: '10',
-    name: 'Transport',
-    iconName: 'ios-car-outline',
     percent: 5,
     amount: 50,
   },

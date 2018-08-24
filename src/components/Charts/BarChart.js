@@ -12,7 +12,7 @@ class BarChart extends Component {
         <VictoryBar
           horizontal
           width={deviceWidth - 20}
-          padding={{ top: 40, bottom: 40, left: 10, right: 40 }}
+          padding={{ top: 40, bottom: 40, left: 10, right: 60 }}
           style={{
             data: { fill: theme.brandInfo },
             labels: { fontSize: '10' },
