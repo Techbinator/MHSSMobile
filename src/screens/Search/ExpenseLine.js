@@ -15,7 +15,7 @@ import {
 } from 'native-base';
 import { formatAmount } from '@utils/formatters';
 
-import style from './styles';
+import styles from './styles';
 
 class ExpenseLine extends React.Component {
   static propTypes = {
@@ -40,23 +40,26 @@ class ExpenseLine extends React.Component {
   render() {
     const {
       item: { ...expense },
-      index,
     } = this.props;
 
     const toggleIconName = this.state.opened
       ? 'ios-arrow-up'
       : 'ios-arrow-down';
-    const innerStyle = index % 2 === 0 ? {} : style.expense.odd;
 
     return (
-      <Card transparent style={style.expense.container}>
-        <CardItem style={style.expense.content}>
+      <Card transparent style={styles.expense.container}>
+        <CardItem style={styles.expense.content}>
           <Body>
-            <Text style={style.expense.title}>{expense.title}</Text>
+            <Text style={styles.expense.title}>{expense.title}</Text>
           </Body>
           <Right>
             <View style={{ flexDirection: 'row' }}>
-              <Text style={style.expense.amount}>
+              <Text
+                style={
+                  expense.amount < 0
+                    ? styles.expense.expenseAmount
+                    : styles.expense.incomeAmount
+                }>
                 {formatAmount(expense.amount)}
               </Text>
               <TouchableHighlight
@@ -68,30 +71,30 @@ class ExpenseLine extends React.Component {
           </Right>
         </CardItem>
         {this.state.opened && (
-          <CardItem style={style.expense.content}>
+          <CardItem style={styles.expense.content}>
             <Body>
               <Grid>
                 <Col>
-                  <Text style={style.expense.detailText}>Date</Text>
+                  <Text style={styles.expense.detailText}>Date</Text>
                 </Col>
                 <Col>
-                  <Text style={style.expense.detailText}>{expense.date}</Text>
-                </Col>
-              </Grid>
-              <Grid>
-                <Col>
-                  <Text style={style.expense.detailText}>Type</Text>
-                </Col>
-                <Col>
-                  <Text style={style.expense.detailText}>{expense.type}</Text>
+                  <Text style={styles.expense.detailText}>{expense.date}</Text>
                 </Col>
               </Grid>
               <Grid>
                 <Col>
-                  <Text style={style.expense.detailText}>Amount</Text>
+                  <Text style={styles.expense.detailText}>Type</Text>
                 </Col>
                 <Col>
-                  <Text style={style.expense.detailText}>
+                  <Text style={styles.expense.detailText}>{expense.type}</Text>
+                </Col>
+              </Grid>
+              <Grid>
+                <Col>
+                  <Text style={styles.expense.detailText}>Amount</Text>
+                </Col>
+                <Col>
+                  <Text style={styles.expense.detailText}>
                     {expense.amount}$
                   </Text>
                 </Col>

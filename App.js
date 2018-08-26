@@ -67,7 +67,6 @@ export default class App extends React.Component {
         <AppLoading
           startAsync={this.cacheResourcesAsync}
           onFinish={() => this.setState({ isReady: true })}
-          onError={console.warn}
         />
       );
     }

@@ -1,4 +1,4 @@
-import { Platform, Dimensions } from 'react-native';
+import { Dimensions } from 'react-native';
 const deviceHeight = Dimensions.get('window').height;
 
 import theme from '@theme/variables/mmoney';
@@ -19,25 +19,27 @@ export default {
   item: {
     container: {
       flex: 1,
+      elevation: 0,
       paddingTop: 0,
       paddingBottom: 0,
       paddingRight: 0,
       paddingLeft: 0,
       borderRightWidth: 0,
       borderTopWidth: 0,
-      borderBottomWidth: 0,
+      borderBottomWidth: 0.3,
+      borderBottomColor: '#ddd',
       borderLeftWidth: 0,
     },
     content: {
       flex: 1,
-      elevation: 1,
+      elevation: 0,
+      flexDirection: 'column',
+      padding: 20,
       borderLeftWidth: 5,
       borderRightWidth: 0,
       borderTopWidth: 0,
       borderBottomWidth: 0,
       borderRadius: 0,
-      flexDirection: 'column',
-      padding: 20,
     },
     icon: {
       fontSize: 25,

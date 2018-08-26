@@ -1,9 +1,4 @@
-import React from 'react-native';
 import theme from '@theme/variables/mmoney';
-
-const { Dimensions } = React;
-const deviceHeight = Dimensions.get('window').height;
-const deviceWidth = Dimensions.get('window').width;
 
 export default {
   background: {

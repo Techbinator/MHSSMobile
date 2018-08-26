@@ -1,9 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Button, ListItem } from 'native-base';
-import mockStore from 'redux-mock-store';
-import getElementWithContext from 'react-test-context-provider';
-
+import { TouchableOpacity } from 'react-native';
+import { Content } from 'native-base';
 import Sidebar from '../index';
 
 it('renders correctly', () => {
@@ -19,7 +17,8 @@ it('navigates to the sub routes', () => {
   };
   const testRenderer = renderer.create(<Sidebar {...props} />);
   const instance = testRenderer.root;
-  const listItems = instance.findAllByType(ListItem);
+  const content = instance.findByType(Content);
+  const listItems = content.findAllByType(TouchableOpacity);
 
   listItems.forEach(item => item.props.onPress());
 

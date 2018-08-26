@@ -1,5 +1,6 @@
 import { Dimensions } from 'react-native';
 const deviceHeight = Dimensions.get('window').height;
+import theme from '@theme/variables/mmoney';
 
 export default {
   container: {
@@ -40,10 +41,17 @@ export default {
     },
     title: {
       fontSize: 14,
+      color: '#777',
     },
-    amount: {
+    expenseAmount: {
       marginRight: 10,
       fontSize: 14,
+      color: theme.brandPrimary,
+    },
+    incomeAmount: {
+      marginRight: 10,
+      fontSize: 14,
+      color: theme.brandSuccess,
     },
     detailText: {
       fontSize: 12,
@@ -70,11 +78,8 @@ export default {
       color: '#FFF',
       paddingLeft: 30,
     },
-    exportBtn: {
-      alignSelf: 'flex-end',
-      marginBottom: 10,
-      marginRight: 5,
-      height: 30,
+    btnIcon: {
+      color: '#FFF',
     },
   },
 };

@@ -34,12 +34,12 @@
       "assets/",
       "config/",
       "src/theme",
-      "style.js"
+      "styles.js"
     ],
     "coveragePathIgnorePatterns": [
       "node_modules/",
       "src/theme",
-      "style.js"
+      "styles.js"
     ]
   },
   "devDependencies": {

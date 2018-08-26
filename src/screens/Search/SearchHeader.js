@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, Button, View, Grid, Col, Item, Icon, Input } from 'native-base';
+import { Button, View, Item, Icon, Input } from 'native-base';
 
 import styles from './styles';
 
@@ -14,10 +14,10 @@ const SearchHeader = props => {
           placeholder="Search"
         />
         <Button transparent onPress={() => props.onSearch()}>
-          <Icon name="search" />
+          <Icon style={styles.searchHeader.btnIcon} name="search" />
         </Button>
         <Button transparent onPress={() => props.onExport()}>
-          <Icon name="download" />
+          <Icon style={styles.searchHeader.btnIcon} name="download" />
         </Button>
       </Item>
     </View>

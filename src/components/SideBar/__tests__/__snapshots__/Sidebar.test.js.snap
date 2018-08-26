@@ -289,60 +289,44 @@ exports[`renders correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              style={null}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomWidth": 0.8,
+                  "borderColor": "rgba(29, 29, 38, 0.1)",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
             >
-              <View
-                onPress={[Function]}
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "backgroundColor": "transparent",
-                      "borderBottomWidth": 0.5,
-                      "borderColor": "#c9c9c9",
-                      "flexDirection": "row",
-                      "marginLeft": 16,
-                      "paddingBottom": 13,
-                      "paddingRight": 16,
-                      "paddingTop": 13,
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
                     },
                     Object {
-                      "borderColor": "rgba(29, 29, 38, 0.1)",
-                      "flexDirection": "row",
-                      "marginLeft": 0,
-                      "paddingLeft": 15,
+                      "color": "#444",
+                      "fontFamily": "Roboto_light",
                     },
                   ]
                 }
+                uppercase={false}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Array [
-                      Object {
-                        "alignSelf": "center",
-                        "color": "#000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "#444",
-                        "fontFamily": "Roboto_light",
-                      },
-                    ]
-                  }
-                  uppercase={false}
-                >
-                  My Expenses
-                </Text>
-              </View>
+                My Expenses
+              </Text>
             </View>
           </View>
           <View
@@ -358,60 +342,44 @@ exports[`renders correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              style={null}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomWidth": 0.8,
+                  "borderColor": "rgba(29, 29, 38, 0.1)",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
             >
-              <View
-                onPress={[Function]}
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "backgroundColor": "transparent",
-                      "borderBottomWidth": 0.5,
-                      "borderColor": "#c9c9c9",
-                      "flexDirection": "row",
-                      "marginLeft": 16,
-                      "paddingBottom": 13,
-                      "paddingRight": 16,
-                      "paddingTop": 13,
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
                     },
                     Object {
-                      "borderColor": "rgba(29, 29, 38, 0.1)",
-                      "flexDirection": "row",
-                      "marginLeft": 0,
-                      "paddingLeft": 15,
+                      "color": "#444",
+                      "fontFamily": "Roboto_light",
                     },
                   ]
                 }
+                uppercase={false}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Array [
-                      Object {
-                        "alignSelf": "center",
-                        "color": "#000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "#444",
-                        "fontFamily": "Roboto_light",
-                      },
-                    ]
-                  }
-                  uppercase={false}
-                >
-                  Categories
-                </Text>
-              </View>
+                Categories
+              </Text>
             </View>
           </View>
           <View
@@ -427,60 +395,44 @@ exports[`renders correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              style={null}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomWidth": 0.8,
+                  "borderColor": "rgba(29, 29, 38, 0.1)",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
             >
-              <View
-                onPress={[Function]}
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "backgroundColor": "transparent",
-                      "borderBottomWidth": 0.5,
-                      "borderColor": "#c9c9c9",
-                      "flexDirection": "row",
-                      "marginLeft": 16,
-                      "paddingBottom": 13,
-                      "paddingRight": 16,
-                      "paddingTop": 13,
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
                     },
                     Object {
-                      "borderColor": "rgba(29, 29, 38, 0.1)",
-                      "flexDirection": "row",
-                      "marginLeft": 0,
-                      "paddingLeft": 15,
+                      "color": "#444",
+                      "fontFamily": "Roboto_light",
                     },
                   ]
                 }
+                uppercase={false}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Array [
-                      Object {
-                        "alignSelf": "center",
-                        "color": "#000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "#444",
-                        "fontFamily": "Roboto_light",
-                      },
-                    ]
-                  }
-                  uppercase={false}
-                >
-                  Expenses Analytics
-                </Text>
-              </View>
+                Expenses Analytics
+              </Text>
             </View>
           </View>
           <View
@@ -496,60 +448,44 @@ exports[`renders correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              style={null}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomWidth": 0.8,
+                  "borderColor": "rgba(29, 29, 38, 0.1)",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
             >
-              <View
-                onPress={[Function]}
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "backgroundColor": "transparent",
-                      "borderBottomWidth": 0.5,
-                      "borderColor": "#c9c9c9",
-                      "flexDirection": "row",
-                      "marginLeft": 16,
-                      "paddingBottom": 13,
-                      "paddingRight": 16,
-                      "paddingTop": 13,
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
                     },
                     Object {
-                      "borderColor": "rgba(29, 29, 38, 0.1)",
-                      "flexDirection": "row",
-                      "marginLeft": 0,
-                      "paddingLeft": 15,
+                      "color": "#444",
+                      "fontFamily": "Roboto_light",
                     },
                   ]
                 }
+                uppercase={false}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Array [
-                      Object {
-                        "alignSelf": "center",
-                        "color": "#000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "#444",
-                        "fontFamily": "Roboto_light",
-                      },
-                    ]
-                  }
-                  uppercase={false}
-                >
-                  Expenses Calendar
-                </Text>
-              </View>
+                Expenses Calendar
+              </Text>
             </View>
           </View>
           <View
@@ -565,60 +501,44 @@ exports[`renders correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              style={null}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomWidth": 0.8,
+                  "borderColor": "rgba(29, 29, 38, 0.1)",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
             >
-              <View
-                onPress={[Function]}
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "backgroundColor": "transparent",
-                      "borderBottomWidth": 0.5,
-                      "borderColor": "#c9c9c9",
-                      "flexDirection": "row",
-                      "marginLeft": 16,
-                      "paddingBottom": 13,
-                      "paddingRight": 16,
-                      "paddingTop": 13,
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
                     },
                     Object {
-                      "borderColor": "rgba(29, 29, 38, 0.1)",
-                      "flexDirection": "row",
-                      "marginLeft": 0,
-                      "paddingLeft": 15,
+                      "color": "#444",
+                      "fontFamily": "Roboto_light",
                     },
                   ]
                 }
+                uppercase={false}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Array [
-                      Object {
-                        "alignSelf": "center",
-                        "color": "#000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "#444",
-                        "fontFamily": "Roboto_light",
-                      },
-                    ]
-                  }
-                  uppercase={false}
-                >
-                  Search & Export
-                </Text>
-              </View>
+                Search & Export
+              </Text>
             </View>
           </View>
           <View
@@ -634,60 +554,44 @@ exports[`renders correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              style={null}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomWidth": 0.8,
+                  "borderColor": "rgba(29, 29, 38, 0.1)",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
             >
-              <View
-                onPress={[Function]}
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "backgroundColor": "transparent",
-                      "borderBottomWidth": 0.5,
-                      "borderColor": "#c9c9c9",
-                      "flexDirection": "row",
-                      "marginLeft": 16,
-                      "paddingBottom": 13,
-                      "paddingRight": 16,
-                      "paddingTop": 13,
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
                     },
                     Object {
-                      "borderColor": "rgba(29, 29, 38, 0.1)",
-                      "flexDirection": "row",
-                      "marginLeft": 0,
-                      "paddingLeft": 15,
+                      "color": "#444",
+                      "fontFamily": "Roboto_light",
                     },
                   ]
                 }
+                uppercase={false}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Array [
-                      Object {
-                        "alignSelf": "center",
-                        "color": "#000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "#444",
-                        "fontFamily": "Roboto_light",
-                      },
-                    ]
-                  }
-                  uppercase={false}
-                >
-                  Profile
-                </Text>
-              </View>
+                Profile
+              </Text>
             </View>
           </View>
           <View
@@ -703,60 +607,44 @@ exports[`renders correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              style={null}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomWidth": 0.8,
+                  "borderColor": "rgba(29, 29, 38, 0.1)",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
             >
-              <View
-                onPress={[Function]}
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "backgroundColor": "transparent",
-                      "borderBottomWidth": 0.5,
-                      "borderColor": "#c9c9c9",
-                      "flexDirection": "row",
-                      "marginLeft": 16,
-                      "paddingBottom": 13,
-                      "paddingRight": 16,
-                      "paddingTop": 13,
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
                     },
                     Object {
-                      "borderColor": "rgba(29, 29, 38, 0.1)",
-                      "flexDirection": "row",
-                      "marginLeft": 0,
-                      "paddingLeft": 15,
+                      "color": "#444",
+                      "fontFamily": "Roboto_light",
                     },
                   ]
                 }
+                uppercase={false}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Array [
-                      Object {
-                        "alignSelf": "center",
-                        "color": "#000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "#444",
-                        "fontFamily": "Roboto_light",
-                      },
-                    ]
-                  }
-                  uppercase={false}
-                >
-                  Settings
-                </Text>
-              </View>
+                Settings
+              </Text>
             </View>
           </View>
           <View
@@ -772,60 +660,44 @@ exports[`renders correctly 1`] = `
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              style={null}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderBottomWidth": 0.8,
+                  "borderColor": "rgba(29, 29, 38, 0.1)",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
             >
-              <View
-                onPress={[Function]}
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "backgroundColor": "transparent",
-                      "borderBottomWidth": 0.5,
-                      "borderColor": "#c9c9c9",
-                      "flexDirection": "row",
-                      "marginLeft": 16,
-                      "paddingBottom": 13,
-                      "paddingRight": 16,
-                      "paddingTop": 13,
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
                     },
                     Object {
-                      "borderColor": "rgba(29, 29, 38, 0.1)",
-                      "flexDirection": "row",
-                      "marginLeft": 0,
-                      "paddingLeft": 15,
+                      "color": "#444",
+                      "fontFamily": "Roboto_light",
                     },
                   ]
                 }
+                uppercase={false}
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                />
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Array [
-                      Object {
-                        "alignSelf": "center",
-                        "color": "#000",
-                        "fontFamily": "System",
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "#444",
-                        "fontFamily": "Roboto_light",
-                      },
-                    ]
-                  }
-                  uppercase={false}
-                >
-                  Log Out
-                </Text>
-              </View>
+                Log Out
+              </Text>
             </View>
           </View>
         </View>

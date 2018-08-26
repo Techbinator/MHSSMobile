@@ -7,7 +7,6 @@ import ExpenseLine from './ExpenseLine';
 import ExpensesSectionHeader from './ExpensesSectionHeader';
 
 import theme from '@theme/variables/mmoney';
-import styles from './styles';
 class ExpensesResultList extends Component {
   static propTypes = {
     expensesList: PropTypes.array,

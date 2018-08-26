@@ -21,13 +21,19 @@ export default {
   },
   menuItem: {
     container: {
-      flexDirection: 'row',
       borderColor: 'rgba(29, 29, 38, 0.1)',
-      paddingLeft: 15,
       marginLeft: 0,
     },
     selected: {
       backgroundColor: '#F8F8F8',
+    },
+    button: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      width: '100%',
+      padding: 15,
+      borderBottomWidth: 0.8,
+      borderColor: 'rgba(29, 29, 38, 0.1)',
     },
     title: {
       fontFamily: 'Roboto_light',

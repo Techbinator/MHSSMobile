@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ListItem, Text, Icon } from 'native-base';
+import { TouchableOpacity } from 'react-native';
+import { Text, Icon } from 'native-base';
 
 import styles from './styles';
 class MenuItem extends React.PureComponent {
@@ -10,13 +11,13 @@ class MenuItem extends React.PureComponent {
 
   render() {
     const itemStyle = this.props.selected
-      ? [styles.menuItem.container, styles.menuItem.selected]
-      : styles.menuItem.container;
+      ? [styles.menuItem.button, styles.menuItem.selected]
+      : styles.menuItem.button;
     return (
-      <ListItem onPress={this.onPress} style={itemStyle}>
+      <TouchableOpacity style={itemStyle} onPress={this.onPress}>
         <Icon name={this.props.icon} style={styles.menuItem.icon} />
         <Text style={styles.menuItem.title}>{this.props.title}</Text>
-      </ListItem>
+      </TouchableOpacity>
     );
   }
 }

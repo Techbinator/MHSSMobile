@@ -100,9 +100,6 @@ class ExpenseCalendar extends Component {
               pastScrollRange={6}
               futureScrollRange={6}
               renderEmptyData={this.renderEmptyData.bind(this)}
-              onDayChange={day => {
-                console.log('day changed');
-              }}
               theme={{
                 calendarBackground: '#FFF',
                 textSectionTitleColor: theme.brandPrimary,
