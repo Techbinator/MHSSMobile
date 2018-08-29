@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImageBackground } from 'react-native';
 import { groupBy } from 'lodash';
-import { Container, Content, View, Text, Spinner } from 'native-base';
+import { Container, View, Text, Spinner, Icon } from 'native-base';
 import { connect } from 'react-redux';
 import { Agenda } from 'react-native-calendars';
 import AppHeader from '@components/AppHeader';
@@ -85,35 +85,47 @@ class ExpenseCalendar extends Component {
           source={require('@assets/images/header-bg.png')}
           style={styles.container}>
           <AppHeader hasTabs navigation={navigation} />
-          <Content
-            showsVerticalScrollIndicator={false}
-            style={{ backgroundColor: '#fff' }}>
-            <Agenda
-              style={styles.agenda.container}
-              items={this.state.expenses}
-              loadItemsForMonth={day => {
-                this.props.getExpenses(day);
-              }}
-              renderItem={this.renderItem.bind(this)}
-              rowHasChanged={this.rowHasChanged.bind(this)}
-              selected={'2018-08-11'}
-              pastScrollRange={6}
-              futureScrollRange={6}
-              renderEmptyData={this.renderEmptyData.bind(this)}
-              theme={{
-                calendarBackground: '#FFF',
-                textSectionTitleColor: theme.brandPrimary,
-                selectedDayBackgroundColor: theme.brandPrimary,
-                selectedDayTextColor: '#FFF',
-                todayTextColor: theme.brandPrimary,
-                textDisabledColor: '#DDD',
-                dotColor: theme.brandSecondary,
-                selectedDotColor: '#FFF',
-                arrowColor: theme.brandPrimary,
-                monthTextColor: '#000',
-              }}
-            />
-          </Content>
+          <Agenda
+            style={styles.agenda.container}
+            items={this.state.expenses}
+            loadItemsForMonth={day => {
+              this.props.getExpenses(day);
+            }}
+            renderItem={this.renderItem.bind(this)}
+            rowHasChanged={this.rowHasChanged.bind(this)}
+            selected={'2018-08-11'}
+            pastScrollRange={2}
+            futureScrollRange={2}
+            renderEmptyData={this.renderEmptyData.bind(this)}
+            renderKnob={() => {
+              return (
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}>
+                  <Text style={styles.agenda.knobText}>More dates</Text>
+                  <Icon
+                    style={styles.agenda.knobIcon}
+                    name="ios-arrow-down-outline"
+                  />
+                </View>
+              );
+            }}
+            theme={{
+              calendarBackground: '#FFF',
+              textSectionTitleColor: theme.brandPrimary,
+              selectedDayBackgroundColor: theme.brandPrimary,
+              selectedDayTextColor: '#FFF',
+              todayTextColor: theme.brandPrimary,
+              textDisabledColor: '#DDD',
+              dotColor: theme.brandSecondary,
+              selectedDotColor: '#FFF',
+              arrowColor: theme.brandPrimary,
+              monthTextColor: '#000',
+              agendaKnobColor: 'blue',
+            }}
+          />
         </ImageBackground>
       </Container>
     );

@@ -93,5 +93,15 @@ export default {
       flex: 1,
       paddingTop: 30,
     },
+    knobText: {
+      color: theme.brandInfo,
+      fontSize: 13,
+    },
+    knobIcon: {
+      color: theme.brandInfo,
+      paddingLeft: 5,
+      paddingTop: 2,
+      fontSize: 20,
+    },
   },
 };
