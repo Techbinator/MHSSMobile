@@ -7,21 +7,20 @@ import styles from './styles';
 
 const ExpenseItem = ({ item, style, color }) => {
   const borderColor = color ? color : item.color;
-  const iconSize = style ? 2 : 1;
 
   return (
     <View style={[styles.item.content, { borderColor: borderColor }, style]}>
       <Grid>
-        <Col size={iconSize}>
+        <Col size={7} style={{ flexDirection: 'row' }}>
           <Icon name={item.categoryIcon} style={styles.item.icon} />
-        </Col>
-        <Col size={7}>
-          <Text numberOfLines={2} style={styles.item.title}>
-            {item.title}
-          </Text>
-          <Text numberOfLines={2} style={styles.item.subtitle}>
-            {item.type}
-          </Text>
+          <View>
+            <Text numberOfLines={2} style={styles.item.title}>
+              {item.title}
+            </Text>
+            <Text numberOfLines={2} style={styles.item.subtitle}>
+              {item.type}
+            </Text>
+          </View>
         </Col>
         <Col size={3}>
           <Text
