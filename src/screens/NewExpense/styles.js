@@ -23,10 +23,6 @@ export default {
       flex: 1,
       width: '100%',
     },
-    formBtn: {
-      width: '100%',
-      borderRadius: 0,
-    },
   },
 
   footer: {
@@ -35,13 +31,20 @@ export default {
   },
 
   picker: {
-    container: {
-      borderBottomWidth: 0,
-      marginLeft: 0,
+    item: {
+      borderColor: '#F6F6F6',
       paddingLeft: Platform.OS === 'android' ? 8 : 0,
     },
     input: {
-      height: 80,
+      width: theme.deviceWidth,
+      height: 70,
+    },
+    icon: {
+      color: '#95959A',
+    },
+    headerTextStyle: {
+      color: theme.DefaultTextColor,
+      fontSize: 14,
     },
     placeholderText: {
       color: theme.inputColorPlaceholder,
@@ -56,13 +59,18 @@ export default {
   },
 
   datePicker: {
-    dateInput: {
-      height: 70,
-      paddingLeft: 15,
+    formItem: {
       borderColor: '#F6F6F6',
-      borderWidth: 1,
-      borderTopColor: '#F6F6F6',
-      borderTopWidth: 1,
+      marginRight: 0,
+    },
+    container: {
+      width: '100%',
+      height: 70,
+      justifyContent: 'center',
+    },
+    dateInput: {
+      borderWidth: 0,
+      paddingLeft: 15,
     },
     dateTouchBody: {
       paddingBottom: 0,
@@ -72,30 +80,31 @@ export default {
       fontSize: theme.DefaultFontSize,
     },
     dateIcon: {
-      fontSize: 25,
       color: '#95959A',
-      position: 'absolute',
-      right: 15,
-      bottom: 4,
+      paddingRight: 15,
     },
     placeholderText: {
       alignSelf: 'flex-start',
-      color: '#95959A',
+      color: theme.inputColorPlaceholder,
       fontSize: theme.DefaultFontSize,
     },
   },
 
-  switchContainer: {
-    alignSelf: 'flex-end',
-    flexDirection: 'row',
-    paddingTop: 25,
-    paddingRight: 15,
+  switch: {
+    item: {
+      paddingLeft: 0,
+      paddingRight: 12,
+      borderColor: '#F6F6F6',
+    },
+    input: {
+      paddingLeft: 15,
+      height: 70,
+    },
+    switch: {
+      transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }],
+    },
   },
-  switchText: {
-    color: '#95959A',
-    paddingTop: 5,
-    paddingRight: 15,
-  },
+
   formError: {
     color: theme.brandDanger,
     fontSize: Platform.OS === 'android' ? 12 : 15,

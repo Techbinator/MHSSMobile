@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field, getFormValues } from 'redux-form';
-import { ImageBackground, Switch, KeyboardAvoidingView } from 'react-native';
+import { ImageBackground } from 'react-native';
 import {
   Container,
   Content,
@@ -12,9 +12,10 @@ import {
   Form,
   Item,
   Picker,
-  View,
   Spinner,
   Footer,
+  Switch,
+  Input,
 } from 'native-base';
 import DatePicker from 'react-native-datepicker';
 import moment from 'moment';
@@ -97,86 +98,87 @@ class ExpenseForm extends React.Component {
           <Content
             paddershowsVerticalScrollIndicator={false}
             style={styles.content}>
-            <KeyboardAvoidingView
-              style={styles.form.container}
-              behavior="padding"
-              enabled>
-              {addExpenseError && (
-                <Notification
-                  message="Error adding a new expense!"
-                  buttonText="Retry"
-                  duration={5000}
-                  position="top"
-                  type="danger"
-                />
-              )}
-              <Form style={styles.form.content}>
-                <Field
-                  name="amount"
-                  label="Amount"
-                  component={FormInput}
-                  type="text"
-                  validate={[required, isNumeric]}
-                  autoCapitalize="none"
-                  keyboardType="numeric"
-                />
-                <Field
-                  name="title"
-                  label="Expense title"
-                  component={FormInput}
-                  type="text"
-                  validate={[required, alphaNumeric]}
-                />
-                <Field
-                  last
-                  name="category"
-                  component={({
-                    input: { onChange, value },
-                    meta: { touched, error },
-                  }) => {
-                    return (
-                      <Item style={styles.picker.container}>
-                        <Picker
-                          style={styles.picker.input}
-                          mode="dropdown"
-                          iosHeader="Select Category"
-                          placeholder="Category"
-                          placeholderStyle={styles.picker.placeholderText}
-                          placeholderIconColor="#95959A"
-                          itemStyle={styles.picker.itemStyle}
-                          itemTextStyle={styles.picker.itemTextStyle}
-                          iosIcon={<Icon name="arrow-down" />}
-                          selectedValue={value}
-                          onValueChange={value => {
-                            onChange(value);
-                          }}>
-                          {categories.map(item => {
-                            return (
-                              <Picker.Item
-                                key={item.id}
-                                label={item.name}
-                                value={item.id}
-                              />
-                            );
-                          })}
-                        </Picker>
-                        {touched &&
-                          error && (
-                            <Text style={styles.formError}>{error}</Text>
-                          )}
-                      </Item>
-                    );
-                  }}
-                  validate={[required]}
-                />
-                <Field
-                  name="date"
-                  component={({ input: { onChange } }) => {
-                    return (
+            {addExpenseError && (
+              <Notification
+                message="Error adding a new expense!"
+                buttonText="Retry"
+                duration={5000}
+                position="bottom"
+                type="danger"
+              />
+            )}
+            <Form style={styles.form.content}>
+              <Field
+                name="amount"
+                label="Amount"
+                component={FormInput}
+                type="text"
+                validate={[required, isNumeric]}
+                autoCapitalize="none"
+                keyboardType="numeric"
+              />
+              <Field
+                name="title"
+                label="Expense title"
+                component={FormInput}
+                type="text"
+                validate={[required, alphaNumeric]}
+              />
+              <Field
+                last
+                name="category"
+                component={({
+                  input: { onChange, value },
+                  meta: { touched, error },
+                }) => {
+                  return (
+                    <Item picker style={styles.picker.item}>
+                      <Picker
+                        style={styles.picker.input}
+                        mode="dropdown"
+                        iosHeader="Select Category"
+                        placeholder="Category"
+                        placeholderStyle={styles.picker.placeholderText}
+                        placeholderIconColor="#95959A"
+                        itemStyle={styles.picker.itemStyle}
+                        itemTextStyle={styles.picker.itemTextStyle}
+                        headerTitleStyle={styles.picker.headerTextStyle}
+                        headerBackButtonTextStyle={
+                          styles.picker.headerTextStyle
+                        }
+                        iosIcon={
+                          <Icon style={styles.picker.icon} name="arrow-down" />
+                        }
+                        selectedValue={value}
+                        onValueChange={value => {
+                          onChange(value);
+                        }}>
+                        {categories.map(item => {
+                          return (
+                            <Picker.Item
+                              key={item.id}
+                              label={item.name}
+                              value={item.id}
+                            />
+                          );
+                        })}
+                      </Picker>
+                      {touched &&
+                        error && <Text style={styles.formError}>{error}</Text>}
+                    </Item>
+                  );
+                }}
+                validate={[required]}
+              />
+              <Field
+                name="date"
+                component={({ input: { onChange } }) => {
+                  return (
+                    <Item picker style={styles.datePicker.formItem}>
                       <DatePicker
-                        style={{ width: '100%' }}
+                        style={styles.datePicker.container}
                         mode="date"
-                        placeholder="Date"
+                        placeholder="Select Date"
                         confirmBtnText="Select"
                         cancelBtnText="Cancel"
                         customStyles={styles.datePicker}
@@ -191,38 +193,42 @@ class ExpenseForm extends React.Component {
                           onChange(value);
                         }}
                       />
-                    );
-                  }}
-                />
-                <Field
-                  name="permanent"
-                  label="Every month"
-                  component={({ input: { onChange } }) => {
-                    return (
-                      <View style={styles.switchContainer}>
-                        <Text style={styles.switchText}>Every month</Text>
-                        <Switch
-                          onTintColor={light}
-                          thumbTintColor={theme.brandPrimary}
-                          tintColor={theme.brandPrimary}
-                          value={formValues.permanent}
-                          onValueChange={value => {
-                            onChange(value);
-                          }}
-                        />
-                      </View>
-                    );
-                  }}
-                />
-              </Form>
-            </KeyboardAvoidingView>
+                    </Item>
+                  );
+                }}
+              />
+              <Field
+                name="permanent"
+                component={({ input: { onChange } }) => {
+                  return (
+                    <Item picker style={styles.switch.item}>
+                      <Input
+                        style={styles.switch.input}
+                        disabled
+                        placeholder="Every month"
+                      />
+                      <Switch
+                        style={styles.switch.switch}
+                        onTintColor={light}
+                        thumbTintColor={theme.brandPrimary}
+                        tintColor={theme.brandPrimary}
+                        value={formValues.permanent}
+                        onValueChange={value => {
+                          onChange(value);
+                        }}
+                      />
+                    </Item>
+                  );
+                }}
+              />
+            </Form>
           </Content>
           <Footer style={styles.footer}>
             <Button
               large
               primary
               block
-              style={styles.form.formBtn}
+              full
               onPress={handleSubmit(this.handleSubmit)}>
               {addExpenseStarted ? (
                 <Spinner color="#fff" />
@@ -234,6 +240,7 @@ class ExpenseForm extends React.Component {
               transparent
               large
               block
+              full
               style={styles.form.formBtn}
               onPress={() => navigation.navigate('Expenses')}>
               <Text>Cancel</Text>
