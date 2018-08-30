@@ -45,7 +45,7 @@ class ExpensesList extends Component {
           <FlatList
             horizontal={false}
             data={expensesList}
-            initialNumToRender={15}
+            initialNumToRender={5}
             renderItem={({ item, index }) => (
               <SwipeRow
                 rightOpenValue={-85}

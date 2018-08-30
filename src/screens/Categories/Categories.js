@@ -73,6 +73,7 @@ class Categories extends Component {
                 <Category navigation={navigation} {...props} />
               )}
               keyExtractor={category => category.id}
+              initialNumToRender={5}
             />
           </Content>
           <Fab

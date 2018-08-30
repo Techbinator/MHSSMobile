@@ -76,6 +76,7 @@ class SideBar extends Component {
             extraData={this.state}
             renderItem={this.renderMenuItem}
             keyExtractor={item => item.route}
+            initialNumToRender={5}
           />
         </Content>
       </Container>
