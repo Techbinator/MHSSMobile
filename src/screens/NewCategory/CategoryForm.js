@@ -105,7 +105,7 @@ class CategoryForm extends React.Component {
                   message="Error creating a new category!"
                   buttonText="Retry"
                   duration={5000}
-                  position="top"
+                  position="bottom"
                   type="danger"
                 />
               )}

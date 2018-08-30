@@ -83,8 +83,8 @@ class ExpenseSearch extends Component {
               <Notification
                 message="Data successfully exported"
                 duration={3000}
-                position="top"
-                type="success"
+                position="bottom"
+                type="info"
               />
             )}
             <ExpensesResultList
