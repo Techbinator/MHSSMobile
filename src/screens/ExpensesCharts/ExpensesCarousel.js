@@ -66,23 +66,24 @@ export class ExpensesCarousel extends React.Component {
           width={deviceWidth}
           height={deviceHeight}
           loop={false}
-          indicatorAtBottom={false}
+          indicatorAtBottom
+          indicatorOffset={deviceHeight / 3}
           indicatorSize={Platform.OS === 'android' ? 15 : 10}
           indicatorColor={theme.brandPrimary}
           animate={false}>
-          <View style={styles.slides}>
+          <View pointerEvents="none" style={styles.slides}>
             <Text style={styles.chartTitle}>Budget Objectif Completion</Text>
             <GaugeChart percent={65} />
           </View>
-          <View style={styles.slides}>
+          <View pointerEvents="none" style={styles.slides}>
             <Text style={styles.chartTitle}>Expenses By Categories</Text>
             <PieChart data={this.getCategoriesDataForChart(true)} />
           </View>
-          <View style={styles.slides}>
+          <View pointerEvents="none" style={styles.slides}>
             <Text style={styles.chartTitle}>Expenses By Categories</Text>
             <BarChart data={this.getCategoriesDataForChart()} />
           </View>
-          <View style={styles.slides}>
+          <View pointerEvents="none" style={styles.slides}>
             <Text style={styles.chartTitle}>Cash Flow History</Text>
             <CashFlowChart
               incomeData={incomeHistory}

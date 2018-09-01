@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import { Dimensions } from 'react-native';
-import {
-  VictoryChart,
-  VictoryLine,
-  VictoryTheme,
-  VictoryVoronoiContainer,
-  VictoryTooltip,
-} from 'victory-native';
+import { VictoryChart, VictoryLine, VictoryTheme } from 'victory-native';
 import theme from '@theme/variables/mmoney';
 
 const deviceWidth = Dimensions.get('window').width;
@@ -17,21 +11,8 @@ class CashFlowChart extends Component {
       this.props.incomeData.length > 0 && (
         <VictoryChart
           theme={VictoryTheme.material}
-          width={deviceWidth - 20}
-          domainPadding={{ y: 10 }}
-          containerComponent={
-            <VictoryVoronoiContainer
-              voronoiDimension="x"
-              labels={d => `y: ${d.y}`}
-              labelComponent={
-                <VictoryTooltip
-                  cornerRadius={0}
-                  flyoutStyle={{ fill: 'white' }}
-                />
-              }
-            />
-          }
-          padding={{ top: 40, bottom: 40, left: 50, right: 10 }}>
+          width={deviceWidth - 10}
+          padding={{ top: 10, bottom: 60, left: 50, right: 20 }}>
           <VictoryLine
             style={{
               data: {

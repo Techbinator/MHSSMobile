@@ -9,11 +9,13 @@ export default {
     height: null,
   },
   chartTitle: {
-    paddingTop: 40,
+    paddingTop: 10,
     fontSize: 18,
     textAlign: 'center',
   },
   slides: {
+    alignItems: 'center',
+    padding: 20,
     height: deviceHeight,
     width: deviceWidth,
   },
