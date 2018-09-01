@@ -4,16 +4,17 @@ const deviceHeight = Dimensions.get('window').height;
 import theme from '@theme/variables/mmoney';
 
 export default {
+  calendarContainer: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+  },
+  spinner: {
+    paddingTop: deviceHeight / 2 - 10,
+  },
   container: {
     flex: 1,
     width: null,
     height: null,
-  },
-  emptyMsg: {
-    color: '#777',
-    fontSize: 12,
-    paddingTop: 10,
-    alignSelf: 'center',
   },
 
   item: {
@@ -88,10 +89,16 @@ export default {
       marginLeft: 0,
       marginTop: 10,
     },
-    emptyDate: {
-      height: 15,
+    emptyContainer: {
       flex: 1,
-      paddingTop: 30,
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    emptyMsg: {
+      color: '#777',
+      fontSize: 18,
+      alignSelf: 'center',
     },
     knobText: {
       color: theme.brandInfo,

@@ -6,7 +6,6 @@ import { Container, Content } from 'native-base';
 import { connect } from 'react-redux';
 import AppHeader from '@components/AppHeader';
 import Notification from '@components/Notification';
-import SearchHeader from './SearchHeader';
 import ExpensesResultList from './ExpensesResultList';
 
 import * as actions from './behaviors';
@@ -71,8 +70,10 @@ class ExpenseSearch extends Component {
         <ImageBackground
           source={require('@assets/images/header-bg.png')}
           style={styles.container}>
-          <AppHeader hasTabs navigation={navigation} />
-          <SearchHeader
+          <AppHeader
+            displayAvatar={false}
+            displaySearch={true}
+            navigation={navigation}
             onSearch={this.props.doSearch}
             onExport={this.props.doExport}
           />
@@ -83,6 +84,7 @@ class ExpenseSearch extends Component {
               <Notification
                 message="Data successfully exported"
                 duration={3000}
+                buttonText="Ok"
                 position="bottom"
                 type="info"
               />

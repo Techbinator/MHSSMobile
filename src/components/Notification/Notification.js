@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Toast } from 'native-base';
+import theme from '@theme/variables/mmoney';
 
 class Notification extends Component {
   componentDidMount() {
@@ -10,6 +11,7 @@ class Notification extends Component {
       buttonText: this.props.buttonText,
       duration: this.props.duration,
       type: this.props.type,
+      buttonStyle: { backgroundColor: theme.brandPrimary },
     });
   }
   render() {

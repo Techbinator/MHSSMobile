@@ -13,22 +13,8 @@ export default {
     backgroundColor: '#FFF',
   },
   form: {
-    container: {
-      flex: 2,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
-      backgroundColor: '#FFF',
-    },
-    content: {
-      flex: 1,
-      width: '100%',
-    },
-    formBtn: {
-      width: '100%',
-      borderRadius: 0,
-    },
+    flex: 1,
+    width: '100%',
   },
 
   iconExplorer: {

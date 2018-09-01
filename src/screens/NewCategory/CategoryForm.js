@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field, getFormValues, change, reset } from 'redux-form';
-import {
-  KeyboardAvoidingView,
-  ImageBackground,
-  TouchableOpacity,
-} from 'react-native';
+import { ImageBackground, TouchableOpacity } from 'react-native';
 import {
   Container,
   Content,
@@ -93,63 +89,56 @@ class CategoryForm extends React.Component {
           source={require('@assets/images/header-bg-small.png')}
           style={styles.background}>
           <AppHeader navigation={navigation} title="Add Category" />
-          <Content
-            paddershowsVerticalScrollIndicator={false}
-            style={styles.content}>
-            <KeyboardAvoidingView
-              style={styles.form.container}
-              behavior="padding"
-              enabled>
-              {addCategoryError && (
-                <Notification
-                  message="Error creating a new category!"
-                  buttonText="Retry"
-                  duration={5000}
-                  position="bottom"
-                  type="danger"
-                />
-              )}
-              <Form style={styles.form.content}>
-                <Field
-                  name="name"
-                  label="Category Name"
-                  component={FormInput}
-                  itemStyle={styles.formInput}
-                  inputStyle={styles.formInput}
-                  type="text"
-                  validate={[required, alphaNumeric]}
-                  autoCapitalize="none"
-                />
-                <TouchableOpacity
-                  onPress={() => {
-                    this.setState(() => ({
-                      showIconExplorer: true,
-                    }));
-                  }}>
-                  <Row style={styles.iconSelect.container}>
-                    <Col size={7}>
-                      <Icon
-                        style={styles.iconSelect.categoryIcon}
-                        name={formValues && formValues.iconName}
-                      />
-                    </Col>
-                    <Col size={3}>
-                      <Text style={styles.iconSelect.text}>Select Icon</Text>
-                    </Col>
-                    <Col size={2}>
-                      <Icon
-                        active
-                        style={styles.iconSelect.icon}
-                        name="ios-arrow-down"
-                      />
-                    </Col>
-                  </Row>
-                </TouchableOpacity>
-              </Form>
+          <Content showsVerticalScrollIndicator={false} style={styles.content}>
+            {addCategoryError && (
+              <Notification
+                message="Error creating a new category!"
+                buttonText="Retry"
+                duration={5000}
+                position="bottom"
+                type="danger"
+              />
+            )}
+            <Form style={styles.form}>
+              <Field
+                name="name"
+                label="Category Name"
+                component={FormInput}
+                itemStyle={styles.formInput}
+                inputStyle={styles.formInput}
+                type="text"
+                validate={[required, alphaNumeric]}
+                autoCapitalize="none"
+              />
+              <TouchableOpacity
+                onPress={() => {
+                  this.setState(() => ({
+                    showIconExplorer: true,
+                  }));
+                }}>
+                <Row style={styles.iconSelect.container}>
+                  <Col size={7}>
+                    <Icon
+                      style={styles.iconSelect.categoryIcon}
+                      name={formValues && formValues.iconName}
+                    />
+                  </Col>
+                  <Col size={3}>
+                    <Text style={styles.iconSelect.text}>Select Icon</Text>
+                  </Col>
+                  <Col size={2}>
+                    <Icon
+                      active
+                      style={styles.iconSelect.icon}
+                      name="ios-arrow-down"
+                    />
+                  </Col>
+                </Row>
+              </TouchableOpacity>
               {this.state.showIconExplorer && (
                 <IconExplorer onIconSelect={this.onIconSelect} />
               )}
-            </KeyboardAvoidingView>
+            </Form>
           </Content>
           <Footer style={styles.footer}>
             <View>
@@ -157,7 +146,7 @@ class CategoryForm extends React.Component {
                 large
                 primary
                 block
-                style={styles.form.formBtn}
+                full
                 onPress={handleSubmit(this.handleSubmit)}>
                 {addCategoryStarted ? (
                   <Spinner color="#fff" />
@@ -169,7 +158,7 @@ class CategoryForm extends React.Component {
                 transparent
                 large
                 block
-                style={styles.form.formBtn}
+                full
                 onPress={() => navigation.navigate('Categories')}>
                 <Text>Cancel</Text>
               </Button>

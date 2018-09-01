@@ -66,11 +66,15 @@ export default {
       fontSize: 10,
       fontWeight: '200',
       alignSelf: 'center',
+      paddingBottom: 0,
     },
     marker: {
       alignSelf: 'center',
-      fontSize: 24,
-      fontWeight: '600',
+      borderWidth: 2,
+      paddingTop: 0,
+      marginTop: 10,
+      paddingLeft: 5,
+      paddingRight: 5,
     },
   },
   contact: {
@@ -84,7 +88,6 @@ export default {
     },
     icon: {
       color: theme.brandSuccess,
-      justifyContent: 'flex-end',
       fontSize: 30,
     },
     nameColumn: {
@@ -108,7 +111,7 @@ export default {
   social: {
     container: {
       flexDirection: 'row',
-      justifyContent: 'flex-start',
+      justifyContent: 'center',
       paddingTop: 15,
       paddingBottom: 15,
       paddingLeft: 30,
@@ -118,6 +121,7 @@ export default {
       alignSelf: 'center',
       fontSize: 24,
       marginBottom: 5,
+      color: '#777',
     },
   },
 };

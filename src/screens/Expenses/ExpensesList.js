@@ -45,6 +45,7 @@ class ExpensesList extends Component {
           {!expensesLoading && (
             <FlatList
               horizontal={false}
+              showsVerticalScrollIndicator={false}
               data={expensesList}
               initialNumToRender={7}
               renderItem={({ item, index }) => (

@@ -18,13 +18,12 @@ const Overview = ({ navigation }) => {
               </View>
               <View style={styles.overview.column}>
                 <Text style={styles.overview.subtitle}>CATEGORIES</Text>
-                <Text
+                <View
                   style={[
                     styles.overview.marker,
-                    { color: theme.brandSuccess },
-                  ]}>
-                  _
-                </Text>
+                    { borderColor: theme.brandSuccess },
+                  ]}
+                />
               </View>
             </View>
           </TouchableOpacity>
@@ -37,13 +36,12 @@ const Overview = ({ navigation }) => {
               </View>
               <View style={styles.overview.column}>
                 <Text style={styles.overview.subtitle}>EXPENSES LOGGED</Text>
-                <Text
+                <View
                   style={[
                     styles.overview.marker,
-                    { color: theme.brandWarning },
-                  ]}>
-                  _
-                </Text>
+                    { borderColor: theme.brandWarning },
+                  ]}
+                />
               </View>
             </View>
           </TouchableOpacity>
@@ -56,10 +54,12 @@ const Overview = ({ navigation }) => {
               </View>
               <View style={styles.overview.column}>
                 <Text style={styles.overview.subtitle}>TOTAL SPENT</Text>
-                <Text
-                  style={[styles.overview.marker, { color: theme.brandThird }]}>
-                  _
-                </Text>
+                <View
+                  style={[
+                    styles.overview.marker,
+                    { borderColor: theme.brandThird },
+                  ]}
+                />
               </View>
             </View>
           </TouchableOpacity>

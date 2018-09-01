@@ -10,7 +10,7 @@ const Contact = ({ type, name, number }) => {
   return (
     <View style={[styles.contact.container]}>
       <Grid>
-        <Col size={1}>
+        <Col size={1} style={{ alignItems: 'center' }}>
           <TouchableOpacity>
             <Icon name={iconName} style={[styles.contact.icon]} />
           </TouchableOpacity>

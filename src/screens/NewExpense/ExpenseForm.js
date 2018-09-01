@@ -95,9 +95,7 @@ class ExpenseForm extends React.Component {
           source={require('@assets/images/header-bg-small.png')}
           style={styles.background}>
           <AppHeader navigation={navigation} title="Add Expense" />
-          <Content
-            paddershowsVerticalScrollIndicator={false}
-            style={styles.content}>
+          <Content showsVerticalScrollIndicator={false} style={styles.content}>
             {addExpenseError && (
               <Notification
                 message="Error adding a new expense!"
@@ -107,7 +105,7 @@ class ExpenseForm extends React.Component {
                 type="danger"
               />
             )}
-            <Form style={styles.form.content}>
+            <Form style={styles.form}>
               <Field
                 name="amount"
                 label="Amount"
@@ -241,7 +239,6 @@ class ExpenseForm extends React.Component {
               large
               block
               full
-              style={styles.form.formBtn}
               onPress={() => navigation.navigate('Expenses')}>
               <Text>Cancel</Text>
             </Button>
