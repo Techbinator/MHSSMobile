@@ -42,34 +42,36 @@ class ExpensesList extends Component {
             )}
         </View>
         <View>
-          <FlatList
-            horizontal={false}
-            data={expensesList}
-            initialNumToRender={5}
-            renderItem={({ item, index }) => (
-              <SwipeRow
-                rightOpenValue={-85}
-                disableRightSwipe={true}
-                style={styles.item.container}
-                body={
-                  <ExpenseItem
-                    item={item}
-                    color={categoryColors[index % categoryColors.length]}
-                    navigation={navigation}
-                  />
-                }
-                right={
-                  <Button
-                    primary
-                    style={styles.swipeBtn}
-                    onPress={() => this.deleteItem(item.id)}>
-                    <Icon active name="trash" style={{ fontSize: 35 }} />
-                  </Button>
-                }
-              />
-            )}
-            keyExtractor={item => item.id}
-          />
+          {!expensesLoading && (
+            <FlatList
+              horizontal={false}
+              data={expensesList}
+              initialNumToRender={7}
+              renderItem={({ item, index }) => (
+                <SwipeRow
+                  rightOpenValue={-85}
+                  disableRightSwipe={true}
+                  style={styles.item.container}
+                  body={
+                    <ExpenseItem
+                      item={item}
+                      color={categoryColors[index % categoryColors.length]}
+                      navigation={navigation}
+                    />
+                  }
+                  right={
+                    <Button
+                      primary
+                      style={styles.swipeBtn}
+                      onPress={() => this.deleteItem(item.id)}>
+                      <Icon active name="trash" style={{ fontSize: 35 }} />
+                    </Button>
+                  }
+                />
+              )}
+              keyExtractor={item => item.id}
+            />
+          )}
         </View>
       </View>
     );

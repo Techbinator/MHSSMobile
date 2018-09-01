@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-import { Image, ImageBackground, KeyboardAvoidingView } from 'react-native';
-import { NavigationActions, StackActions } from 'react-navigation';
 import {
-  Container,
-  Text,
-  Button,
-  View,
-  Form,
-  Footer,
-  Spinner,
-} from 'native-base';
+  Image,
+  ImageBackground,
+  KeyboardAvoidingView,
+  ScrollView,
+} from 'react-native';
+import { NavigationActions, StackActions } from 'react-navigation';
+import { Container, Text, Button, View, Footer, Spinner } from 'native-base';
 
 import LoginInput from '@components/LoginInput';
 import Notification from '@components/Notification';
@@ -74,40 +71,42 @@ class SignIn extends Component {
             style={styles.form.container}
             behavior="padding"
             enabled>
-            {loginError && (
-              <Notification
-                message="Invalid username or password!"
-                buttonText="Retry"
-                duration={5000}
-                position="bottom"
-                type="danger"
-              />
-            )}
-            <Form style={styles.form.content}>
-              <Field
-                name="username"
-                component={LoginInput}
-                type="username"
-                placeholder="Username"
-                icon="ios-person-outline"
-                validate={[required, alphaNumeric, maxLength15]}
-              />
-              <Field
-                name="password"
-                component={LoginInput}
-                type="password"
-                placeholder="Password"
-                icon="ios-lock-outline"
-                secureTextEntry={true}
-                validate={[required, alphaNumeric, minLength7, maxLength15]}
-              />
-              <Button
-                small
-                transparent
-                style={{ alignSelf: 'flex-end' }}
-                onPress={() => navigation.navigate('ResetPassword')}>
-                <Text style={styles.form.linkBtn}>Forgot Password</Text>
-              </Button>
+            <View style={styles.form.content}>
+              {loginError && (
+                <Notification
+                  message="Invalid username or password!"
+                  buttonText="Retry"
+                  duration={5000}
+                  position="bottom"
+                  type="danger"
+                />
+              )}
+              <ScrollView style={styles.form.content}>
+                <Field
+                  name="username"
+                  component={LoginInput}
+                  type="username"
+                  placeholder="Username"
+                  icon="ios-person-outline"
+                  validate={[required, alphaNumeric, maxLength15]}
+                />
+                <Field
+                  name="password"
+                  component={LoginInput}
+                  type="password"
+                  placeholder="Password"
+                  icon="ios-lock-outline"
+                  secureTextEntry={true}
+                  validate={[required, alphaNumeric, minLength7, maxLength15]}
+                />
+                <Button
+                  small
+                  transparent
+                  style={{ alignSelf: 'flex-end' }}
+                  onPress={() => navigation.navigate('ResetPassword')}>
+                  <Text style={styles.form.linkBtn}>Forgot Password</Text>
+                </Button>
+              </ScrollView>
               <Button
                 large
                 primary
@@ -120,7 +119,7 @@ class SignIn extends Component {
                   <Text> Sign In </Text>
                 )}
               </Button>
-            </Form>
+            </View>
           </KeyboardAvoidingView>
           <Footer>
             <View>

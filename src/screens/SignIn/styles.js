@@ -27,6 +27,7 @@ export default {
     content: {
       flex: 1,
       width: '100%',
+      paddingBottom: 20,
     },
     linkBtn: {
       opacity: 0.9,

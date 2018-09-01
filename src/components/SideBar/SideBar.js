@@ -71,13 +71,16 @@ class SideBar extends Component {
           </Right>
         </Header>
         <Content style={styles.content}>
-          <FlatList
-            data={routes}
-            extraData={this.state}
-            renderItem={this.renderMenuItem}
-            keyExtractor={item => item.route}
-            initialNumToRender={5}
-          />
+          {routes.map(item => (
+            <MenuItem
+              key={item.route}
+              id={item.route}
+              onPressItem={this.onPressItem}
+              selected={this.state.selected === item.route}
+              title={item.title}
+              icon={item.icon}
+            />
+          ))}
         </Content>
       </Container>
     );

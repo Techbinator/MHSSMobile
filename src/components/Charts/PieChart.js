@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { VictoryPie } from 'victory-native';
 import { View } from 'native-base';
-
-import { Dimensions, TouchableOpacity } from 'react-native';
+import { Dimensions } from 'react-native';
 const deviceWidth = Dimensions.get('window').width;
 
 import categoryColors from '@theme/categoryColors';
