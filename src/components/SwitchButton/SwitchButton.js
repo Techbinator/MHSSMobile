@@ -12,6 +12,7 @@ const SwitchButton = ({ ...props }) => {
     <View style={styles.switchContainer}>
       <Text style={styles.switchText}>{props.label}</Text>
       <Switch
+        style={styles.switch}
         onTintColor={light}
         thumbTintColor={theme.brandPrimary}
         tintColor={theme.brandPrimary}

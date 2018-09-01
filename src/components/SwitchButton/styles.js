@@ -15,4 +15,7 @@ module.exports = StyleSheet.create({
     paddingTop: 5,
     paddingRight: 15,
   },
+  switch: {
+    transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }],
+  },
 });
