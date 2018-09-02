@@ -59,7 +59,12 @@ class ExpenseSearch extends Component {
   }
 
   initialize = (initialize = false) => {
-    this.props.doSearch('data', initialize);
+    if (
+      this.props.searchResult === undefined ||
+      this.props.searchResult.length === 0
+    ) {
+      this.props.doSearch('data', initialize);
+    }
   };
 
   render() {

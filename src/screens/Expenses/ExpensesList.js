@@ -34,13 +34,17 @@ class ExpensesList extends Component {
       <View
         showsVerticalScrollIndicator={false}
         style={{ backgroundColor: '#F4F4F4' }}>
-        <View>
-          {expensesLoading && <Spinner color={theme.brandPrimary} />}
-          {!expensesLoading &&
-            expensesList.length === 0 && (
+        {expensesLoading && (
+          <View style={styles.emptyContainer}>
+            <Spinner color={theme.brandPrimary} />
+          </View>
+        )}
+        {!expensesLoading &&
+          expensesList.length === 0 && (
+            <View style={styles.emptyContainer}>
               <Text style={styles.emptyMsg}>No expenses loaded</Text>
-            )}
-        </View>
+            </View>
+          )}
         <View>
           {!expensesLoading && (
             <FlatList

@@ -45,7 +45,12 @@ class ExpensesCharts extends Component {
   }
 
   initialize = () => {
-    this.props.getCategories();
+    if (
+      this.props.categories === undefined ||
+      this.props.categories.length === 0
+    ) {
+      this.props.getCategories();
+    }
   };
 
   switchPeriod(i) {
@@ -79,15 +84,18 @@ class ExpensesCharts extends Component {
             title="Analytics"
             titleSuffix={this.state.currentPeriod}
           />
-          <View>
-            {categoriesLoading && (
+          {categoriesLoading && (
+            <View style={styles.emptyContainer}>
               <Spinner style={{ marginTop: 40 }} color={theme.brandPrimary} />
-            )}
-            {!categoriesLoading &&
-              categories.lenght === 0 && (
+            </View>
+          )}
+          {!categoriesLoading &&
+            categories.lenght === 0 && (
+              <View style={styles.emptyContainer}>
                 <Text style={styles.emptyMsg}>No categories found</Text>
-              )}
-          </View>
+              </View>
+            )}
+
           {!categoriesLoading && (
             <Tabs
               tabContainerStyle={{

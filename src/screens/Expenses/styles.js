@@ -17,6 +17,16 @@ export default {
     height: null,
   },
 
+  emptyContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emptyMsg: {
+    color: '#777',
+    fontSize: 18,
+    alignSelf: 'center',
+  },
   item: {
     container: {
       flex: 1,
@@ -88,17 +98,6 @@ export default {
       marginRight: 10,
       marginLeft: 0,
       marginTop: 10,
-    },
-    emptyContainer: {
-      flex: 1,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    emptyMsg: {
-      color: '#777',
-      fontSize: 18,
-      alignSelf: 'center',
     },
     knobText: {
       color: theme.brandInfo,

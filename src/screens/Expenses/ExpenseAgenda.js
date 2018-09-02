@@ -64,13 +64,11 @@ class ExpenseCalendar extends Component {
   }
   renderEmptyData() {
     return (
-      <View style={styles.agenda.emptyContainer}>
+      <View style={styles.emptyContainer}>
         {this.props.expensesLoading ? (
           <Spinner color={theme.brandPrimary} />
         ) : (
-          <Text style={styles.agenda.emptyMsg}>
-            No expenses found for this date
-          </Text>
+          <Text style={styles.emptyMsg}>No expenses found for this date</Text>
         )}
       </View>
     );

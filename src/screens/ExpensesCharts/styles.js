@@ -8,6 +8,12 @@ export default {
     width: null,
     height: null,
   },
+  emptyContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   chartTitle: {
     paddingTop: 10,
     fontSize: 18,

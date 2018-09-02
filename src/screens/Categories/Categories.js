@@ -41,7 +41,12 @@ class Categories extends Component {
   }
 
   initialize = () => {
-    this.props.getCategories();
+    if (
+      this.props.categories === undefined ||
+      this.props.categories.length === 0
+    ) {
+      this.props.getCategories();
+    }
   };
 
   render() {

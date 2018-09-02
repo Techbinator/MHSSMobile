@@ -8,7 +8,7 @@ module.exports = StyleSheet.create({
     flexDirection: 'row',
     paddingTop: 5,
     paddingBottom: 10,
-    paddingRight: 15,
+    paddingRight: 0,
   },
   switchText: {
     color: '#95959A',

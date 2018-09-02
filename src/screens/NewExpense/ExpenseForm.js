@@ -71,7 +71,12 @@ class ExpenseForm extends React.Component {
   }
 
   initialize = () => {
-    this.props.loadCategories();
+    if (
+      this.props.categories === undefined ||
+      this.props.categories.length === 0
+    ) {
+      this.props.loadCategories();
+    }
   };
 
   handleSubmit = values => {

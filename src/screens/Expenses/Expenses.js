@@ -34,7 +34,9 @@ class Expenses extends Component {
   }
 
   initialize = () => {
-    this.props.getExpenses();
+    if (this.props.expenses === undefined || this.props.expenses.length === 0) {
+      this.props.getExpenses();
+    }
   };
 
   constructor(props) {
