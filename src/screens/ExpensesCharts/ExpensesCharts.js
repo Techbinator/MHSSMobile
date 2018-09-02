@@ -19,13 +19,6 @@ import {
 import styles from './styles';
 
 class ExpensesCharts extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentPeriod: getFormattedCurrentWeek(),
-      showPieChart: false,
-    };
-  }
   static propTypes = {
     navigation: PropTypes.any,
     getCategories: PropTypes.func.isRequired,
@@ -38,6 +31,11 @@ class ExpensesCharts extends Component {
     categoriesLoading: false,
     categoriesError: false,
     categories: [],
+  };
+
+  state = {
+    currentPeriod: getFormattedCurrentWeek(),
+    showPieChart: false,
   };
 
   componentDidMount() {

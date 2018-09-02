@@ -44,7 +44,7 @@ const AppNavigation = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: 'Walkthrough',
+    initialRouteName: 'SignIn',
     headerMode: 'none',
   }
 );

@@ -39,6 +39,11 @@ class Expenses extends Component {
     expensesError: false,
   };
 
+  state = {
+    headerTitle: moment().format('dddd,'),
+    headerTitleSuffix: moment().format('MMM DD'),
+  };
+
   componentDidMount() {
     this.initialize();
   }
@@ -46,14 +51,6 @@ class Expenses extends Component {
   initialize = () => {
     this.props.getExpenses();
   };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      headerTitle: moment().format('dddd,'),
-      headerTitleSuffix: moment().format('MMM DD'),
-    };
-  }
 
   switchPeriod(i) {
     var m = moment();
