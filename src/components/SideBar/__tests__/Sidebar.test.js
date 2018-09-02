@@ -17,7 +17,6 @@ it('navigates to the sub routes', () => {
   const instance = testRenderer.root;
   const content = instance.findByType(Content);
   const listItems = content.findAllByType(TouchableOpacity);
-  console.log(listItems);
   listItems.forEach(item => item.props.onPress());
   expect(props.navigation.navigate.mock.calls).toEqual([
     ['Expenses'],
