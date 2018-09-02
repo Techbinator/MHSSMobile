@@ -12,6 +12,17 @@ export default {
   content: {
     backgroundColor: '#FFF',
   },
+  emptyContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emptyMsg: {
+    color: '#777',
+    fontSize: 18,
+    alignSelf: 'center',
+  },
   categoryBox: {
     justifyContent: 'center',
     height: deviceHeight / 4,

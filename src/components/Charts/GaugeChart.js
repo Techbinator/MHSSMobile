@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { VictoryPie, VictoryLabel, VictoryGroup } from 'victory-native';
 import { Dimensions } from 'react-native';
 const deviceWidth = Dimensions.get('window').width;
 
 import theme from '@theme/variables/mmoney';
-class GaugeChart extends Component {
+class GaugeChart extends PureComponent {
   getData(percent) {
     return [{ x: 1, y: percent }, { x: 2, y: 100 - percent }];
   }

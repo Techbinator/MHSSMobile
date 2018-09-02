@@ -2,7 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImageBackground } from 'react-native';
 import moment from 'moment';
-import { Container, Tabs, Tab, Icon, Fab } from 'native-base';
+import {
+  Container,
+  Content,
+  Tabs,
+  Tab,
+  Text,
+  Icon,
+  Fab,
+  Spinner,
+  View,
+} from 'native-base';
 import { connect } from 'react-redux';
 
 import ExpensesList from './ExpensesList';
@@ -34,9 +44,7 @@ class Expenses extends Component {
   }
 
   initialize = () => {
-    if (this.props.expenses === undefined || this.props.expenses.length === 0) {
-      this.props.getExpenses();
-    }
+    this.props.getExpenses();
   };
 
   constructor(props) {
@@ -84,45 +92,60 @@ class Expenses extends Component {
             title={this.state.headerTitle}
             titleSuffix={this.state.headerTitleSuffix}
           />
-          <Tabs
-            tabContainerStyle={{
-              elevation: 0,
-            }}
-            locked
-            onChangeTab={({ i, ref, from }) => this.switchPeriod(i, ref, from)}>
-            <Tab heading="Today">
-              <ExpensesList
-                expensesList={expenses}
-                navigation={navigation}
-                handleDelete={deleteExpense}
-                expensesLoading={expensesLoading}
-              />
-            </Tab>
-            <Tab heading="This Week">
-              <ExpensesList
-                expensesList={expenses}
-                navigation={navigation}
-                handleDelete={deleteExpense}
-                expensesLoading={expensesLoading}
-              />
-            </Tab>
-            <Tab heading="This Month">
-              <ExpensesList
-                expensesList={expenses}
-                navigation={navigation}
-                handleDelete={deleteExpense}
-                expensesLoading={expensesLoading}
-              />
-            </Tab>
-          </Tabs>
-          <Fab
-            direction="up"
-            containerStyle={{}}
-            style={{ backgroundColor: theme.brandPrimary }}
-            position="bottomRight"
-            onPress={() => navigation.navigate('NewExpense')}>
-            <Icon type="Feather" name="plus" />
-          </Fab>
+          <Content
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ flex: 1 }}
+            style={styles.content}>
+            {expensesLoading && (
+              <View style={styles.emptyContainer}>
+                <Spinner color={theme.brandPrimary} />
+              </View>
+            )}
+            {!expensesLoading &&
+              expenses.length === 0 && (
+                <View style={styles.emptyContainer}>
+                  <Text style={styles.emptyMsg}>No expenses found</Text>
+                </View>
+              )}
+            {!expensesLoading &&
+              expenses.length > 0 && (
+                <Tabs
+                  tabContainerStyle={{
+                    elevation: 0,
+                  }}
+                  locked
+                  onChangeTab={({ i, ref, from }) =>
+                    this.switchPeriod(i, ref, from)
+                  }>
+                  <Tab heading="Today">
+                    <ExpensesList
+                      expensesList={expenses}
+                      handleDelete={deleteExpense}
+                    />
+                  </Tab>
+                  <Tab heading="This Week">
+                    <ExpensesList
+                      expensesList={expenses}
+                      handleDelete={deleteExpense}
+                    />
+                  </Tab>
+                  <Tab heading="This Month">
+                    <ExpensesList
+                      expensesList={expenses}
+                      handleDelete={deleteExpense}
+                    />
+                  </Tab>
+                </Tabs>
+              )}
+            <Fab
+              direction="up"
+              containerStyle={{}}
+              style={{ backgroundColor: theme.brandPrimary }}
+              position="bottomRight"
+              onPress={() => navigation.navigate('NewExpense')}>
+              <Icon type="Feather" name="plus" />
+            </Fab>
+          </Content>
         </ImageBackground>
       </Container>
     );

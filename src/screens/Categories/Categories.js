@@ -41,12 +41,7 @@ class Categories extends Component {
   }
 
   initialize = () => {
-    if (
-      this.props.categories === undefined ||
-      this.props.categories.length === 0
-    ) {
-      this.props.getCategories();
-    }
+    this.props.getCategories();
   };
 
   render() {
@@ -62,24 +57,34 @@ class Categories extends Component {
             title="Categories"
             subTitle="Manage expense categories"
           />
-          <Content showsVerticalScrollIndicator={false} style={styles.content}>
-            <View>
-              {categoriesLoading && <Spinner color={theme.brandPrimary} />}
-              {!categoriesLoading &&
-                categories.lenght === 0 && (
+          <Content
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ flex: 1 }}
+            style={styles.content}>
+            {categoriesLoading && (
+              <View style={styles.emptyContainer}>
+                <Spinner color={theme.brandPrimary} />
+              </View>
+            )}
+            {!categoriesLoading &&
+              categories.length === 0 && (
+                <View style={styles.emptyContainer}>
                   <Text style={styles.emptyMsg}>No categories found</Text>
-                )}
-            </View>
-            <FlatList
-              horizontal={false}
-              numColumns={2}
-              data={categories}
-              renderItem={({ ...props }) => (
-                <Category navigation={navigation} {...props} />
+                </View>
               )}
-              keyExtractor={category => category.id}
-              initialNumToRender={5}
-            />
+            {!categoriesLoading &&
+              categories.length > 0 && (
+                <FlatList
+                  horizontal={false}
+                  numColumns={2}
+                  data={categories}
+                  renderItem={({ ...props }) => (
+                    <Category navigation={navigation} {...props} />
+                  )}
+                  keyExtractor={category => category.id}
+                  initialNumToRender={5}
+                />
+              )}
           </Content>
           <Fab
             direction="up"

@@ -14,6 +14,11 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  emptyMsg: {
+    color: '#777',
+    fontSize: 18,
+    alignSelf: 'center',
+  },
   chartTitle: {
     paddingTop: 10,
     fontSize: 18,

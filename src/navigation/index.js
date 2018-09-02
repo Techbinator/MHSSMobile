@@ -19,8 +19,8 @@ const Drawer = createDrawerNavigator(
   {
     Expenses: { screen: Expenses },
     Categories: { screen: Categories },
-    ExpensesCharts: { screen: ExpensesCharts },
     ExpenseAgenda: { screen: ExpenseAgenda },
+    ExpensesCharts: { screen: ExpensesCharts },
     Search: { screen: Search },
     Settings: { screen: Settings },
     Profile: { screen: Profile },
@@ -44,7 +44,7 @@ const AppNavigation = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: 'SignIn',
+    initialRouteName: 'Walkthrough',
     headerMode: 'none',
   }
 );

@@ -8,16 +8,16 @@ export default {
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
   },
-  spinner: {
-    paddingTop: deviceHeight / 2 - 10,
-  },
   container: {
     flex: 1,
     width: null,
     height: null,
   },
-
+  content: {
+    backgroundColor: 'transparent',
+  },
   emptyContainer: {
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',

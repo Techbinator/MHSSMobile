@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { FlatList, TouchableOpacity } from 'react-native';
 import { DrawerActions } from 'react-navigation';
 import {
   Container,
@@ -11,24 +11,19 @@ import {
   Left,
   Right,
 } from 'native-base';
-
 import MenuItem from './MenuItem';
-
 import styles from './styles';
 import { routes } from './config';
-
 class SideBar extends Component {
   state = {
     selected: '',
   };
-
   onPressItem = route => {
     this.setState(() => ({
       selected: route,
     }));
     this.props.navigation.navigate(route);
   };
-
   renderMenuItem = ({ item }) => (
     <MenuItem
       id={item.route}
@@ -38,7 +33,6 @@ class SideBar extends Component {
       icon={item.icon}
     />
   );
-
   render() {
     const navigation = this.props.navigation;
     return (
@@ -71,20 +65,15 @@ class SideBar extends Component {
           </Right>
         </Header>
         <Content style={styles.content}>
-          {routes.map(item => (
-            <MenuItem
-              key={item.route}
-              id={item.route}
-              onPressItem={this.onPressItem}
-              selected={this.state.selected === item.route}
-              title={item.title}
-              icon={item.icon}
-            />
-          ))}
+          <FlatList
+            initialNumToRender={8}
+            data={routes}
+            renderItem={this.renderMenuItem}
+            keyExtractor={item => item.route}
+          />
         </Content>
       </Container>
     );
   }
 }
-
 export default SideBar;

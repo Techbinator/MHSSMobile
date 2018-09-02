@@ -45,12 +45,7 @@ class ExpensesCharts extends Component {
   }
 
   initialize = () => {
-    if (
-      this.props.categories === undefined ||
-      this.props.categories.length === 0
-    ) {
-      this.props.getCategories();
-    }
+    this.props.getCategories();
   };
 
   switchPeriod(i) {
@@ -79,52 +74,52 @@ class ExpensesCharts extends Component {
           source={require('@assets/images/header-bg.png')}
           style={styles.container}>
           <AppHeader
-            hasTabs
             navigation={this.props.navigation}
             title="Analytics"
             titleSuffix={this.state.currentPeriod}
           />
           {categoriesLoading && (
             <View style={styles.emptyContainer}>
-              <Spinner style={{ marginTop: 40 }} color={theme.brandPrimary} />
+              <Spinner color={theme.brandPrimary} />
             </View>
           )}
           {!categoriesLoading &&
-            categories.lenght === 0 && (
+            categories.length === 0 && (
               <View style={styles.emptyContainer}>
                 <Text style={styles.emptyMsg}>No categories found</Text>
               </View>
             )}
 
-          {!categoriesLoading && (
-            <Tabs
-              tabContainerStyle={{
-                elevation: 0,
-              }}
-              locked
-              onChangeTab={({ i, ref, from }) =>
-                this.switchPeriod(i, ref, from)
-              }>
-              <Tab heading="This Week">
-                <ExpensesCarousel
-                  categories={categories}
-                  navigation={navigation}
-                />
-              </Tab>
-              <Tab heading="This Month">
-                <ExpensesCarousel
-                  categories={categories}
-                  navigation={navigation}
-                />
-              </Tab>
-              <Tab heading="This Year">
-                <ExpensesCarousel
-                  categories={categories}
-                  navigation={navigation}
-                />
-              </Tab>
-            </Tabs>
-          )}
+          {!categoriesLoading &&
+            categories.length > 0 && (
+              <Tabs
+                tabContainerStyle={{
+                  elevation: 0,
+                }}
+                locked
+                onChangeTab={({ i, ref, from }) =>
+                  this.switchPeriod(i, ref, from)
+                }>
+                <Tab heading="This Week">
+                  <ExpensesCarousel
+                    categories={categories}
+                    navigation={navigation}
+                  />
+                </Tab>
+                <Tab heading="This Month">
+                  <ExpensesCarousel
+                    categories={categories}
+                    navigation={navigation}
+                  />
+                </Tab>
+                <Tab heading="This Year">
+                  <ExpensesCarousel
+                    categories={categories}
+                    navigation={navigation}
+                  />
+                </Tab>
+              </Tabs>
+            )}
         </ImageBackground>
       </Container>
     );

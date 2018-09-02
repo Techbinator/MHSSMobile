@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Dimensions } from 'react-native';
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory-native';
 import theme from '@theme/variables/mmoney';
 
 const deviceWidth = Dimensions.get('window').width;
 
-class CashFlowChart extends Component {
+class CashFlowChart extends PureComponent {
   render() {
     return (
       this.props.incomeData.length > 0 && (

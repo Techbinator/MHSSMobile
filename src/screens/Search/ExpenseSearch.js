@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { groupBy } from 'lodash';
 import { ImageBackground } from 'react-native';
-import { Container, Content } from 'native-base';
+import { Container, Content, View, Spinner, Text } from 'native-base';
 import { connect } from 'react-redux';
 import AppHeader from '@components/AppHeader';
 import Notification from '@components/Notification';
+import theme from '@theme/variables/mmoney';
 import ExpensesResultList from './ExpensesResultList';
 
 import * as actions from './behaviors';
@@ -84,6 +85,7 @@ class ExpenseSearch extends Component {
           />
           <Content
             showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ flex: 1 }}
             style={{ backgroundColor: '#fff' }}>
             {exportSuccess && (
               <Notification
@@ -94,11 +96,24 @@ class ExpenseSearch extends Component {
                 type="info"
               />
             )}
-            <ExpensesResultList
-              navigation={navigation}
-              expensesList={expenses}
-              expensesLoading={searching}
-            />
+            {searching && (
+              <View style={styles.emptyContainer}>
+                <Spinner color={theme.brandPrimary} />
+              </View>
+            )}
+            {!searching &&
+              expenses.length === 0 && (
+                <View style={styles.emptyContainer}>
+                  <Text style={styles.emptyMsg}>No expenses found</Text>
+                </View>
+              )}
+            {!searching &&
+              expenses.length > 0 && (
+                <ExpensesResultList
+                  expensesList={expenses}
+                  expensesLoading={searching}
+                />
+              )}
           </Content>
         </ImageBackground>
       </Container>

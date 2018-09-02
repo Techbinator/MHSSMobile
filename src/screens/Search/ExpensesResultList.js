@@ -30,6 +30,7 @@ class ExpensesResultList extends Component {
             <ExpensesSectionHeader {...props} />
           )}
           keyExtractor={expense => expense.id}
+          initialNumToRender={10}
         />
       </View>
     );

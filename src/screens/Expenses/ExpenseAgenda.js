@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImageBackground } from 'react-native';
 import { groupBy } from 'lodash';
-import { Container, View, Text, Spinner, Icon } from 'native-base';
+import { Container, Content, View, Text, Spinner, Icon } from 'native-base';
 import { connect } from 'react-redux';
 import { Agenda } from 'react-native-calendars';
 import AppHeader from '@components/AppHeader';
@@ -38,6 +38,14 @@ class ExpenseCalendar extends Component {
     expensesError: false,
   };
 
+  componentDidMount() {
+    this.initialize();
+  }
+
+  initialize = () => {
+    this.props.getExpenses();
+  };
+
   static getDerivedStateFromProps(props) {
     if (!props.expensesLoading && !props.expensesError) {
       const expensesWithColor = props.expenses.map((obj, index) => {
@@ -54,13 +62,7 @@ class ExpenseCalendar extends Component {
     return null;
   }
   renderItem(item) {
-    return (
-      <ExpenseItem
-        item={item}
-        style={styles.agenda.item}
-        navigation={this.props.navigation}
-      />
-    );
+    return <ExpenseItem item={item} style={styles.agenda.item} />;
   }
   renderEmptyData() {
     return (
@@ -78,54 +80,70 @@ class ExpenseCalendar extends Component {
   }
 
   render() {
-    const { navigation } = this.props;
+    const { navigation, expenses, expensesLoading } = this.props;
     return (
       <Container>
         <ImageBackground
           source={require('@assets/images/header-bg.png')}
           style={styles.container}>
           <AppHeader hasTabs navigation={navigation} />
-          <Agenda
-            style={styles.agenda.container}
-            items={this.state.expenses}
-            loadItemsForMonth={day => {
-              this.props.getExpenses(day);
-            }}
-            renderItem={this.renderItem.bind(this)}
-            rowHasChanged={this.rowHasChanged.bind(this)}
-            selected={'2018-08-11'}
-            pastScrollRange={2}
-            futureScrollRange={2}
-            renderEmptyData={this.renderEmptyData.bind(this)}
-            renderKnob={() => {
-              return (
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                  }}>
-                  <Text style={styles.agenda.knobText}>More dates</Text>
-                  <Icon
-                    style={styles.agenda.knobIcon}
-                    name="ios-arrow-down-outline"
-                  />
+          <Content
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ flex: 1 }}
+            style={styles.content}>
+            {expensesLoading && (
+              <View style={styles.emptyContainer}>
+                <Spinner color={theme.brandPrimary} />
+              </View>
+            )}
+            {!expensesLoading &&
+              expenses.length === 0 && (
+                <View style={styles.emptyContainer}>
+                  <Text style={styles.emptyMsg}>No expenses found</Text>
                 </View>
-              );
-            }}
-            theme={{
-              calendarBackground: '#FFF',
-              textSectionTitleColor: theme.brandPrimary,
-              selectedDayBackgroundColor: theme.brandPrimary,
-              selectedDayTextColor: '#FFF',
-              todayTextColor: theme.brandPrimary,
-              textDisabledColor: '#DDD',
-              dotColor: theme.brandSecondary,
-              selectedDotColor: '#FFF',
-              arrowColor: theme.brandPrimary,
-              monthTextColor: '#000',
-              agendaKnobColor: 'blue',
-            }}
-          />
+              )}
+            {!expensesLoading &&
+              expenses.length > 0 && (
+                <Agenda
+                  style={styles.agenda.container}
+                  items={this.state.expenses}
+                  renderItem={this.renderItem.bind(this)}
+                  rowHasChanged={this.rowHasChanged.bind(this)}
+                  selected={'2018-08-11'}
+                  pastScrollRange={2}
+                  futureScrollRange={2}
+                  renderEmptyData={this.renderEmptyData.bind(this)}
+                  renderKnob={() => {
+                    return (
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                        }}>
+                        <Text style={styles.agenda.knobText}>More dates</Text>
+                        <Icon
+                          style={styles.agenda.knobIcon}
+                          name="ios-arrow-down-outline"
+                        />
+                      </View>
+                    );
+                  }}
+                  theme={{
+                    calendarBackground: '#FFF',
+                    textSectionTitleColor: theme.brandPrimary,
+                    selectedDayBackgroundColor: theme.brandPrimary,
+                    selectedDayTextColor: '#FFF',
+                    todayTextColor: theme.brandPrimary,
+                    textDisabledColor: '#DDD',
+                    dotColor: theme.brandSecondary,
+                    selectedDotColor: '#FFF',
+                    arrowColor: theme.brandPrimary,
+                    monthTextColor: '#000',
+                    agendaKnobColor: 'blue',
+                  }}
+                />
+              )}
+          </Content>
         </ImageBackground>
       </Container>
     );

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import {
@@ -20,7 +20,7 @@ const logo = require('@assets/images/header-logo.png');
 const avatar = require('@assets/images/avatar1.png');
 import styles from './styles';
 
-class AppHeader extends Component {
+class AppHeader extends PureComponent {
   state = {
     displaySearchBar: false,
   };

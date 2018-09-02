@@ -10,14 +10,14 @@ export const routes = [
     icon: 'ios-apps-outline',
   },
   {
-    title: 'Expenses Analytics',
-    route: 'ExpensesCharts',
-    icon: 'ios-stats-outline',
-  },
-  {
     title: 'Expenses Calendar',
     route: 'ExpenseAgenda',
     icon: 'ios-calendar-outline',
+  },
+  {
+    title: 'Expenses Analytics',
+    route: 'ExpensesCharts',
+    icon: 'ios-stats-outline',
   },
   {
     title: 'Search & Export',

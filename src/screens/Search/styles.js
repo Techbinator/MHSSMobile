@@ -1,5 +1,3 @@
-import { Dimensions } from 'react-native';
-const deviceHeight = Dimensions.get('window').height;
 import theme from '@theme/variables/mmoney';
 
 export default {
@@ -8,8 +6,16 @@ export default {
     width: null,
     height: null,
   },
-  spinner: {
-    paddingTop: deviceHeight / 2 - 10,
+  emptyContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emptyMsg: {
+    color: '#777',
+    fontSize: 18,
+    alignSelf: 'center',
   },
   sectionHeader: {
     container: {

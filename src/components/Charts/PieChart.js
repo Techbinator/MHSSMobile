@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { VictoryPie } from 'victory-native';
 import { View } from 'native-base';
 import { Dimensions } from 'react-native';
@@ -12,7 +12,7 @@ const theme = {
   },
 };
 
-class PieChart extends Component {
+class PieChart extends PureComponent {
   render() {
     return (
       this.props.data.length > 0 && (

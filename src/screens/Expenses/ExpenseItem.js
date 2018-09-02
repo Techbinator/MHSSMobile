@@ -39,7 +39,6 @@ const ExpenseItem = ({ item, style, color }) => {
 };
 
 ExpenseItem.propTypes = {
-  navigation: PropTypes.shape({ navigate: PropTypes.func }),
   item: PropTypes.object.isRequired,
   style: PropTypes.object,
   color: PropTypes.string,
