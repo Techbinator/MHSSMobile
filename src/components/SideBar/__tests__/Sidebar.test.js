@@ -21,7 +21,7 @@ it('navigates to the sub routes', () => {
   expect(props.navigation.navigate.mock.calls).toEqual([
     ['Expenses'],
     ['Categories'],
-    ['ExpenseAgenda'],
+    ['ExpensesCalendar'],
     ['ExpensesCharts'],
     ['Search'],
     ['Profile'],

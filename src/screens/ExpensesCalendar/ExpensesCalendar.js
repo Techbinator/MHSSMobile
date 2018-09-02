@@ -7,24 +7,22 @@ import { connect } from 'react-redux';
 import { Agenda } from 'react-native-calendars';
 import AppHeader from '@components/AppHeader';
 
-import ExpenseItem from './ExpenseItem';
+import ExpenseItem from '@components/ExpenseItem';
 
 import * as actions from './behaviors';
-import * as expensesSelectors from './selectors';
+import * as eventsSelectors from './selectors';
 import categoryColors from '@theme/categoryColors';
 import styles from './styles';
 import theme from '@theme/variables/mmoney';
 
-class ExpenseCalendar extends Component {
+class ExpensesCalendar extends Component {
   static propTypes = {
     navigation: PropTypes.any,
     selected: PropTypes.string,
-    date: PropTypes.object,
-    getExpenses: PropTypes.func.isRequired,
-    expensesLoading: PropTypes.bool.isRequired,
-    expensesError: PropTypes.bool.isRequired,
-    expenses: PropTypes.array,
-    deleteExpense: PropTypes.func,
+    getEvents: PropTypes.func.isRequired,
+    eventsLoading: PropTypes.bool.isRequired,
+    eventsError: PropTypes.bool.isRequired,
+    events: PropTypes.array,
   };
 
   state = {
@@ -34,8 +32,8 @@ class ExpenseCalendar extends Component {
   };
 
   static defaultProps = {
-    expensesLoading: false,
-    expensesError: false,
+    eventsLoading: false,
+    eventsError: false,
   };
 
   componentDidMount() {
@@ -43,20 +41,20 @@ class ExpenseCalendar extends Component {
   }
 
   initialize = () => {
-    this.props.getExpenses();
+    this.props.getEvents();
   };
 
   static getDerivedStateFromProps(props) {
-    if (!props.expensesLoading && !props.expensesError) {
-      const expensesWithColor = props.expenses.map((obj, index) => {
+    if (!props.eventsLoading && !props.eventsError) {
+      const eventsWithColor = props.events.map((obj, index) => {
         return {
           ...obj,
           color: categoryColors[index % categoryColors.length],
         };
       });
-      const expensesGroupedByDate = groupBy(expensesWithColor, 'date');
+      const eventsGroupedByDate = groupBy(eventsWithColor, 'date');
       return {
-        expenses: expensesGroupedByDate,
+        events: eventsGroupedByDate,
       };
     }
     return null;
@@ -67,10 +65,10 @@ class ExpenseCalendar extends Component {
   renderEmptyData() {
     return (
       <View style={styles.emptyContainer}>
-        {this.props.expensesLoading ? (
+        {this.props.eventsLoading ? (
           <Spinner color={theme.brandPrimary} />
         ) : (
-          <Text style={styles.emptyMsg}>No expenses found for this date</Text>
+          <Text style={styles.emptyMsg}>No events found for this date</Text>
         )}
       </View>
     );
@@ -80,7 +78,7 @@ class ExpenseCalendar extends Component {
   }
 
   render() {
-    const { navigation, expenses, expensesLoading } = this.props;
+    const { navigation, events, eventsLoading } = this.props;
     return (
       <Container>
         <ImageBackground
@@ -91,22 +89,22 @@ class ExpenseCalendar extends Component {
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ flex: 1 }}
             style={styles.content}>
-            {expensesLoading && (
+            {eventsLoading && (
               <View style={styles.emptyContainer}>
                 <Spinner color={theme.brandPrimary} />
               </View>
             )}
-            {!expensesLoading &&
-              expenses.length === 0 && (
+            {!eventsLoading &&
+              events.length === 0 && (
                 <View style={styles.emptyContainer}>
-                  <Text style={styles.emptyMsg}>No expenses found</Text>
+                  <Text style={styles.emptyMsg}>No events found</Text>
                 </View>
               )}
-            {!expensesLoading &&
-              expenses.length > 0 && (
+            {!eventsLoading &&
+              events.length > 0 && (
                 <Agenda
                   style={styles.agenda.container}
-                  items={this.state.expenses}
+                  items={this.state.events}
                   renderItem={this.renderItem.bind(this)}
                   rowHasChanged={this.rowHasChanged.bind(this)}
                   selected={'2018-08-11'}
@@ -151,12 +149,12 @@ class ExpenseCalendar extends Component {
 }
 
 const mapStateToProps = state => ({
-  expenses: expensesSelectors.getExpenses(state),
-  expensesLoading: expensesSelectors.getExpensesLoadingState(state),
-  expensesError: expensesSelectors.getExpensesErrorState(state),
+  events: eventsSelectors.getEvents(state),
+  eventsLoading: eventsSelectors.getEventsLoadingState(state),
+  eventsError: eventsSelectors.getEventsErrorState(state),
 });
 
 export default connect(
   mapStateToProps,
   actions
-)(ExpenseCalendar);
+)(ExpensesCalendar);

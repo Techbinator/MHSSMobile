@@ -4,7 +4,7 @@ import { FlatList } from 'react-native';
 
 import { View, Button, Icon, SwipeRow } from 'native-base';
 
-import ExpenseItem from './ExpenseItem';
+import ExpenseItem from '@components/ExpenseItem';
 import categoryColors from '@theme/categoryColors';
 
 import styles from './styles';

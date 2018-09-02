@@ -218,7 +218,7 @@ exports[`renders correctly 1`] = `
             },
             Object {
               "icon": "ios-calendar-outline",
-              "route": "ExpenseAgenda",
+              "route": "ExpensesCalendar",
               "title": "Expenses Calendar",
             },
             Object {

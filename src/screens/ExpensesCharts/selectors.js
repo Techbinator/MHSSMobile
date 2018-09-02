@@ -1,5 +1,4 @@
-export const getCategories = state => state.categories.categories;
+export const getCategories = state => state.analytics.categories;
 export const getCategoriesLoadingState = state =>
-  state.categories.categoriesLoading;
-export const getCategoriesErrorState = state =>
-  state.categories.categoriesError;
+  state.analytics.categoriesLoading;
+export const getCategoriesErrorState = state => state.analytics.categoriesError;
