@@ -82,7 +82,7 @@ class ResetPassword extends Component {
                 message="Error resetting your password!"
                 buttonText="Retry"
                 duration={5000}
-                position="bottom"
+                position="top"
                 type="danger"
               />
             )}

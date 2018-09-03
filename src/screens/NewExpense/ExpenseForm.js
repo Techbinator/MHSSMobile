@@ -106,7 +106,7 @@ class ExpenseForm extends React.Component {
                 message="Error adding a new expense!"
                 buttonText="Retry"
                 duration={5000}
-                position="bottom"
+                position="top"
                 type="danger"
               />
             )}

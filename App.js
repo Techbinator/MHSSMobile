@@ -8,19 +8,12 @@ import mmoneyTheme from './src/theme/variables/mmoney';
 import getTheme from './src/theme/components';
 import AppNavigation from './src/navigation';
 
+const store = configureStore();
 export default class App extends React.Component {
   state = {
     fontLoaded: false,
-    storeCreated: false,
     isReady: false,
   };
-
-  constructor() {
-    super();
-    this.state = {
-      store: configureStore(() => this.setState({ storeCreated: true })),
-    };
-  }
 
   async componentDidMount() {
     this.loadFonts();
@@ -58,11 +51,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (
-      !this.state.isReady ||
-      !this.state.storeCreated ||
-      !this.state.fontLoaded
-    ) {
+    if (!this.state.isReady || !this.state.fontLoaded) {
       return (
         <AppLoading
           startAsync={this.cacheResourcesAsync}
@@ -72,7 +61,7 @@ export default class App extends React.Component {
     }
     return (
       <StyleProvider style={getTheme(mmoneyTheme)}>
-        <Provider store={this.state.store}>
+        <Provider store={store}>
           <Root>
             <AppNavigation />
           </Root>

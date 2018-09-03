@@ -77,7 +77,7 @@ class SignIn extends Component {
                   message="Invalid username or password!"
                   buttonText="Retry"
                   duration={5000}
-                  position="bottom"
+                  position="top"
                   type="danger"
                 />
               )}

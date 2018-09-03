@@ -87,7 +87,7 @@ class SignUp extends Component {
                 message="Error creating your account!"
                 buttonText="Retry"
                 duration={5000}
-                position="bottom"
+                position="top"
                 type="danger"
               />
             )}

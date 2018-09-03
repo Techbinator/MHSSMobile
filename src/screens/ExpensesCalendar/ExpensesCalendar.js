@@ -36,14 +36,6 @@ class ExpensesCalendar extends Component {
     eventsError: false,
   };
 
-  componentDidMount() {
-    this.initialize();
-  }
-
-  initialize = () => {
-    this.props.getEvents();
-  };
-
   static getDerivedStateFromProps(props) {
     if (!props.eventsLoading && !props.eventsError) {
       const eventsWithColor = props.events.map((obj, index) => {
@@ -78,7 +70,7 @@ class ExpensesCalendar extends Component {
   }
 
   render() {
-    const { navigation, events, eventsLoading } = this.props;
+    const { navigation } = this.props;
     return (
       <Container>
         <ImageBackground
@@ -89,58 +81,47 @@ class ExpensesCalendar extends Component {
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ flex: 1 }}
             style={styles.content}>
-            {eventsLoading && (
-              <View style={styles.emptyContainer}>
-                <Spinner color={theme.brandPrimary} />
-              </View>
-            )}
-            {!eventsLoading &&
-              events.length === 0 && (
-                <View style={styles.emptyContainer}>
-                  <Text style={styles.emptyMsg}>No events found</Text>
-                </View>
-              )}
-            {!eventsLoading &&
-              events.length > 0 && (
-                <Agenda
-                  style={styles.agenda.container}
-                  items={this.state.events}
-                  renderItem={this.renderItem.bind(this)}
-                  rowHasChanged={this.rowHasChanged.bind(this)}
-                  selected={'2018-08-11'}
-                  pastScrollRange={2}
-                  futureScrollRange={2}
-                  renderEmptyData={this.renderEmptyData.bind(this)}
-                  renderKnob={() => {
-                    return (
-                      <View
-                        style={{
-                          flexDirection: 'row',
-                          alignItems: 'center',
-                        }}>
-                        <Text style={styles.agenda.knobText}>More dates</Text>
-                        <Icon
-                          style={styles.agenda.knobIcon}
-                          name="ios-arrow-down-outline"
-                        />
-                      </View>
-                    );
-                  }}
-                  theme={{
-                    calendarBackground: '#FFF',
-                    textSectionTitleColor: theme.brandPrimary,
-                    selectedDayBackgroundColor: theme.brandPrimary,
-                    selectedDayTextColor: '#FFF',
-                    todayTextColor: theme.brandPrimary,
-                    textDisabledColor: '#DDD',
-                    dotColor: theme.brandSecondary,
-                    selectedDotColor: '#FFF',
-                    arrowColor: theme.brandPrimary,
-                    monthTextColor: '#000',
-                    agendaKnobColor: 'blue',
-                  }}
-                />
-              )}
+            <Agenda
+              style={styles.agenda.container}
+              items={this.state.events}
+              loadItemsForMonth={day => {
+                this.props.getEvents(day);
+              }}
+              renderItem={this.renderItem.bind(this)}
+              rowHasChanged={this.rowHasChanged.bind(this)}
+              selected={'2018-08-11'}
+              pastScrollRange={2}
+              futureScrollRange={2}
+              renderEmptyData={this.renderEmptyData.bind(this)}
+              renderKnob={() => {
+                return (
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                    }}>
+                    <Text style={styles.agenda.knobText}>More dates</Text>
+                    <Icon
+                      style={styles.agenda.knobIcon}
+                      name="ios-arrow-down-outline"
+                    />
+                  </View>
+                );
+              }}
+              theme={{
+                calendarBackground: '#FFF',
+                textSectionTitleColor: theme.brandPrimary,
+                selectedDayBackgroundColor: theme.brandPrimary,
+                selectedDayTextColor: '#FFF',
+                todayTextColor: theme.brandPrimary,
+                textDisabledColor: '#DDD',
+                dotColor: theme.brandSecondary,
+                selectedDotColor: '#FFF',
+                arrowColor: theme.brandPrimary,
+                monthTextColor: '#000',
+                agendaKnobColor: 'blue',
+              }}
+            />
           </Content>
         </ImageBackground>
       </Container>
