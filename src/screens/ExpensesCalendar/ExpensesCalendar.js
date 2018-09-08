@@ -13,7 +13,7 @@ import * as actions from './behaviors';
 import * as eventsSelectors from './selectors';
 import categoryColors from '@theme/categoryColors';
 import styles from './styles';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 class ExpensesCalendar extends Component {
   static propTypes = {

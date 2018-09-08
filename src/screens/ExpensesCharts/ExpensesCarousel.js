@@ -9,7 +9,7 @@ import CashFlowChart from '@components/Charts/CashFlowChart';
 
 import styles from './styles';
 
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 

@@ -1,7 +1,7 @@
 import { Platform, Dimensions } from 'react-native';
 const deviceWidth = Dimensions.get('window').width;
 
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 export default {
   background: {

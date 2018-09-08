@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Dimensions } from 'react-native';
 import { VictoryBar } from 'victory-native';
 
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 const deviceWidth = Dimensions.get('window').width;
 
 class BarChart extends Component {

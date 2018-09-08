@@ -1,4 +1,4 @@
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 export default {
   inputWrapper: {

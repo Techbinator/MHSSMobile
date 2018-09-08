@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { Root, StyleProvider } from 'native-base';
 
 import configureStore from './src/store/configureStore';
-import mmoneyTheme from './src/theme/variables/mmoney';
+import mmoneyTheme from './src/theme/variables/myexpense';
 import getTheme from './src/theme/components';
 import AppNavigation from './src/navigation';
 

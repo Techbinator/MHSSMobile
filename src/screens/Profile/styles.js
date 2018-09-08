@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 export default {
   container: {

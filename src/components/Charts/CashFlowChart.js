@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Dimensions } from 'react-native';
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory-native';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 const deviceWidth = Dimensions.get('window').width;
 

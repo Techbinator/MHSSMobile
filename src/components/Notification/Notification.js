@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Toast } from 'native-base';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 class Notification extends Component {
   componentDidMount() {

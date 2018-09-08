@@ -9,7 +9,7 @@ import ExpensesCarousel from './ExpensesCarousel';
 import AppHeader from '@components/AppHeader';
 import * as actions from './behaviors';
 import * as categoriesSelectors from './selectors';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 import {
   getFormattedCurrentWeek,

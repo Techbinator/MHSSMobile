@@ -1,4 +1,4 @@
-import theme from './variables/mmoney';
+import theme from './variables/myexpense';
 
 export default (categoryColors = [
   theme.brandSuccess,

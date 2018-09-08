@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native';
 const deviceHeight = Dimensions.get('window').height;
 
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 export default {
   container: {

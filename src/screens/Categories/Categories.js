@@ -19,7 +19,7 @@ import * as actions from './behaviors';
 import * as categoriesSelectors from './selectors';
 
 import styles from './styles';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 class Categories extends Component {
   static propTypes = {

@@ -6,7 +6,7 @@ import { Container, Content, View, Spinner, Text } from 'native-base';
 import { connect } from 'react-redux';
 import AppHeader from '@components/AppHeader';
 import Notification from '@components/Notification';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 import ExpensesResultList from './ExpensesResultList';
 
 import * as actions from './behaviors';

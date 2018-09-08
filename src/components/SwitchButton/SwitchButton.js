@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Switch } from 'native-base';
 
 import styles from './styles';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 var Color = require('color');
 const light = Color(theme.brandPrimary).alpha(0.4);

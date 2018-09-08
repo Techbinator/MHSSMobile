@@ -30,7 +30,7 @@ import * as expenseSelectors from '@screens/NewExpense/selectors';
 
 import styles from './styles';
 
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 var Color = require('color');
 
 const light = Color(theme.brandPrimary).alpha(0.3);

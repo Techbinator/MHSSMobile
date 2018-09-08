@@ -4,7 +4,7 @@ import { Grid, Col } from 'native-base';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 const Overview = ({ navigation }) => {
   return (

@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "mMoney",
+    "name": "MyExpense",
     "description": "an awesome expense manager app",
-    "slug": "mmoney",
+    "slug": "myexpense",
     "version": "1.0.0",
     "privacy": "unlisted",
     "sdkVersion": "28.0.0",
@@ -24,10 +24,10 @@
       ]
     },
     "ios": {
-      "bundleIdentifier": "io.market.nativebase.craftman.mmoney"
+      "bundleIdentifier": "io.market.nativebase.craftman.myexpense"
     },
     "android": {
-      "package": "io.market.nativebase.craftman.mmoney"
+      "package": "io.market.nativebase.craftman.myexpense"
     }
   }
 }

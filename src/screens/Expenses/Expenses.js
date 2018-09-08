@@ -22,7 +22,7 @@ import * as actions from './behaviors';
 import * as expensesSelectors from './selectors';
 
 import styles from './styles';
-import theme from '@theme/variables/mmoney';
+import theme from '@theme/variables/myexpense';
 
 class Expenses extends Component {
   static propTypes = {
