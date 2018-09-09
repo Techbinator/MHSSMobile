@@ -22,6 +22,7 @@ export default {
     color: '#777',
     fontSize: 18,
     alignSelf: 'center',
+    paddingBottom: 5,
   },
   agenda: {
     container: {
