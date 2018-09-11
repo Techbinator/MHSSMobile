@@ -110,7 +110,7 @@ class ExpenseForm extends React.Component {
                 type="danger"
               />
             )}
-            <Form>
+            <Form style={{ backgroundColor: '#FFF' }}>
               <Field
                 name="amount"
                 label="Amount"
