@@ -7,18 +7,10 @@ export default {
     width: null,
     height: null,
   },
-  content: {
-    backgroundColor: '#FFF',
-  },
-  form: {
-    flex: 1,
-    width: '100%',
-  },
   footer: {
     flexDirection: 'column',
     height: 120,
   },
-
   picker: {
     item: {
       borderColor: '#F6F6F6',
@@ -70,7 +62,7 @@ export default {
     },
     dateIcon: {
       color: '#95959A',
-      paddingRight: 15,
+      paddingRight: 12,
     },
     placeholderText: {
       alignSelf: 'flex-start',
@@ -82,7 +74,7 @@ export default {
   switch: {
     item: {
       paddingLeft: 0,
-      paddingRight: Platform.OS === 'android' ? 5 : 12,
+      paddingRight: Platform.OS === 'android' ? 0 : 12,
       borderColor: '#F6F6F6',
     },
     input: {

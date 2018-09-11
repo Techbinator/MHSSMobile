@@ -7,13 +7,14 @@ export default {
 
   header: {
     container: {
-      flex: 0.3,
+      flex: 1,
       backgroundColor: 'transparent',
       marginTop: 20,
+      marginBottom: 50,
     },
     navigation: {
       opacity: 0.8,
-      fontSize: 38,
+      fontSize: 24,
       color: '#FFF',
     },
     title: {
@@ -24,28 +25,11 @@ export default {
     },
   },
 
-  form: {
-    container: {
-      flex: 0.7,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
-    },
-    content: {
-      flex: 1,
-      width: '100%',
-    },
-    submitBtn: {
-      position: 'absolute',
-      bottom: 0,
-      width: '100%',
-      left: 0,
-      borderRadius: 0,
-    },
-  },
-
   footer: {
+    container: {
+      flexDirection: 'column',
+      height: 120,
+    },
     linkText: {
       opacity: 0.7,
       fontSize: 14,

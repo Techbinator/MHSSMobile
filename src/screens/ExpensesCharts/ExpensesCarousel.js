@@ -72,7 +72,7 @@ export class ExpensesCarousel extends React.Component {
           indicatorColor={theme.brandPrimary}
           animate={false}>
           <View pointerEvents="none" style={styles.slides}>
-            <Text style={styles.chartTitle}>Budget Objectif Completion</Text>
+            <Text style={styles.chartTitle}>Budget Goal Completion</Text>
             <GaugeChart percent={65} />
           </View>
           <View pointerEvents="none" style={styles.slides}>

@@ -28,6 +28,9 @@
     },
     "android": {
       "package": "io.market.nativebase.craftman.myexpense"
+    },
+    "androidStatusBar": {
+      "translucent": true
     }
   }
 }

@@ -100,7 +100,7 @@ class ExpenseForm extends React.Component {
           source={require('@assets/images/header-bg-small.png')}
           style={styles.background}>
           <AppHeader navigation={navigation} title="Add Expense" />
-          <Content showsVerticalScrollIndicator={false} style={styles.content}>
+          <Content showsVerticalScrollIndicator={false}>
             {addExpenseError && (
               <Notification
                 message="Error adding a new expense!"
@@ -110,7 +110,7 @@ class ExpenseForm extends React.Component {
                 type="danger"
               />
             )}
-            <Form style={styles.form}>
+            <Form>
               <Field
                 name="amount"
                 label="Amount"

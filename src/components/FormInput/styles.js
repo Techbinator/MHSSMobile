@@ -11,6 +11,9 @@ export default {
     height: 70,
   },
   formError: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
     color: theme.brandDanger,
     fontSize: Platform.OS === 'android' ? 12 : 15,
     paddingRight: 5,

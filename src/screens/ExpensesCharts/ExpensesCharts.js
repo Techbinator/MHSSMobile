@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ImageBackground, StatusBar } from 'react-native';
+import { ImageBackground } from 'react-native';
 import { Container, Tabs, Tab, Spinner, View, Text } from 'native-base';
 import { connect } from 'react-redux';
 import moment from 'moment/moment';
@@ -67,7 +67,6 @@ class ExpensesCharts extends Component {
     const { navigation, categoriesLoading, categories } = this.props;
     return (
       <Container>
-        <StatusBar barStyle="light-content" />
         <ImageBackground
           source={require('@assets/images/header-bg.png')}
           style={styles.container}>

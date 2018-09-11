@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { KeyboardAvoidingView, ImageBackground } from 'react-native';
+import { ImageBackground } from 'react-native';
 import {
   Container,
   Text,
@@ -11,6 +11,9 @@ import {
   Icon,
   Spinner,
   View,
+  Header,
+  Left,
+  Content,
 } from 'native-base';
 import { reduxForm, Field } from 'redux-form';
 import { doResetPassword } from './behaviors';
@@ -61,45 +64,52 @@ class ResetPassword extends Component {
         <ImageBackground
           source={require('@assets/images/background2.png')}
           style={styles.background}>
-          <View style={styles.header.container}>
-            <View style={{ flex: 1 }}>
+          <Header transparent>
+            <Left style={{ flex: 1 }}>
               <Button
                 transparent
                 onPress={() => this.props.navigation.goBack()}>
-                <Icon style={styles.header.navigation} name="md-arrow-back" />
+                <Icon
+                  style={styles.header.navigation}
+                  type="SimpleLineIcons"
+                  name="arrow-left"
+                />
               </Button>
-            </View>
+            </Left>
+          </Header>
+          <Content showsVerticalScrollIndicator={false}>
             <View style={{ flex: 1 }}>
-              <Text style={styles.header.title}>Forgot Password</Text>
+              {resetPasswordError && (
+                <Notification
+                  message="Error reseting your password!!"
+                  buttonText="Retry"
+                  duration={5000}
+                  position="top"
+                  type="danger"
+                />
+              )}
+              <View style={styles.header.container}>
+                <Text style={styles.header.title}>Forgot Password</Text>
+              </View>
+              <Form>
+                <Field
+                  name="email"
+                  placeholder="Email"
+                  icon="ios-mail-outline"
+                  component={LoginInput}
+                  type="email"
+                  validate={[email, required]}
+                />
+              </Form>
             </View>
-          </View>
-          <KeyboardAvoidingView
-            style={styles.form.container}
-            behavior="padding"
-            enabled>
-            {resetPasswordError && (
-              <Notification
-                message="Error resetting your password!"
-                buttonText="Retry"
-                duration={5000}
-                position="top"
-                type="danger"
-              />
-            )}
-            <Form style={styles.form.content}>
-              <Field
-                name="email"
-                placeholder="Email"
-                icon="ios-mail-outline"
-                component={LoginInput}
-                type="email"
-                validate={[email, required]}
-              />
+          </Content>
+          <Footer style={styles.footer.container}>
+            <View style={{ flex: 1 }}>
               <Button
                 large
                 primary
                 block
-                style={styles.form.submitBtn}
+                full
                 onPress={handleSubmit(this.handleSubmit)}>
                 {resetPasswordStarted ? (
                   <Spinner color="#fff" />
@@ -107,11 +117,10 @@ class ResetPassword extends Component {
                   <Text> Reset Password </Text>
                 )}
               </Button>
-            </Form>
-          </KeyboardAvoidingView>
-          <Footer>
-            <View>
-              <Button transparent onPress={() => navigation.navigate('SignIn')}>
+              <Button
+                transparent
+                full
+                onPress={() => navigation.navigate('SignIn')}>
                 <Text style={styles.footer.linkText}>
                   Got my password, go to
                 </Text>

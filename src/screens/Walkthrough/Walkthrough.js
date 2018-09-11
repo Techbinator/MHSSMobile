@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Dimensions, View, Image, ImageBackground } from 'react-native';
+import {
+  Dimensions,
+  View,
+  Image,
+  ImageBackground,
+  StatusBar,
+} from 'react-native';
 import { Container, Content, Text, Button, Card, Footer } from 'native-base';
 import Carousel from 'react-native-snap-carousel';
 
@@ -47,6 +53,11 @@ class Walkthrough extends Component {
   render() {
     return (
       <Container>
+        <StatusBar
+          barStyle="light-content"
+          translucent={true}
+          backgroundColor={'transparent'}
+        />
         <ImageBackground
           source={require('@assets/images/background2.png')}
           style={styles.background}>

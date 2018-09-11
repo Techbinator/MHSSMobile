@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-import {
-  ImageBackground,
-  KeyboardAvoidingView,
-  ScrollView,
-} from 'react-native';
+import { ImageBackground, StatusBar } from 'react-native';
 import {
   Container,
   Icon,
   Text,
   Button,
   View,
+  Header,
   Footer,
   Spinner,
+  Content,
+  Form,
+  Left,
 } from 'native-base';
 
 import LoginInput from '@components/LoginInput';
@@ -63,86 +63,93 @@ class SignUp extends Component {
     const { navigation, handleSubmit, signupStarted, signupError } = this.props;
     return (
       <Container>
+        <StatusBar barStyle="light-content" />
         <ImageBackground
           source={require('@assets/images/background2.png')}
           style={styles.background}>
-          <View style={styles.header.container}>
-            <View style={{ flex: 1 }}>
+          <Header transparent>
+            <Left style={{ flex: 1 }}>
               <Button
                 transparent
                 onPress={() => this.props.navigation.goBack()}>
-                <Icon style={styles.header.navigation} name="md-arrow-back" />
+                <Icon
+                  style={styles.header.navigation}
+                  type="SimpleLineIcons"
+                  name="arrow-left"
+                />
               </Button>
-            </View>
+            </Left>
+          </Header>
+          <Content showsVerticalScrollIndicator={false}>
             <View style={{ flex: 1 }}>
-              <Text style={styles.header.title}>Sign Up</Text>
-            </View>
-          </View>
-          <KeyboardAvoidingView
-            style={styles.form.container}
-            behavior="padding"
-            enabled>
-            {signupError && (
-              <Notification
-                message="Error creating your account!"
-                buttonText="Retry"
-                duration={5000}
-                position="top"
-                type="danger"
-              />
-            )}
-            <ScrollView style={styles.form.content}>
-              <Field
-                name="username"
-                placeholder="Username"
-                icon="ios-person-outline"
-                component={LoginInput}
-                type="text"
-                validate={[required, alphaNumeric, maxLength15]}
-              />
-              <Field
-                name="email"
-                placeholder="Email"
-                icon="ios-mail-outline"
-                component={LoginInput}
-                type="email"
-                validate={[email, required]}
-              />
-              <Field
-                name="password"
-                placeholder="Password"
-                icon="ios-lock-outline"
-                component={LoginInput}
-                type="password"
-                secureTextEntry={true}
-                validate={[required, alphaNumeric, minLength7, maxLength15]}
-              />
-              <Field
-                name="confirmPassword"
-                placeholder="Confirm Password"
-                icon="ios-lock-outline"
-                component={LoginInput}
-                type="password"
-                secureTextEntry={true}
-                validate={[required, alphaNumeric, minLength7, maxLength15]}
-              />
-            </ScrollView>
-            <Button
-              large
-              primary
-              block
-              style={styles.form.submitBtn}
-              onPress={handleSubmit(this.handleSubmit)}>
-              {signupStarted ? (
-                <Spinner color="#fff" />
-              ) : (
-                <Text> Sign Up </Text>
+              {signupError && (
+                <Notification
+                  message="Error creating your account!"
+                  buttonText="Retry"
+                  duration={5000}
+                  position="top"
+                  type="danger"
+                />
               )}
-            </Button>
-          </KeyboardAvoidingView>
-          <Footer>
-            <View>
-              <Button transparent onPress={() => navigation.navigate('SignIn')}>
+              <View style={styles.header.container}>
+                <Text style={styles.header.title}>Sign Up</Text>
+              </View>
+              <Form>
+                <Field
+                  name="username"
+                  placeholder="Username"
+                  icon="ios-person-outline"
+                  component={LoginInput}
+                  type="text"
+                  validate={[required, alphaNumeric, maxLength15]}
+                />
+                <Field
+                  name="email"
+                  placeholder="Email"
+                  icon="ios-mail-outline"
+                  component={LoginInput}
+                  type="email"
+                  validate={[email, required]}
+                />
+                <Field
+                  name="password"
+                  placeholder="Password"
+                  icon="ios-lock-outline"
+                  component={LoginInput}
+                  type="password"
+                  secureTextEntry={true}
+                  validate={[required, alphaNumeric, minLength7, maxLength15]}
+                />
+                <Field
+                  name="confirmPassword"
+                  placeholder="Confirm Password"
+                  icon="ios-lock-outline"
+                  component={LoginInput}
+                  type="password"
+                  secureTextEntry={true}
+                  validate={[required, alphaNumeric, minLength7, maxLength15]}
+                />
+              </Form>
+            </View>
+          </Content>
+          <Footer style={styles.footer.container}>
+            <View style={{ flex: 1 }}>
+              <Button
+                large
+                primary
+                block
+                full
+                onPress={handleSubmit(this.handleSubmit)}>
+                {signupStarted ? (
+                  <Spinner color="#fff" />
+                ) : (
+                  <Text> Sign Up </Text>
+                )}
+              </Button>
+              <Button
+                transparent
+                full
+                onPress={() => navigation.navigate('SignIn')}>
                 <Text style={styles.footer.linkText}>
                   Already have an account?
                 </Text>

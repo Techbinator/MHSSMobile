@@ -150,7 +150,7 @@ export default {
 
   // Header
   toolbarBtnColor: '#fff',
-  toolbarDefaultBg: platform === 'ios' ? '#F8F8F8' : '#3F51B5',
+  toolbarDefaultBg: platform === 'ios' ? '#F8F8F8' : '#F8F8F8',
   toolbarHeight: platform === 'ios' ? 64 : 56,
   toolbarSearchIconSize: platform === 'ios' ? 20 : 23,
   toolbarInputColor: platform === 'ios' ? '#CECDD2' : '#fff',
@@ -160,9 +160,7 @@ export default {
   iosStatusbar: 'light-content',
   toolbarDefaultBorder: 'transparent',
   get statusBarColor() {
-    return color(this.toolbarDefaultBg)
-      .darken(0.2)
-      .hex();
+    return 'rgba(0, 0, 0, 0.1)';;
   },
   get darkenHeader() {
     return color(this.tabBgColor)

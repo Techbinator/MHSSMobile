@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-import {
-  Image,
-  ImageBackground,
-  KeyboardAvoidingView,
-  ScrollView,
-} from 'react-native';
+import { Image, ImageBackground, StatusBar } from 'react-native';
 import { NavigationActions, StackActions } from 'react-navigation';
-import { Container, Text, Button, View, Footer, Spinner } from 'native-base';
-
+import {
+  Container,
+  Text,
+  Button,
+  View,
+  Spinner,
+  Content,
+  Form,
+  Footer,
+} from 'native-base';
 import LoginInput from '@components/LoginInput';
 import Notification from '@components/Notification';
 
@@ -58,30 +61,32 @@ class SignIn extends Component {
     const { navigation, handleSubmit, loginStarted, loginError } = this.props;
     return (
       <Container>
+        <StatusBar
+          barStyle="light-content"
+          translucent={true}
+          backgroundColor={'transparent'}
+        />
         <ImageBackground
           source={require('@assets/images/background1.png')}
           style={styles.background}>
-          <View style={styles.header.container}>
-            <Image
-              source={require('@assets/images/logo.png')}
-              style={styles.header.logo}
-            />
-          </View>
-          <KeyboardAvoidingView
-            style={styles.form.container}
-            behavior="padding"
-            enabled>
-            <View style={styles.form.content}>
-              {loginError && (
-                <Notification
-                  message="Invalid username or password!"
-                  buttonText="Retry"
-                  duration={5000}
-                  position="top"
-                  type="danger"
+          <Content showsVerticalScrollIndicator={false}>
+            <View style={{ flex: 1 }}>
+              <View style={styles.header.wrapper}>
+                <Image
+                  source={require('@assets/images/logo.png')}
+                  style={styles.header.logo}
                 />
-              )}
-              <ScrollView style={styles.form.content}>
+                {loginError && (
+                  <Notification
+                    message="Invalid username or password!"
+                    buttonText="Retry"
+                    duration={5000}
+                    position="top"
+                    type="danger"
+                  />
+                )}
+              </View>
+              <Form>
                 <Field
                   name="username"
                   component={LoginInput}
@@ -104,30 +109,29 @@ class SignIn extends Component {
                   transparent
                   style={{ alignSelf: 'flex-end' }}
                   onPress={() => navigation.navigate('ResetPassword')}>
-                  <Text style={styles.form.linkBtn}>Forgot Password</Text>
+                  <Text style={styles.resetPwdBtn}>Forgot Password</Text>
                 </Button>
-              </ScrollView>
+              </Form>
+            </View>
+          </Content>
+          <Footer style={styles.footer}>
+            <View style={{ flex: 1 }}>
               <Button
                 large
                 primary
                 block
-                style={styles.form.submitBtn}
+                full
                 onPress={handleSubmit(this.handleSubmit)}>
-                {loginStarted ? (
-                  <Spinner color="#fff" />
-                ) : (
-                  <Text> Sign In </Text>
-                )}
+                {loginStarted ? <Spinner color="#fff" /> : <Text>Sign In</Text>}
               </Button>
-            </View>
-          </KeyboardAvoidingView>
-          <Footer>
-            <View>
-              <Button transparent onPress={() => navigation.navigate('SignUp')}>
-                <Text style={styles.footer.linkText}>
+              <Button
+                transparent
+                full
+                onPress={() => navigation.navigate('SignUp')}>
+                <Text style={styles.signup.linkText}>
                   Don’t have an account?
                 </Text>
-                <Text style={styles.footer.linkBtn}>Sign Up</Text>
+                <Text style={styles.signup.linkBtn}>Sign Up</Text>
               </Button>
             </View>
           </Footer>
