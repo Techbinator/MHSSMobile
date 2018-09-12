@@ -36,7 +36,7 @@ class SideBar extends Component {
   render() {
     const navigation = this.props.navigation;
     return (
-      <Container>
+      <Container style={{ backgroundColor: 'transparent' }}>
         <Header transparent style={styles.header.container}>
           <Left style={{ flex: 1 }}>
             <Button

@@ -28,6 +28,7 @@ const Drawer = createDrawerNavigator(
   },
   {
     initialRouteName: 'Expenses',
+    drawerBackgroundColor: 'rgba(255, 255, 255, 0.3)',
     contentComponent: props => <SideBar {...props} />,
   }
 );

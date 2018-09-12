@@ -7,7 +7,7 @@ export const entries = [
   },
   {
     title: 'TRACK YOUR MONEY',
-    subtitle: 'It helps you traks your spending quickly and easily.',
+    subtitle: 'It helps you to track your expenses quickly and easily.',
     illustration: require('@assets/images/walkthrough2.png'),
   },
   {

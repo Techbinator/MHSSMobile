@@ -18,8 +18,18 @@ This is an expo App with [CRNA](https://facebook.github.io/react-native/blog/201
 * Easy Routing and Navigation using [React Navigation](https://reactnavigation.org/)
 
 # screenshots
-![screenshots](docs/img/screenshots/group1.png "screenshot1")
-![screenshots](docs/img/screenshots/group2.png "screenshot2")
+![screenshots](docs/img/screenshots/screenshot1.png "screenshot1")
+
+![screenshots](docs/img/screenshots/screenshot2.png "screenshot2")
+
+![screenshots](docs/img/screenshots/screenshot3.png "screenshot2")
+
+![screenshots](docs/img/screenshots/screenshot4.png "screenshot2")
+
+![screenshots](docs/img/screenshots/screenshot5.png "screenshot2")
+
+![screenshots](docs/img/screenshots/screenshot6.png "screenshot2")
+
 
 Follow the following documentation to install and get started with the development:
 

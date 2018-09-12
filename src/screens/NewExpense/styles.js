@@ -6,6 +6,7 @@ export default {
     flex: 1,
     width: null,
     height: null,
+    backgroundColor: 'transparent',
   },
   footer: {
     flexDirection: 'column',
@@ -24,7 +25,7 @@ export default {
       color: '#95959A',
     },
     headerTextStyle: {
-      color: theme.DefaultTextColor,
+      color: '#FFF',
       fontSize: 14,
     },
     placeholderText: {
@@ -62,7 +63,7 @@ export default {
     },
     dateIcon: {
       color: '#95959A',
-      paddingRight: 12,
+      paddingRight: Platform.OS === 'android' ? 11 : 16,
     },
     placeholderText: {
       alignSelf: 'flex-start',
@@ -74,7 +75,7 @@ export default {
   switch: {
     item: {
       paddingLeft: 0,
-      paddingRight: Platform.OS === 'android' ? 0 : 12,
+      paddingRight: Platform.OS === 'android' ? 0 : 11,
       borderColor: '#F6F6F6',
     },
     input: {

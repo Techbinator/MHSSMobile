@@ -63,7 +63,11 @@ class SignUp extends Component {
     const { navigation, handleSubmit, signupStarted, signupError } = this.props;
     return (
       <Container>
-        <StatusBar barStyle="light-content" />
+        <StatusBar
+          barStyle="light-content"
+          translucent={true}
+          backgroundColor={'transparent'}
+        />
         <ImageBackground
           source={require('@assets/images/background2.png')}
           style={styles.background}>

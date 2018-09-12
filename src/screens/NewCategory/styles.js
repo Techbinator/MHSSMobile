@@ -48,13 +48,14 @@ export default {
 
   iconSelect: {
     container: {
+      height: 70,
       paddingLeft: 15,
       alignItems: 'center',
       flexDirection: 'row',
       width: '100%',
     },
     categoryIcon: {
-      fontSize: 50,
+      fontSize: 32,
       color: theme.dropdownLinkColor,
       alignSelf: 'flex-start',
     },
@@ -63,8 +64,9 @@ export default {
       color: theme.inputColorPlaceholder,
     },
     icon: {
-      alignSelf: 'flex-end',
+      alignSelf: 'flex-start',
       marginRight: 5,
+      paddingLeft: 5,
       color: theme.inputColorPlaceholder,
     },
   },

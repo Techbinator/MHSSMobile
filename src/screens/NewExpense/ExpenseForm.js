@@ -145,6 +145,7 @@ class ExpenseForm extends React.Component {
                         placeholderIconColor="#95959A"
                         itemStyle={styles.picker.itemStyle}
                         itemTextStyle={styles.picker.itemTextStyle}
+                        headerStyle={{ backgroundColor: theme.brandPrimary }}
                         headerTitleStyle={styles.picker.headerTextStyle}
                         headerBackButtonTextStyle={
                           styles.picker.headerTextStyle

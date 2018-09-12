@@ -126,7 +126,7 @@ class CategoryForm extends React.Component {
                   <Col size={3}>
                     <Text style={styles.iconSelect.text}>Select Icon</Text>
                   </Col>
-                  <Col size={2}>
+                  <Col size={1}>
                     <Icon
                       active
                       style={styles.iconSelect.icon}

@@ -3,7 +3,8 @@ import { Platform } from 'react-native';
 export default {
   header: {
     container: {
-      marginTop: 5,
+      marginTop: 20,
+      backgroundColor: '#fff',
     },
     icon: {
       color: '#D8D8D8',
@@ -40,8 +41,10 @@ export default {
       color: '#444',
     },
     icon: {
-      color: '#444',
+      textAlign: 'center',
+      width: 30,
       marginRight: 10,
+      color: '#444',
       fontSize: Platform.OS === 'android' ? 25 : 30,
     },
   },
