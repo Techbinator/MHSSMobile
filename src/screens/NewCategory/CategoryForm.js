@@ -15,6 +15,7 @@ import {
   View,
   Row,
   Col,
+  Item,
 } from 'native-base';
 import AppHeader from '@components/AppHeader';
 import FormInput from '@components/FormInput';
@@ -46,9 +47,6 @@ class CategoryForm extends React.Component {
     addCategoryStarted: false,
     addCategorySuccess: false,
     addCategoryError: false,
-    formValues: {
-      iconName: 'ios-add-circle-outline',
-    },
   };
 
   state = {
@@ -104,29 +102,30 @@ class CategoryForm extends React.Component {
                 name="name"
                 label="Category Name"
                 component={FormInput}
-                itemStyle={styles.formInput}
-                inputStyle={styles.formInput}
                 type="text"
                 validate={[required, alphaNumeric]}
                 autoCapitalize="none"
               />
-              <TouchableOpacity
+              <Item
+                last
+                style={{
+                  paddingLeft: 0,
+                  borderColor: '#F6F6F6',
+                }}
                 onPress={() => {
                   this.setState(() => ({
                     showIconExplorer: true,
                   }));
                 }}>
                 <Row style={styles.iconSelect.container}>
-                  <Col size={7}>
-                    <Icon
-                      style={styles.iconSelect.categoryIcon}
-                      name={formValues && formValues.iconName}
-                    />
+                  <Col size={8}>
+                    {formValues && formValues.iconName ? (
+                      <Text style={styles.iconSelect.text}>Change Icon</Text>
+                    ) : (
+                      <Text style={styles.iconSelect.text}>Select Icon</Text>
+                    )}
                   </Col>
-                  <Col size={3}>
-                    <Text style={styles.iconSelect.text}>Select Icon</Text>
-                  </Col>
-                  <Col size={1}>
+                  <Col size={2}>
                     <Icon
                       active
                       style={styles.iconSelect.icon}
@@ -134,9 +133,17 @@ class CategoryForm extends React.Component {
                     />
                   </Col>
                 </Row>
-              </TouchableOpacity>
-              {this.state.showIconExplorer && (
+              </Item>
+              {this.state.showIconExplorer ? (
                 <IconExplorer onIconSelect={this.onIconSelect} />
+              ) : (
+                formValues &&
+                formValues.iconName && (
+                  <Icon
+                    style={styles.iconSelect.categoryIcon}
+                    name={formValues && formValues.iconName}
+                  />
+                )
               )}
             </Form>
           </Content>

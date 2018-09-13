@@ -42,7 +42,7 @@ exports[`renders correctly 1`] = `
           },
           Object {
             "backgroundColor": "#fff",
-            "marginTop": 20,
+            "marginTop": 23,
           },
         ]
       }

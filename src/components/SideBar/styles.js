@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 export default {
   header: {
     container: {
-      marginTop: 20,
+      marginTop: 23,
       backgroundColor: '#fff',
     },
     icon: {
