@@ -4,9 +4,8 @@ import theme from '@theme/variables/myexpense';
 export default {
   background: {
     flex: 1,
-    width: null,
-    height: null,
-    backgroundColor: 'transparent',
+    width: theme.deviceWidth,
+    height: theme.deviceHeight,
   },
   footer: {
     flexDirection: 'column',

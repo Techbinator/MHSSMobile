@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { reduxForm, Field, getFormValues, change, reset } from 'redux-form';
-import { ImageBackground, TouchableOpacity } from 'react-native';
+import { ImageBackground } from 'react-native';
 import {
   Container,
   Content,

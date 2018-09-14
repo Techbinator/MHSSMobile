@@ -1,13 +1,11 @@
-import { Platform, Dimensions } from 'react-native';
-const deviceWidth = Dimensions.get('window').width;
-
+import { Platform } from 'react-native';
 import theme from '@theme/variables/myexpense';
 
 export default {
   background: {
     flex: 1,
-    width: null,
-    height: null,
+    width: theme.deviceWidth,
+    height: theme.deviceHeight,
   },
   content: {
     backgroundColor: '#FFF',
@@ -21,7 +19,7 @@ export default {
     container: {
       justifyContent: 'center',
       height: 70,
-      width: deviceWidth / 6,
+      width: theme.deviceWidth / 6,
       backgroundColor: '#FFF',
       borderBottomWidth: 1,
       borderRightWidth: 1,
